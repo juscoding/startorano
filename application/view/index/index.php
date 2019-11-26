@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>IndexController/index</h1>
+    <h1>Startorano | connection Startups</h1>
     <div class="box">
 
         <!-- echo out the system feedback (error and success messages) -->
