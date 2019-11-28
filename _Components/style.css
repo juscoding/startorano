@@ -69,6 +69,12 @@ html, body {
   box-sizing: border-box;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 /* Basic Component Style END */
 
 
@@ -491,3 +497,168 @@ color: rgba(0, 0, 0, 0.1) !important;
 
 /* Compnent Type JobElement END */
 
+/* Component Type MenuBand START */
+
+.startoranoUserComponentTypeMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  width: 100%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  bottom: 0;
+}
+
+.startoranoUserComponentTypeMenu a {
+  text-decoration: none;
+}
+
+.startoranoUserComponentTypeMenu a svg {
+  height: 26px;
+  opacity: 0.19;
+}
+
+.startoranoUserComponentTypeMenu a:hover svg {
+  opacity: 0.9;
+  fill: #FF004C;
+}
+
+/* Component Type MenuBand END */
+
+
+/* Component Type CompanyInfo START */
+
+.startoranoUserComponentTypeCompanyInfo p {
+  margin: 0;
+  padding: 0;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  color: #000000;
+}
+
+.startoranoUserComponentTypeCompanyInfoHeadline p {
+  font-weight: 800;
+  font-size: 20px;
+  padding-bottom: 8px;
+}
+
+/* Component Type CompanyInfo END */
+
+
+/* Component Header mit Profile START */
+
+.startoranoComponentHeaderProfile {
+  background-color: #FF004C;
+  width: 100%;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 250px;
+}
+
+.startoranoComponentHeaderProfieLogo p {
+  margin: 0;
+  margin: 12px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.startoranoComponentHeaderProfileInfoImage {
+  padding-left: 6px;
+}
+
+.startoranoComponentHeaderProfileInfo {
+  display: flex;
+  flex-direction: row;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.startoranoComponentHeaderProfileInfo p {
+  margin: 0;
+  padding: 0;
+}
+
+.startoranoComponentHeaderProfileInfoText {
+  font-family: Raleway;
+  font-style: normal;
+  padding-left: 8px;
+  display: flex;
+  color: #FFFFFF;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.startoranoComponentHeaderProfileInfoTextCompanyName {
+  font-weight: 900;
+  font-size: 28px;
+}
+
+.startoranoComponentHeaderProfileInfoTextCompanyType {
+  font-weight: normal;
+  font-size: 12px;
+  opacity: 0.8;
+  padding-bottom: 12px;
+}
+
+.startoranoComponentHeaderProfileInfoTextCompanySlogan {
+  font-weight: normal;
+  font-size: 12px;
+  opacity: 0.8;
+  padding-bottom: 12px;
+}
+
+.startoranoComponentHeaderProfileInfoTextCompanyExperience {
+  display: flex;
+  flex-direction: column;
+  padding-right: 6px;
+}
+
+.startoranoComponentHeaderProfileInfoTextCompanyExperienceRow1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  font-weight: 500;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2 {
+  flex: 1;
+  padding-top: 4px;
+  position: relative;
+  height: 5px;
+}
+
+.startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2Progressbar1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.35;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2Progressbar2 {
+  position: absolute;
+  height: 100%;
+  width: 33%;
+  opacity: 0.9;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+/* Component Header mit Profile END */
