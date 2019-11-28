@@ -1,0 +1,493 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #F4F4F4;
+}
+
+/* Basic Compnent Style START */
+
+.startoranoUserComponentsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: calc(100% - 24px);
+  max-width: 400px;
+  height: auto;
+  background-color: #FFFFFF;
+  padding: 12px;
+  border-radius: 7px;
+  margin: 6px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box !important;
+}
+
+.startoranoUserComponentsContainer input {
+  border: none;
+  background: none;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  color: #000000;
+  caret-color: #FF004C;
+  flex: 1;
+}
+.startoranoUserComponentsContainer input:focus {
+  outline: none;
+}
+.startoranoUserComponentsContainer input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.15);
+}
+.startoranoUserComponentsContainer input::-ms-clear {
+  display: none;
+  width : 0;
+  height: 0;
+}
+.startoranoUserComponentsContainer input::-ms-reveal {
+  display: none;
+  width : 0;
+  height: 0;
+}
+.startoranoUserComponentsContainer input::-webkit-search-decoration,
+.startoranoUserComponentsContainer input::-webkit-search-cancel-button,
+.startoranoUserComponentsContainer input::-webkit-search-results-button,
+.startoranoUserComponentsContainer input::-webkit-search-results-decoration {
+  display: none;
+}
+.startoranoUserComponentsContainer input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.15);
+}
+.startoranoUserComponentsContainer input::placeholder {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.startoranoUserComponentsContainer img {
+  height: 26px;
+  opacity: 0.15;
+  /* padding-left: 6px; */
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Basic Component Style END */
+
+
+/* Component User Info START */
+
+.startoranoUserComponentTypeUserInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.startoranoUserComponentTypeUserInfo img {
+  padding-right: 12px;
+  opacity: 1;
+  height: 90px;
+}
+
+.startoranoUserComponentTypeUserInfo p, small {
+  padding: 0;
+  margin: 0;
+  font-family: Raleway;
+  font-style: normal;
+}
+
+.startoranoUserComponentTypeUserInfo p {
+  font-weight: 800;
+  font-size: 28px;
+  color: #000000;
+}
+
+.startoranoUserComponentTypeUserInfo small {
+  font-weight: normal;
+  font-size: 12px;
+  color: #000000;
+  opacity: 0.8;
+}
+
+.startoranoUserComponentTypeUserInfoRow2 {
+  flex: 1;
+}
+
+/* Component User Info END */
+
+/* Component Header mit Logo START */
+
+.startoranoComponentHeaderLogo {
+  background-color: #FF004C;
+  width: 100%;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
+  margin-bottom: 6px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: flex-end;
+  height: 90px;
+}
+
+.startoranoComponentHeaderLogo p {
+  margin: 0;
+  margin: 12px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+/* Component Header mit Logo END */
+
+
+/* Component Header mit Seitenname START */
+
+.startoranoComponentHeaderSiteName {
+  background-color: #FF004C;
+  width: 100%;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 90px;
+}
+
+.startoranoComponentHeaderSiteName p {
+  margin: 0;
+  margin-bottom: 12px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22px;
+  color: #FFFFFF;
+}
+
+/* Component Header mit Seitenname END */
+
+
+/* Component Header mit Seitenname START */
+
+.startoranoComponentHeaderSearchInputCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.startoranoComponentHeaderSearch {
+  background-color: #FF004C;
+  width: 100%;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 170px;
+}
+
+.startoranoComponentHeaderSearch p {
+  margin: 0;
+  margin: 12px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+/* Component Header mit Seitenname END */
+
+
+/* Input Type Search START */
+
+.startoranoUserComponentTypeSearch {
+  height: auto;
+  box-sizing: border-box;
+}
+
+.startoranoUserComponentTypeSearchListElement {
+  display: flex;
+  align-items: center;
+  height: 26px;
+  padding-bottom: 12px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.startoranoUserComponentTypeSearchListElement input {
+  width: 100%;
+  padding: 0;
+}
+
+.startoranoUserComponentTypeSearchListElement:last-of-type {
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.startoranoUserComponentTypeSearchListElement p {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  color: #000000;
+}
+
+/* Input Type Search END */
+
+/* Input Type DropDown START */
+
+.startoranoUserComponentTypeDropDown {
+  height: auto;
+}
+
+.startoranoUserComponentTypeDropDownListElement {
+  display: flex;
+  align-items: center;
+  height: 26px;
+  padding-bottom: 12px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+}
+
+.startoranoUserComponentTypeDropDownListElement:first-of-type {
+  cursor: pointer;
+}
+
+.startoranoUserComponentTypeDropDownListElement:last-of-type {
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.startoranoUserComponentTypeDropDownListElement p {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.startoranoUserComponentTypeDropDownListElement:first-of-type p {
+  flex: 1;
+  color:rgba(0, 0, 0, 0.15);
+}
+
+
+.startoranoUserComponentTypeDropDown img {
+  height: 26px;
+  opacity: 0.15;
+  padding-left: 6px;
+}
+
+.closed {
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.startoranoUserComponentTypeDropDownListElementLoaded {
+  cursor: pointer;
+}
+
+.selected {
+  color: rgba(0, 0, 0, 255) !important;
+}
+
+.selectedgrayedout {
+  color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Input Type DropDown END */
+
+/* Input Type BigButton START */
+
+.startoranoUserComponentTypeBigButton {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  color: #000000;
+  margin: 6px;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.startoranoUserComponentTypeBigButton:focus {
+  outline: none;
+}
+
+.startoranoUserComponentTypeBigButton:hover {
+  cursor: pointer;
+}
+
+/* Input Type BigButton END */
+
+/* Input Type SmallButton START */
+
+.startoranoUserComponentTypeSmallButton {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+  border: none !important;
+  justify-content: center;
+  align-items: center;
+  width: 172px;
+  height: 36px;
+}
+
+.startoranoUserComponentTypeSmallButton:hover {
+  cursor: pointer;
+}
+
+/* Input Type SmallButton END */
+
+/* Input Type Button Style START */
+
+.filledWhite {
+  color: #FF004C !important;
+}
+
+.filledRed {
+  background-color: #FF004C !important;
+  color: #FFFFFF !important;
+}
+
+.outlinedWhite {
+  background-color: transparent !important;
+  border: 1px solid #FFFFFF !important;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+  border-radius: 7px !important;
+  color: #FFFFFF !important;
+}
+
+.outlinedRed {
+  background-color: transparent !important;
+  border: 1px solid #FF004C !important;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+  border-radius: 7px !important;
+  color: #FF004C !important;
+}
+
+.disabledGray {
+color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Input Type Button Style END */
+
+/* Compnent Type JobElement START */
+
+.startoranoUserComponentTypeJobElement {
+  display: flex;
+  flex-direction: column;
+  font-family: Raleway;
+  font-style: normal;
+
+}
+
+.startoranoUserComponentTypeJobElement img {
+  opacity: 1;
+  padding: 0;
+  padding-right: 8px;
+  height: 33px;
+}
+
+.startoranoUserComponentTypeJobElementRow1 {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.startoranoUserComponentTypeJobElementRow1ProfilePicture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.startoranoUserComponentTypeJobElementRow1ProfileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.startoranoUserComponentTypeJobElement p, small {
+  margin: 0;
+  padding: 0;
+}
+
+.startoranoUserComponentTypeJobElementRow1ProfileInfoRow1 p {
+  font-weight: bold;
+  font-size: 12px;
+  color: #000000;
+  line-height: 0.9;
+}
+
+.startoranoUserComponentTypeJobElementRow1ProfileInfoRow1 small {
+  font-weight: normal;
+  font-size: 11px;
+}
+
+.startoranoUserComponentTypeJobElementRow1Bookmark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.startoranoUserComponentTypeJobElementRow1Bookmark img {
+  padding: 0;
+  height: 24px;
+  opacity: 0.1;
+}
+
+.bookmarkChecked img {
+  color: red;
+}
+
+.startoranoUserComponentTypeJobElementRow2JobInfoRow1 {
+  font-weight: 800;
+  font-size: 28px;
+}
+
+.startoranoUserComponentTypeJobElementRow2JobInfoRow2 {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.startoranoUserComponentTypeJobElementRow2JobInfoRow2 p small {
+  color: #FF004C;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.startoranoUserComponentTypeJobElementRow3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.startoranoUserComponentTypeJobElementRow3 small {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  color: #000000;
+  opacity: 0.2;
+  text-transform: uppercase;
+}
+
+/* Compnent Type JobElement END */
+
