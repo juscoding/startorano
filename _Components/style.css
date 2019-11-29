@@ -4,7 +4,7 @@ html, body {
   background-color: #F4F4F4;
 }
 
-/* Basic Compnent Style START */
+/* Basic Component Style START */
 
 .startoranoUserComponentsContainer {
   display: flex;
@@ -323,6 +323,7 @@ input {
   align-items: center;
 }
 
+
 .startoranoUserComponentTypeBigButton:focus {
   outline: none;
 }
@@ -365,6 +366,10 @@ input {
   color: #FFFFFF !important;
 }
 
+.filledBlack {
+  color: #000000 !important;
+}
+
 .outlinedWhite {
   background-color: transparent !important;
   border: 1px solid #FFFFFF !important;
@@ -389,7 +394,7 @@ color: rgba(0, 0, 0, 0.1) !important;
 
 /* Input Type Button Style END */
 
-/* Compnent Type JobElement START */
+/* Component Type JobElement START */
 
 .startoranoUserComponentTypeJobElement {
   display: flex;
@@ -495,7 +500,248 @@ color: rgba(0, 0, 0, 0.1) !important;
   text-transform: uppercase;
 }
 
-/* Compnent Type JobElement END */
+/* Component Type JobElement END */
+
+/* Output Type ChatBubbles START */
+
+.startoranoUserComponentsContainerChat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* width: calc(100% - 24px); */
+  width: auto;
+  max-width: 400px;
+  height: auto;
+  background-color: #FFFFFF;
+  border-radius: 7px;
+  margin: 6px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box !important;
+}
+
+.startoranoChatBubble {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  padding: 12px;
+  color: #000000;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.startoranoChatBubble p {
+  margin: 0;
+}
+
+.startoranoChatUsername {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.startoranoChatUsernameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  background-color: #FFFFFF;
+  padding: 12px;
+  border-radius: 7px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box !important;
+}
+
+.startoranoChatUsernameContainer p {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  color: #000000;
+  margin: 0 !important;
+}
+
+.startoranoChatBubbleWrapperMe {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.startoranoChatBubbleWrapperOther {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.startoranoChatBubbleWrapperOtherDate {
+  margin-left: 6px;
+}
+
+.startoranoChatBubbleWrapperOtherDate small {
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 8px;
+  color: #000000;
+  opacity: 0.5;
+} 
+
+.startoranoChatBubbleWrapperMeDate {
+  margin-right: 6px;
+}
+
+.startoranoChatBubbleWrapperMeDate small {
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 8px;
+  color: #000000;
+  opacity: 0.5;
+} 
+
+.startoranoUserComponentChatBubbleRow1 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+}
+
+.startoranoUserComponentChatBubbleRow1ProfilePicture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Output Type ChatBubbles END */
+
+/* Component Type MessageElement START */
+
+.startoranoUserComponentMessageInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+}
+
+.startoranoUserComponentMessageInfo img {
+  padding-right: 12px;
+  opacity: 1;
+  height: 90px;
+}
+
+.startoranoUserComponentMessageInfo p, small {
+  padding: 0;
+  margin: 0;
+  font-family: Raleway;
+  font-style: normal;
+}
+
+.startoranoUserComponentMessageInfoUser {
+  font-weight: 800;
+  font-size: 16px;
+  color: #000000;
+}
+
+.startoranoUserComponentMessageInfoUnreadUser {
+  font-weight: 800;
+  font-size: 20px;
+  color: #000000;
+}
+
+.startoranoUserComponentMessageInfoPreview {
+  padding-top: 4px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #000000;
+}
+
+.startoranoUserComponentMessageInfoUnreadPreviewUnreadText p {
+  font-weight: 600;
+  font-size: 14px;
+  color: #000000;
+}
+
+.startoranoUserComponentMessageInfoPreviewRepliedText p {
+  font-weight: normal;
+  font-size: 14px;
+  color: #000000;
+}
+
+.startoranoUserComponentMessageInfoPreviewReplied {
+  padding-top: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.startoranoUserComponentMessageInfoPreviewRepliedImage {
+  flex: 0;
+}
+
+.startoranoUserComponentMessageInfoPreviewRepliedText {
+  flex: 1;
+}
+
+.startoranoUserComponentMessageInfoUnreadPreviewUnread {
+  padding-top: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+
+.startoranoUserComponentMessageInfoUnreadPreviewUnreadImage {
+  flex: 1;
+}
+
+.startoranoUserComponentMessageInfoTime {
+  padding-top: 4px;
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 8px;
+  color: #000000;
+  opacity: 0.8;
+}
+
+.startoranoUserComponentMessageInfoRow2 {
+  flex: 1;
+}
+
+.startoranoUserComponentMessageInfoRow2 img {
+  padding-left: 44px;
+  height: 10px;
+}
+
+.startoranoUserComponentMessageInfoRow2Send {
+  flex: 1;
+}
+
+.startoranoUserComponentMessageInfoRow2Send img {
+  height: 10px;
+}
+
+.startoranoChatNewMessageWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+
+.startoranoChatNewMessageArrow {
+  flex: 1;
+}
+
+.startoranoChatNewMessageArrow:hover {
+  cursor: pointer;
+}
+
+.startoranoMessageComponentTypeBigField {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  color: #000000;
+  margin: 6px;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* Component Type MenuBand START */
 
@@ -662,3 +908,4 @@ color: rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Component Header mit Profile END */
+/* Component Type MessageElement END */
