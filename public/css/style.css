@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #F4F4F4;
+    font-family: Raleway;
 }
 .wrapper {
     width: 960px;

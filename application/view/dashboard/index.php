@@ -15,12 +15,11 @@
             <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementLoaded">
                 <p>Heinzl</p>
             </div>
-            <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementLoaded">
-                <p>Rabensteiner</p>
-            </div>
-            <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementLoaded">
-                <p>Ritz</p>
-            </div>
+            <?php foreach ($this->dropdownjobs as $option) { ?>
+                <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementLoaded">
+                    <p><?= $chat->Jobbezeichnung; ?></p>
+                </div>
+            <?php } ?>
         </div>
         <!-- DropDownInput END -->
     </div>
