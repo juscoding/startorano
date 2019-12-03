@@ -12,9 +12,6 @@
                 <p>Auswahl</p>
                 <img src="<?php echo Config::get('URL'); ?>images/svg/arrowDownIcon.svg" alt="arrowDownIcon">
             </div>
-            <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementLoaded">
-                <p>Heinzl</p>
-            </div>
             <?php foreach ($this->dropdownjobs as $option) { ?>
                 <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementLoaded">
                     <p><?= $option->Jobbezeichnung; ?></p>
