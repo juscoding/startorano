@@ -10,7 +10,7 @@
         <div class="startoranoUserComponentsContainer startoranoUserComponentTypeDropDown">
             <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementFirst closed">
                 <p>Auswahl</p>
-                <img src="<?php echo Config::get('URL'); ?>images/arrowDownIcon.svg" alt="arrowDownIcon">
+                <img src="<?php echo Config::get('URL'); ?>images/svg/arrowDownIcon.svg" alt="arrowDownIcon">
             </div>
             <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementLoaded">
                 <p>Heinzl</p>

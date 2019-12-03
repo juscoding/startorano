@@ -54,7 +54,7 @@
         // wenn JA
 
         // Icon ändern
-        $(this).closest( ".startoranoUserComponentTypeDropDown" ).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/arrowDownIcon.svg");
+        $(this).closest( ".startoranoUserComponentTypeDropDown" ).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/arrowDownIcon.svg");
         // Class="opend" entfernen
         $(this).closest( ".startoranoUserComponentTypeDropDown" ).removeClass( "opend" );
         // untere Elemente ausblenden
@@ -65,7 +65,7 @@
         // wenn NEIN
 
         // Icon ändern
-        $(this).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/arrowUpIcon.svg");
+        $(this).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/arrowUpIcon.svg");
         // Class="opend" hinzufügen
         $(this).closest( ".startoranoUserComponentTypeDropDown" ).addClass( "opend" );
         // untere Elemente einblenden
@@ -86,7 +86,7 @@
       // dem angeklickten Element wird die Class="selectedgrayedout" hinzugefügt
       $(this).children( "p" ).addClass( "selectedgrayedout" );
       // Icon ändern
-      $(this).closest( ".startoranoUserComponentTypeDropDown" ).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/arrowDownIcon.svg");
+      $(this).closest( ".startoranoUserComponentTypeDropDown" ).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/arrowDownIcon.svg");
       // Class="opend" entfernen
       $(this).closest( ".startoranoUserComponentTypeDropDown" ).removeClass( "opend" );
       // untere Elemente ausblenden
