@@ -17,7 +17,7 @@
             </div>
             <?php foreach ($this->dropdownjobs as $option) { ?>
                 <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementLoaded">
-                    <p><?= $chat->Jobbezeichnung; ?></p>
+                    <p><?= $option->Jobbezeichnung; ?></p>
                 </div>
             <?php } ?>
         </div>
