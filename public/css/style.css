@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     background-color: #F4F4F4;
     font-family: Raleway;
+    height: 100%;
 }
 .wrapper {
     display: flex;
@@ -563,6 +564,7 @@ html, body {
   
   .startoranoUserComponentTypeBigButton {
     font-family: Raleway;
+    text-decoration: none;
     font-style: normal;
     font-weight: 800;
     font-size: 24px;
@@ -587,6 +589,7 @@ html, body {
   /* Input Type SmallButton START */
   
   .startoranoUserComponentTypeSmallButton {
+    text-decoration: none;
     font-family: Raleway;
     font-style: normal;
     font-weight: 400 !important;
@@ -638,9 +641,14 @@ html, body {
     color: #FF004C !important;
   }
   
-  .disabledGray {
+  .filledDisabledGray {
   color: rgba(0, 0, 0, 0.1) !important;
   }
+
+  .outlinedDisabledGray {
+    color: rgba(0, 0, 0, 0.1) !important;
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    }
   
   /* Input Type Button Style END */
   
@@ -1160,3 +1168,25 @@ html, body {
   /* Component Header mit Profile END */
   /* Component Type MessageElement END */
   
+
+
+
+
+
+
+
+  /*************************************** Seiten Design **********************************************/
+
+  .startoranoPageIndexBackground {
+    background-color: #FF004C;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .startoranoPageIndexBackground img {
+    margin-bottom: 24px;
+  }
