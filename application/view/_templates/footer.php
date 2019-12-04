@@ -33,7 +33,7 @@
       // Class="filled" hinzufügen
       $(this).closest( ".startoranoUserComponentTypeSearch" ).addClass( "filled" );
       // Icon ändern
-      $(this).closest( ".startoranoUserComponentTypeSearchListElement" ).find( "img" ).attr("src", "/closeIcon.svg");
+      $(this).closest( ".startoranoUserComponentTypeSearchListElement" ).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/closeIcon.svg");
     });
     // Search end ########################################################################
 
