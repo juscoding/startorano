@@ -1,19 +1,10 @@
-<div class="container">
-    <h1>Startorano | connection Startups</h1>
-    <div class="box">
-
-        <!-- echo out the system feedback (error and success messages) -->
-        <?php $this->renderFeedbackMessages(); ?>
-
-          <!-- Header mit Profile START -->
-
   <div class="startoranoComponentHeaderProfile">
     <div class="startoranoComponentHeaderProfieLogo">
       <p>startorano</p>
     </div>
     <div class="startoranoComponentHeaderProfileInfo">
       <div class="startoranoComponentHeaderProfileInfoImage">
-        <img src="/profilePic2.png" alt="profilePic">
+        <img src="<?php echo Config::get('URL'); ?>images/profilePic2.png" alt="profilePic">
       </div>
       <div class="startoranoComponentHeaderProfileInfoText">
         <div class="startoranoComponentHeaderProfileInfoTextCompanyName">
@@ -62,7 +53,7 @@
 
   <div class="startoranoUserComponentsContainer startoranoUserComponentTypeUserInfo">
     <div class="startoranoUserComponentTypeUserInfoRow1">
-      <img src="/profilePic2.png" alt="ProfilePicture">
+      <img src="<?php echo Config::get('URL'); ?>images/profilePic2.png" alt="ProfilePicture">
     </div>
     <div class="startoranoUserComponentTypeUserInfoRow2">
       <div>
@@ -100,7 +91,7 @@
       <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElement">
           <input type="text" placeholder="Suchbegriff...">
-          <img src="/searchIcon.svg" alt="searchIcon">
+          <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
         <!-- <div class="startoranoUserComponentTypeSearchListElement">
           <p>Rabensteiner</p>
@@ -121,7 +112,7 @@
   <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
     <div class="startoranoUserComponentTypeSearchListElement">
       <input type="text" placeholder="Suchbegriff...">
-      <img src="/searchIcon.svg" alt="searchIcon">
+      <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
     </div>
     <!-- <div class="startoranoUserComponentTypeSearchListElement">
       <p>Rabensteiner</p>
@@ -134,7 +125,7 @@
   <div class="startoranoUserComponentsContainer startoranoUserComponentTypeDropDown">
     <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementFirst closed">
       <p>Auswahl</p>
-      <img src="/arrowDownIcon.svg" alt="arrowDownIcon">
+      <img src="<?php echo Config::get('URL'); ?>images/svg/arrowDownIcon.svg" alt="arrowDownIcon">
     </div>
     <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementLoaded">
       <p>Heinzl</p>
@@ -153,7 +144,7 @@
   <div class="startoranoUserComponentsContainer startoranoUserComponentTypeDropDown">
       <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementFirst closed">
         <p>Auswahl</p>
-        <img src="/arrowDownIcon.svg" alt="arrowDownIcon">
+        <img src="<?php echo Config::get('URL'); ?>images/svg/arrowDownIcon.svg" alt="arrowDownIcon">
       </div>
       <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementLoaded">
         <p>Heinzl</p>
@@ -206,7 +197,7 @@
     <div class="startoranoChatBubbleWrapperOther">
       <div class="startoranoUserComponentChatBubbleRow1">
         <div class="startoranoUserComponentChatBubbleRow1ProfilePicture">
-            <img src="/profilePic.png" alt="ProfilePicture">
+            <img src="<?php echo Config::get('URL'); ?>images/profilePic.png" alt="ProfilePicture">
         </div>
         <div class="startoranoChatBubbleWrapperOtherMessageInfo">
           <div class="startoranoUserComponentsContainerChat startoranoChatBubble filledBlack">
@@ -236,7 +227,7 @@
         <input type="text" class="" placeholder="deine Nachricht...">
       </div>
       <div class="startoranoChatNewMessageArrow">
-        <img src="/sendButton.svg" alt="send">
+        <img src="<?php echo Config::get('URL'); ?>images/svg/sendButton.svg" alt="send">
       </div>
     </div>
   </div>
@@ -250,7 +241,7 @@
     <!-- bereits gelesener Chat -->
     <div class="startoranoUserComponentMessageInfo">
       <div class="startoranoUserComponentMessageInfoRow1">
-        <img src="/profilePic2.png" alt="ProfilePicture">
+        <img src="<?php echo Config::get('URL'); ?>images/profilePic2.png" alt="ProfilePicture">
       </div>
       <div class="startoranoUserComponentMessageInfoRow2">
         <div class="startoranoUserComponentMessageInfoUser">
@@ -268,7 +259,7 @@
     <!-- ungelesener Chat -->
     <div class="startoranoUserComponentMessageInfo">
       <div class="startoranoUserComponentMessageInfoRow1">
-        <img src="/profilePic2.png" alt="ProfilePicture">
+        <img src="<?php echo Config::get('URL'); ?>images/profilePic2.png" alt="ProfilePicture">
       </div>
       <div class="startoranoUserComponentMessageInfoRow2">
         <div class="startoranoUserComponentMessageInfoUnreadUser">
@@ -279,7 +270,7 @@
             <p>Hallo, deine Anzeige hat mich neugierig gemacht, deshalb w....</p>
           </div>
           <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadImage">
-            <img src="/dot-unreadMessage.svg" alt="dot">
+            <img src="<?php echo Config::get('URL'); ?>images/svg/dot-unreadMessage.svg" alt="dot">
           </div>
         </div>
         <div class="startoranoUserComponentMessageInfoTime">
@@ -291,7 +282,7 @@
     <!-- geantwortet auf Chat -->
     <div class="startoranoUserComponentMessageInfo">
       <div class="startoranoUserComponentMessageInfoRow1">
-        <img src="/profilePic2.png" alt="ProfilePicture">
+        <img src="<?php echo Config::get('URL'); ?>images/profilePic2.png" alt="ProfilePicture">
       </div>
       <div class="startoranoUserComponentMessageInfoRow2Send">
         <div class="startoranoUserComponentMessageInfoUser">
@@ -299,7 +290,7 @@
         </div>
         <div class="startoranoUserComponentMessageInfoPreviewReplied">
           <div class="startoranoUserComponentMessageInfoPreviewRepliedImage">
-            <img src="/replied-Message.svg" alt="reply">
+            <img src="<?php echo Config::get('URL'); ?>images/svg/replied-Message.svg" alt="reply">
           </div>
           <div class="startoranoUserComponentMessageInfoPreviewRepliedText">
             <p>Hallo, deine Anzeige hat mich neugierig gemacht, deshalb w....</p>
@@ -319,7 +310,7 @@
   <div class="startoranoUserComponentsContainer startoranoUserComponentTypeJobElement">
     <div class="startoranoUserComponentTypeJobElementRow1">
       <div class="startoranoUserComponentTypeJobElementRow1ProfilePicture">
-        <img src="/profilePic.png" alt="ProfilePicture">
+        <img src="<?php echo Config::get('URL'); ?>images/profilePic.png" alt="ProfilePicture">
       </div>
       <div class="startoranoUserComponentTypeJobElementRow1ProfileInfo">
         <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow1">
@@ -330,7 +321,7 @@
         </div>
       </div>
       <div class="startoranoUserComponentTypeJobElementRow1Bookmark">
-        <img src="/bookmarkOff.svg" alt="bookmarkIcon">
+        <img src="<?php echo Config::get('URL'); ?>images/svg/bookmarkOff.svg" alt="bookmarkIcon">
       </div>
     </div>
     <div class="startoranoUserComponentTypeJobElementRow2">
@@ -359,7 +350,7 @@
   <div class="startoranoUserComponentsContainer startoranoUserComponentTypeJobElement">
     <div class="startoranoUserComponentTypeJobElementRow1">
       <div class="startoranoUserComponentTypeJobElementRow1ProfilePicture">
-        <img src="/profilePic.png" alt="ProfilePicture">
+        <img src="<?php echo Config::get('URL'); ?>images/profilePic.png" alt="ProfilePicture">
       </div>
       <div class="startoranoUserComponentTypeJobElementRow1ProfileInfo">
         <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow1">
@@ -370,7 +361,7 @@
         </div>
       </div>
       <div class="startoranoUserComponentTypeJobElementRow1Bookmark">
-        <img src="/bookmarkOff.svg" alt="bookmarkIcon">
+        <img src="<?php echo Config::get('URL'); ?>images/svg/bookmarkOff.svg" alt="bookmarkIcon">
       </div>
     </div>
     <div class="startoranoUserComponentTypeJobElementRow2">
@@ -420,6 +411,3 @@
   </div>
 
   <!-- Menüband END -->
-
-    </div>
-</div>
