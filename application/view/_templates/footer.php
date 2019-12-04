@@ -17,7 +17,7 @@
         // Input leeren
         $(this).closest( ".startoranoUserComponentTypeSearchListElement" ).find("input").val('');
         // Icon ändern
-        $(this).attr("src", "/searchIcon.svg");
+        $(this).attr("src", "<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg");
         // Class="filled" entfernen
         $(this).closest( ".startoranoUserComponentTypeSearch" ).removeClass( "filled" );
       } else {
@@ -103,10 +103,10 @@
     $( ".startoranoUserComponentTypeJobElementRow1Bookmark" ).click(function() {
 
       if ($(this).hasClass( "bookmarkChecked" )) {
-        $(this).find( "img" ).attr("src", "/bookmarkOff.svg");
+        $(this).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/bookmarkOff.svg");
         $(this).removeClass( "bookmarkChecked" );
       } else {
-        $(this).find( "img" ).attr("src", "/bookmarkOn.svg");
+        $(this).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/bookmarkOn.svg");
         $(this).addClass( "bookmarkChecked" );
       }
     });
