@@ -410,6 +410,7 @@ html, body {
   .startoranoUserComponentTypeSearchListElementMain {
     display: flex;
     align-items: center;
+    height: 26px;
     box-sizing: border-box;
   }
 
