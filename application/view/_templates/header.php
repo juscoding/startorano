@@ -4,7 +4,7 @@
     <title>HUGE</title>
     <!-- META -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- send empty favicon fallback to prevent user's browser hitting the server for lots of favicon requests resulting in 404s -->
     <link rel="icon" href="data:;base64,=">
@@ -17,6 +17,3 @@
 
 </head>
 <body>
-    <!-- wrapper, to center website -->
-    <div class="wrapper">
-
