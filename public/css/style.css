@@ -203,7 +203,7 @@ html, body {
     justify-content: flex-start;
     width: calc(100% - 24px);
     max-width: 400px;
-    height: auto;
+    /* height: auto; */
     background-color: #FFFFFF;
     padding: 12px;
     border-radius: 7px;
@@ -411,12 +411,6 @@ html, body {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-  }
-
-  .searchBottomLine {
-    padding-bottom: 12px;
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
   }
 
   .startoranoUserComponentTypeSearchListElement {
