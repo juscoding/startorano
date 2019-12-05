@@ -12,23 +12,51 @@
 
 <form class="startoranoLoginWrapper" method="post" action="<?php echo Config::get('URL'); ?>register/register_action">
 
-    <!-- TextInput START -->
+    <!-- TextInput Firmenname -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" placeholder="Benutzername" required>
+        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" placeholder="Firmenname..." required>
     </div>
-    <!-- TextInput END -->
 
-    <!-- TextInput START -->
+    <!-- TextInput Anzeigename -->
+    <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
+        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" placeholder="Anzeigename..." required>
+    </div>
+
+    <!-- SerachInput Art des Unternehmens -->
+    <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
+        <div class="startoranoUserComponentTypeSearchListElementMain">
+            <input type="text" placeholder="Art des Unternehmens...">
+            <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
+        </div>
+            <?php foreach ($this->companyType as $type) { ?>
+                <div class="startoranoUserComponentTypeSearchListElement">
+                    <p><?= $type->Jobbezeichnung; ?></p>
+                </div>
+            <?php } ?>
+    </div>
+
+    <!-- SerachInput Firmensitz -->
+    <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
+        <div class="startoranoUserComponentTypeSearchListElementMain">
+            <input type="text" placeholder="Firmensitz...">
+            <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
+        </div>
+            <?php foreach ($this->companyType as $type) { ?>
+                <div class="startoranoUserComponentTypeSearchListElement">
+                    <p><?= $type->Jobbezeichnung; ?></p>
+                </div>
+            <?php } ?>
+    </div>
+
+    <!-- TextInput E-Mail -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
         <input type="text" name="user_email" placeholder="E-Mail" required>
     </div>
-    <!-- TextInput END -->
 
     <!-- TextInput START -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
         <input type="text" name="user_email_repeat" placeholder="E-Mail" required>
     </div>
-    <!-- TextInput END -->
 
     <!-- TextInput START -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
