@@ -1148,7 +1148,6 @@ html, body {
   /****************************************** Login **********************************************/
 
   .startoranoLoginWrapper {
-    height: calc(100% - 96px);
     width: 100%;
     display: flex;
     flex-direction: column;
