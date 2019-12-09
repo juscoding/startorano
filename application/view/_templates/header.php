@@ -11,6 +11,7 @@
 </head>
 <body>
     <!-- wrapper, to center website -->
+<<<<<<< Updated upstream
     <div class="wrapper">
 
         <!-- navigation -->
@@ -74,3 +75,7 @@
             <?php endif; ?>
         <?php endif; ?>
         </ul>
+=======
+    <!-- <div class="wrapper"> -->
+         
+>>>>>>> Stashed changes
