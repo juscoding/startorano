@@ -290,4 +290,14 @@ class RegistrationModel
         Session::add('feedback_negative', Text::get('FEEDBACK_ACCOUNT_ACTIVATION_FAILED'));
         return false;
     }
+
+    public static function getCompanyType(){    
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "CALL getJobs();";
+        $query = $database->prepare($sql);
+        $query->execute();
+
+        return $query->fetchAll();
+    }
 }

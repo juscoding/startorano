@@ -1,11 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4;
+    font-family: Raleway;
+    height: 100%;
 }
 .wrapper {
-    width: 960px;
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .container {
     max-width: 960px;
@@ -32,30 +35,6 @@ body {
     padding-top: 10px;
     margin-top: 30px;
 }
-.container input {
-    background-color: #f5f5f5;
-    border: 0;
-    padding: 5px 10px;
-}
-.container input[type="submit"] {
-    background-color: #ccc;
-    cursor: pointer;
-}
-.container input[type="submit"]:hover {
-    background-color: #222;
-    color: #fff;
-}
-.container button {
-    background-color: #ccc;
-    border: 0;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-.container button:hover {
-    background-color: #222;
-    color: #fff;
-}
-
 
 
 /* navigation dropdown menu */
@@ -166,41 +145,9 @@ body {
 .login-box h2 {
     color: #252525;
 }
-.login-box input[type="text"],
-.login-box input[type="password"] {
-    font-family: Arial, sans-serif;
-    color: #252525;
-    background-color: #ffffff;
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    display: block;
-    width: 100%;
-    box-sizing: border-box; /* modern way to say width:100% without padding */
-    /*text-transform: uppercase;*/
-}
-.login-box input[type="submit"] {
-    color: #777;
-    background-color: transparent;
-    border: 2px solid #777;
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    display: block;
-    width: 100%;
-    box-sizing: border-box; /* modern way to say width:100% without padding */
-    text-transform: uppercase;
-}
-.login-box input[type="submit"]:hover {
-    color: #fff;
-    border-color: #252525;
-    background-color: #252525;
-}
 .login-box .remember-me-label {
     display: block;
     margin-bottom: 10px;
-}
-.login-box .link-forgot-my-password {
-    display: block;
-    text-align: right;
 }
 .login-box .link-forgot-my-password a {
     color: #777;
@@ -209,11 +156,6 @@ body {
 .login-box .link-forgot-my-password a:hover {
     text-decoration: underline;
 }
-.login-box ::-webkit-input-placeholder { color: #777; opacity: 0.5; }
-.login-box ::-moz-placeholder { color: #777; opacity: 0.5; }
-.login-box :-ms-input-placeholder { color: #777; opacity: 0.5; }
-.login-box input:-moz-placeholder { color: #777; opacity: 0.5; }
-
 .register-box {
     display: table-cell;
     color: #fff;
@@ -248,9 +190,6 @@ body {
 /* error page */
 .red-text {
     color: red;
-<<<<<<< Updated upstream
-}
-=======
 }
 
 /***************************************************** STARTORANO COMPONENTS ********************************************************************/
@@ -264,7 +203,7 @@ body {
     justify-content: flex-start;
     width: calc(100% - 24px);
     max-width: 400px;
-    height: auto;
+    /* height: auto; */
     background-color: #FFFFFF;
     padding: 12px;
     border-radius: 7px;
@@ -272,6 +211,10 @@ body {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
     box-sizing: border-box !important;
   }
+  input {
+    padding: 0;
+  }
+
   
   .startoranoUserComponentsContainer input {
     border: none;
@@ -457,24 +400,31 @@ body {
   /* Component Header mit Seitenname END */
   
   
-  /* Input Type Search START */
+ /* Input Type Search START */
   
   .startoranoUserComponentTypeSearch {
     height: auto;
     box-sizing: border-box;
   }
-  
+
+  .startoranoUserComponentTypeSearchListElementMain {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
   .startoranoUserComponentTypeSearchListElement {
     display: flex;
     align-items: center;
-    height: 26px;
-    padding-bottom: 12px;
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
+    padding-top: 12px;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+    margin-top: 12px;
     box-sizing: border-box;
+    display: none;
+    cursor: pointer;
   }
   
-  .startoranoUserComponentTypeSearchListElement input {
+  .startoranoUserComponentTypeSearchListElementMain input {
     width: 100%;
     padding: 0;
   }
@@ -484,12 +434,13 @@ body {
     border-bottom: none;
     margin-bottom: 0;
   }
-  
+
   .startoranoUserComponentTypeSearchListElement p {
     font-family: Raleway;
     font-style: normal;
     font-weight: 800;
     font-size: 20px;
+    margin: 0;
     color: #000000;
   }
   
@@ -1023,7 +974,6 @@ body {
   }
 
 
-
   /* Component Type MenuBand START */
   
   .startoranoUserComponentTypeMenu {
@@ -1199,6 +1149,7 @@ body {
 
 
   /*************************************** Seiten Design **********************************************/
+  /**************************************** Startseite **********************************************/
 
   .startoranoPageIndexBackground {
     background-color: #FF004C;
@@ -1213,4 +1164,33 @@ body {
   .startoranoPageIndexBackground img {
     margin-bottom: 24px;
   }
->>>>>>> Stashed changes
+
+  /****************************************** Login **********************************************/
+
+  .startoranoLoginWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .startoranoLoginPasswordReset  {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .startoranoLoginPasswordReset a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .startoranoLoginPasswordReset a:hover {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: underline;
+  }
+
+  /****************************************** Register **********************************************/
+
+  #captcha {
+    margin: 6px;
+  }

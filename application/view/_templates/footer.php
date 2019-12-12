@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-        <div class="footer"></div>
-    </div><!-- close class="wrapper" -->
-=======
     <!-- Menüband START -->
 
   <div class="startoranoUserComponentTypeMenu">
@@ -42,27 +38,56 @@
       // check ob das Suche-Element die Class="filled" hat
       if ($(this).closest( ".startoranoUserComponentTypeSearch" ).hasClass( "filled" )) {
         // wenn JA
-
+        $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).hide();
         // Input leeren
-        $(this).closest( ".startoranoUserComponentTypeSearchListElement" ).find("input").val('');
+        $(this).closest( ".startoranoUserComponentTypeSearchListElementMain" ).find("input").val('');
         // Icon ändern
         $(this).attr("src", "<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg");
         // Class="filled" entfernen
         $(this).closest( ".startoranoUserComponentTypeSearch" ).removeClass( "filled" );
       } else {
         // wenn NEIN
-
         // Input fokusieren
-        $(this).closest( ".startoranoUserComponentTypeSearchListElement" ).find("input").focus();
+        $(this).closest( ".startoranoUserComponentTypeSearchListElementMain" ).find("input").focus();
       }
     });
-
-    // Bei einer Eingabe in das Input feld
-    $( ".startoranoUserComponentTypeSearch input" ).keypress(function() {
+// Bei einer Eingabe in das Input feld
+    $( ".startoranoUserComponentTypeSearchListElementMain input" ).keypress(function() {
       // Class="filled" hinzufügen
       $(this).closest( ".startoranoUserComponentTypeSearch" ).addClass( "filled" );
       // Icon ändern
-      $(this).closest( ".startoranoUserComponentTypeSearchListElement" ).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/closeIcon.svg");
+      $(this).closest( ".startoranoUserComponentTypeSearchListElementMain" ).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/closeIcon.svg");
+    });
+    $(".startoranoUserComponentTypeSearchListElementMain input").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+      if ($(this).val() == "") {
+        // Class="filled" entfernen
+        $(this).closest( ".startoranoUserComponentTypeSearch" ).removeClass( "filled" );
+        $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementMain img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg");
+        console.log("leer");
+        $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).hide();
+      }
+    });
+    // klick auf eines der unteren DropDown-Elmenete
+    $( ".startoranoUserComponentTypeSearchListElement" ).click(function() {
+      // Class="selectedgrayedout" bei jedem Element mit der Class="startoranoUserComponentTypeDropDownListElementLoaded" entfernen
+      $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).children( "p" ).removeClass( "selectedgrayedout" );
+      // Class="selected" bei jedem Element mit der Class="startoranoUserComponentTypeDropDownListElementLoaded" entfernen
+      $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).children( "p" ).removeClass( "selected" );
+      // beim obersten DropDown-Element wird der Text des angeklickten Elements eingefügt
+      $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementMain" ).children( "input" ).val($(this).children( "p" ).html());
+      // dem obersten Element wird die Class="selected" hinzugefügt
+      $(this).children( "p" ).addClass( "selected" );
+      // dem angeklickten Element wird die Class="selectedgrayedout" hinzugefügt
+      $(this).children( "p" ).addClass( "selectedgrayedout" );
+      $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).hide();
+      
+      // Class="filled" entfernen
+      $(this).closest( ".startoranoUserComponentTypeSearch" ).removeClass( "filled" );
+      $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementMain img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg");
     });
     // Search end ########################################################################
 
@@ -144,6 +169,5 @@
 
     
   </script>   
->>>>>>> Stashed changes
 </body>
 </html>

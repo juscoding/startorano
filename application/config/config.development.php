@@ -62,7 +62,7 @@ return array(
      * DB_CHARSET The charset, necessary for security reasons. Check Database.php class for more info.
      */
     'DB_TYPE' => 'mysql',
-    'DB_HOST' => '127.0.0.1',
+    'DB_HOST' => '84.200.81.82',
     'DB_NAME' => 'huge',
     'DB_USER' => 'startorano',
     'DB_PASS' => 'startorano456!',
@@ -133,12 +133,12 @@ return array(
      * EMAIL_SMTP_AUTH: leave this true unless your SMTP service does not need authentication
      */
     'EMAIL_USED_MAILER' => 'phpmailer',
-    'EMAIL_USE_SMTP' => false,
-    'EMAIL_SMTP_HOST' => 'yourhost',
+    'EMAIL_USE_SMTP' => true,
+    'EMAIL_SMTP_HOST' => 'smtp.gmail.com',
     'EMAIL_SMTP_AUTH' => true,
-    'EMAIL_SMTP_USERNAME' => 'yourusername',
-    'EMAIL_SMTP_PASSWORD' => 'yourpassword',
-    'EMAIL_SMTP_PORT' => 465,
+    'EMAIL_SMTP_USERNAME' => 'droaup@gmail.com',
+    'EMAIL_SMTP_PASSWORD' => 'mjcdroaup!2',
+    'EMAIL_SMTP_PORT' => 25,
     'EMAIL_SMTP_ENCRYPTION' => 'ssl',
     /**
      * Configuration for: Email content data
