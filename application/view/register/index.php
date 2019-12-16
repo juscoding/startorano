@@ -14,18 +14,18 @@
 
     <!-- TextInput Firmenname -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_companyName" placeholder="Firmenname..." required>
+        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_companyName" placeholder="Firmenname..." autocomplete="off" required>
     </div>
 
     <!-- TextInput Anzeigename -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_nickName" placeholder="Anzeigename..." required>
+        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_nickName" placeholder="Anzeigename..." autocomplete="off" required>
     </div>
 
     <!-- SerachInput Art des Unternehmens -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElementMain">
-            <input type="text" name="user_companyType" placeholder="Art des Unternehmens..." required>
+            <input type="text" name="user_companyType" placeholder="Art des Unternehmens..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
             <?php foreach ($this->companyType as $type) { ?>
@@ -38,24 +38,24 @@
     <!-- SerachInput Firmensitz -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElementMain">
-            <input type="text" name="user_companyLocation" placeholder="Firmensitz..." required>
+            <input type="text" name="user_companyLocation" placeholder="Firmensitz..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
-            <?php foreach ($this->companyType as $type) { ?>
+            <?php foreach ($this->companyLocation as $location) { ?>
                 <div class="startoranoUserComponentTypeSearchListElement">
-                    <p><?= $type->Jobbezeichnung; ?></p>
+                    <p><?= $location->Orte; ?></p>
                 </div>
             <?php } ?>
     </div>
 
     <!-- TextInput Anzahl der Mitarbeiter -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="numeric" name="user_workercount" placeholder="Anzahl der Mitarbeiter" required>
+        <input type="numeric" name="user_workercount" placeholder="Anzahl der Mitarbeiter" autocomplete="off" required>
     </div>
 
     <!-- TextInput E-Mail -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="text" name="user_email" placeholder="E-Mail" required>
+        <input type="text" name="user_email" placeholder="E-Mail" autocomplete="off" required>
     </div>
 
     <!-- TextInput Passwort -->
@@ -75,7 +75,7 @@
     
     <!-- TextInput START -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="text" name="captcha" placeholder="Buchstaben eingeben" required />
+        <input type="text" name="captcha" placeholder="Buchstaben eingeben" autocomplete="off" required />
     </div>
     <!-- TextInput END -->
 

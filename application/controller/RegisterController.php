@@ -26,7 +26,8 @@ class RegisterController extends Controller
             Redirect::home();
         } else {
             $this->View->render('register/index', array(
-                'companyType' => RegistrationModel::getCompanyType()
+                'companyType' => RegistrationModel::getCompanyType(),
+                'companyLocation' => RegistrationModel::getLocation()
             ));
         }
     }
