@@ -293,23 +293,34 @@ class RegistrationModel
         return false;
     }
 
-    public static function getCompanyType(){    
+    public static function getCompanyType($searchType){    
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "CALL getJobs();";
+        $sql = "CALL getCompanyType('$searchType');";
         $query = $database->prepare($sql);
         $query->execute();
 
-        return $query->fetchAll();
+        foreach ($query->fetchAll() as $key ) {
+            echo "<div class='startoranoUserComponentTypeSearchListElement'>";
+            echo "<p>" . $key->Art . "</p>";
+            echo "</div>";
+        }
     }
 
-    public static function getLocation(){    
+
+    public static function getLocation($searchOrt){    
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "CALL getLocation();";
+        $sql = "CALL getLocation('$searchOrt');";
         $query = $database->prepare($sql);
         $query->execute();
 
-        return $query->fetchAll();
+        foreach ($query->fetchAll() as $key ) {
+            echo "<div class='startoranoUserComponentTypeSearchListElement'>";
+            echo "<p>" . $key->Orte . "</p>";
+            echo "</div>";
+        }
     }
 }
+
+// 'companyLocation' => RegistrationModel::getLocation()

@@ -25,14 +25,10 @@
     <!-- SerachInput Art des Unternehmens -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElementMain">
-            <input type="text" name="user_companyType" placeholder="Art des Unternehmens..." autocomplete="off" required>
+            <input type="text" name="user_companyType" placeholder="Art des Unternehemens..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
-            <?php foreach ($this->companyType as $type) { ?>
-                <div class="startoranoUserComponentTypeSearchListElement">
-                    <p><?= $type->Jobbezeichnung; ?></p>
-                </div>
-            <?php } ?>
+        <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
     </div>
 
     <!-- SerachInput Firmensitz -->
@@ -41,11 +37,7 @@
             <input type="text" name="user_companyLocation" placeholder="Firmensitz..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
-            <?php foreach ($this->companyLocation as $location) { ?>
-                <div class="startoranoUserComponentTypeSearchListElement">
-                    <p><?= $location->Orte; ?></p>
-                </div>
-            <?php } ?>
+        <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
     </div>
 
     <!-- TextInput Anzahl der Mitarbeiter -->
