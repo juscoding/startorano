@@ -25,10 +25,7 @@
 
   <!-- Menüband END -->
     
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.slim.js"
-    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
     <script>
 
@@ -59,10 +56,6 @@
       $(this).closest( ".startoranoUserComponentTypeSearchListElementMain" ).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/closeIcon.svg");
     });
     $(".startoranoUserComponentTypeSearchListElementMain input").on("keyup", function() {
-      var value = $(this).val().toLowerCase();
-      $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-      });
       if ($(this).val() == "") {
         // Class="filled" entfernen
         $(this).closest( ".startoranoUserComponentTypeSearch" ).removeClass( "filled" );
@@ -70,11 +63,23 @@
         console.log("leer");
         $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).hide();
       }
+      var inputVal = $(this).val();
+        var resultDropdown = $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementWrapper" );
+        if(inputVal.length){
+            $.get("<?php echo Config::get('URL'); ?>register/" + $(this).attr('name') + "", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+                console.log("suche");
+            });
+        } else{
+            resultDropdown.empty();
+        }
+
     });
-    // klick auf eines der unteren DropDown-Elmenete
-    $( ".startoranoUserComponentTypeSearchListElement" ).click(function() {
+
+    $(document).on("click", ".startoranoUserComponentTypeSearchListElementWrapper .startoranoUserComponentTypeSearchListElement", function(){
       // Class="selectedgrayedout" bei jedem Element mit der Class="startoranoUserComponentTypeDropDownListElementLoaded" entfernen
-      $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).children( "p" ).removeClass( "selectedgrayedout" );
+      $(this).find( ".startoranoUserComponentTypeSearchListElement" ).children( "p" ).removeClass( "selectedgrayedout" );
       // Class="selected" bei jedem Element mit der Class="startoranoUserComponentTypeDropDownListElementLoaded" entfernen
       $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).children( "p" ).removeClass( "selected" );
       // beim obersten DropDown-Element wird der Text des angeklickten Elements eingefügt
@@ -84,7 +89,7 @@
       // dem angeklickten Element wird die Class="selectedgrayedout" hinzugefügt
       $(this).children( "p" ).addClass( "selectedgrayedout" );
       $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).hide();
-      
+
       // Class="filled" entfernen
       $(this).closest( ".startoranoUserComponentTypeSearch" ).removeClass( "filled" );
       $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementMain img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg");

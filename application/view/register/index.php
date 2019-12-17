@@ -14,70 +14,60 @@
 
     <!-- TextInput Firmenname -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" placeholder="Firmenname..." required>
+        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_companyName" placeholder="Firmenname..." autocomplete="off" required>
     </div>
 
     <!-- TextInput Anzeigename -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" placeholder="Anzeigename..." required>
+        <input type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_nickName" placeholder="Anzeigename..." autocomplete="off" required>
     </div>
 
     <!-- SerachInput Art des Unternehmens -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElementMain">
-            <input type="text" placeholder="Art des Unternehmens...">
+            <input type="text" name="user_companyType" placeholder="Art des Unternehemens..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
-            <?php foreach ($this->companyType as $type) { ?>
-                <div class="startoranoUserComponentTypeSearchListElement">
-                    <p><?= $type->Jobbezeichnung; ?></p>
-                </div>
-            <?php } ?>
+        <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
     </div>
 
     <!-- SerachInput Firmensitz -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElementMain">
-            <input type="text" placeholder="Firmensitz...">
+            <input type="text" name="user_companyLocation" placeholder="Firmensitz..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
-            <?php foreach ($this->companyType as $type) { ?>
-                <div class="startoranoUserComponentTypeSearchListElement">
-                    <p><?= $type->Jobbezeichnung; ?></p>
-                </div>
-            <?php } ?>
+        <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
+    </div>
+
+    <!-- TextInput Anzahl der Mitarbeiter -->
+    <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
+        <input type="numeric" name="user_workercount" placeholder="Anzahl der Mitarbeiter" autocomplete="off" required>
     </div>
 
     <!-- TextInput E-Mail -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="text" name="user_email" placeholder="E-Mail" required>
+        <input type="text" name="user_email" placeholder="E-Mail" autocomplete="off" required>
     </div>
 
-    <!-- TextInput START -->
+    <!-- TextInput Passwort -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="text" name="user_email_repeat" placeholder="E-Mail" required>
+        <input type="password" name="user_password_new" pattern=".{6,}" placeholder="Passwort" required autocomplete="off" required />
     </div>
 
-    <!-- TextInput START -->
+    <!-- TextInput Passwort wiederholen -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="password" name="user_password_new" pattern=".{6,}" placeholder="Passwort" required autocomplete="off" />
+        <input type="password" name="user_password_repeat" pattern=".{6,}" required placeholder="Passwort wiederholen" autocomplete="off" required />
     </div>
-    <!-- TextInput END -->
-
-    <!-- TextInput START -->
-    <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="password" name="user_password_repeat" pattern=".{6,}" required placeholder="Passwort wiederholen" autocomplete="off" />
-    </div>
-    <!-- TextInput END -->
 
 
-
+ 
     <!-- show the captcha by calling the login/showCaptcha-method in the src attribute of the img tag -->
     <img id="captcha" src="<?php echo Config::get('URL'); ?>register/showCaptcha" />
     
     <!-- TextInput START -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-        <input type="text" name="captcha" placeholder="Buchstaben eingeben" required />
+        <input type="text" name="captcha" placeholder="Buchstaben eingeben" autocomplete="off" required />
     </div>
     <!-- TextInput END -->
 
