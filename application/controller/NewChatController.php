@@ -1,7 +1,6 @@
-@@ -1,24 +0,0 @@
 <?php
 
-class ChatController extends Controller
+class NewChatController extends Controller
 {
     /**
      * Construct this object by extending the basic Controller class
@@ -20,6 +19,21 @@ class ChatController extends Controller
      */
     public function index()
     {
-        $this->View->render('chat/index');
+        $this->View->render('NewChat/index');
+    }
+
+    /**
+     * NewChat page action
+     * POST-request after form submit
+     */
+    public function chat_action()
+    {
+        $send_successful = NewChatModel::sendNewMessage();
+
+        if ($send_successful) {
+            Redirect::to('chat/index');
+        } else {
+            Redirect::to('chat/index');
+        }
     }
 }
