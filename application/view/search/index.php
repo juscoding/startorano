@@ -2,7 +2,7 @@
 <?php include("../application/view/_templates/header_standard.php");?>
 
 <div class="wrapper">
-    <h1>Benutzer Profil</h1>
+    <h1>Suche</h1>
 </div>
 
 <!-- Footer Datei einbinden -->

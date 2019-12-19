@@ -81,6 +81,7 @@
 </div>
 </div>
         
-    <!-- </div> -->
-<!-- </div> -->
 </div>
+
+<!-- Footer Datei einbinden -->
+<?php include("../application/view/_templates/footer_standard.php");?> 
