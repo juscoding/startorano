@@ -6,10 +6,9 @@
       <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElement">
           <input type="text" placeholder="Suchbegriff...">
-          <img src="/searchIcon.svg" alt="searchIcon">
+          <img src="../public/images/svg/searchIcon.svg" alt="searchIcon">
         </div>
       </div>
     </div>
   </div>
-
   <!-- Header mit Suchleiste END -->

@@ -19,6 +19,11 @@ class ChatController extends Controller
      */
     public function index()
     {
-        $this->View->render('chat/index');
+        $this->View->render(
+            'chat/index',
+            array(
+                'SendChats' => ChatModel::getAllSendChats(), 'ReceivedChats' => ChatModel::getAllReceivedChats()
+            )
+        );
     }
 }

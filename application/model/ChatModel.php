@@ -1,25 +1,30 @@
-@@ -1,24 +0,0 @@
+
 <?php
 
-class ChatController extends Controller
+class ChatModel
 {
-    /**
-     * Construct this object by extending the basic Controller class
-     */
-    public function __construct()
-    {
-        parent::__construct();
 
-        // special authentication check for the entire controller: Note the check-ADMIN-authentication!
-        // All methods inside this controller are only accessible for admins (= users that have role type 7)
-        Auth::checkAuthentication();
+    public static function getAllSendChats()
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "CALL getAllSendChats(:user_id);";
+        $query = $database->prepare($sql);
+        $query->execute(array(':user_id' => Session::get('user_id')));
+
+        return $query->fetchAll();
     }
 
-    /**
-     * This method controls what happens when you move to /admin or /admin/index in your app.
-     */
-    public function index()
+    public static function getAllReceivedChats()
     {
-        $this->View->render('chat/index');
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "CALL getAllReceivedChats(:user_id);";
+        $query = $database->prepare($sql);
+        $query->execute(array(':user_id' => Session::get('user_id')));
+
+        return $query->fetchAll();
     }
+
+    
 }
