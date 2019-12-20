@@ -11,5 +11,4 @@
       </div>
     </div>
   </div>
-  
   <!-- Header mit Suchleiste END -->
