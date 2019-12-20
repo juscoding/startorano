@@ -6,8 +6,10 @@
             <p>Nachrichten</p>
         </div>
         <div class="startoranoMessengerStartButton">
-            <input class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledRed" type="button" value="neue Nachricht">
-        </div>
+            <!-- <input class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledRed" type="button" value="neue Nachricht"> -->
+            <a href="<?php echo Config::get('URL'); ?>NewChat/index" class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledRed">neue Nachricht</a>
+          </div>
+        
     </div>
     <div class="wrapper">            
     <!-- <div class="box"> -->
