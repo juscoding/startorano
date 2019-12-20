@@ -1,11 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4;
+    font-family: Raleway;
+    height: 100%;
 }
 .wrapper {
-    width: 960px;
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .container {
     max-width: 960px;
@@ -32,30 +35,6 @@ body {
     padding-top: 10px;
     margin-top: 30px;
 }
-.container input {
-    background-color: #f5f5f5;
-    border: 0;
-    padding: 5px 10px;
-}
-.container input[type="submit"] {
-    background-color: #ccc;
-    cursor: pointer;
-}
-.container input[type="submit"]:hover {
-    background-color: #222;
-    color: #fff;
-}
-.container button {
-    background-color: #ccc;
-    border: 0;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-.container button:hover {
-    background-color: #222;
-    color: #fff;
-}
-
 
 
 /* navigation dropdown menu */
@@ -166,41 +145,9 @@ body {
 .login-box h2 {
     color: #252525;
 }
-.login-box input[type="text"],
-.login-box input[type="password"] {
-    font-family: Arial, sans-serif;
-    color: #252525;
-    background-color: #ffffff;
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    display: block;
-    width: 100%;
-    box-sizing: border-box; /* modern way to say width:100% without padding */
-    /*text-transform: uppercase;*/
-}
-.login-box input[type="submit"] {
-    color: #777;
-    background-color: transparent;
-    border: 2px solid #777;
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    display: block;
-    width: 100%;
-    box-sizing: border-box; /* modern way to say width:100% without padding */
-    text-transform: uppercase;
-}
-.login-box input[type="submit"]:hover {
-    color: #fff;
-    border-color: #252525;
-    background-color: #252525;
-}
 .login-box .remember-me-label {
     display: block;
     margin-bottom: 10px;
-}
-.login-box .link-forgot-my-password {
-    display: block;
-    text-align: right;
 }
 .login-box .link-forgot-my-password a {
     color: #777;
@@ -209,11 +156,6 @@ body {
 .login-box .link-forgot-my-password a:hover {
     text-decoration: underline;
 }
-.login-box ::-webkit-input-placeholder { color: #777; opacity: 0.5; }
-.login-box ::-moz-placeholder { color: #777; opacity: 0.5; }
-.login-box :-ms-input-placeholder { color: #777; opacity: 0.5; }
-.login-box input:-moz-placeholder { color: #777; opacity: 0.5; }
-
 .register-box {
     display: table-cell;
     color: #fff;
@@ -249,3 +191,1005 @@ body {
 .red-text {
     color: red;
 }
+
+/***************************************************** STARTORANO COMPONENTS ********************************************************************/
+
+  
+  /* Basic Component Style START */
+  
+  .startoranoUserComponentsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: calc(100% - 24px);
+    max-width: 400px;
+    /* height: auto; */
+    background-color: #FFFFFF;
+    padding: 12px;
+    border-radius: 7px;
+    margin: 6px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box !important;
+  }
+  input {
+    padding: 0;
+  }
+
+  
+  .startoranoUserComponentsContainer input {
+    border: none;
+    background: none;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    color: #000000;
+    caret-color: #FF004C;
+    flex: 1;
+  }
+  .startoranoUserComponentsContainer input:focus {
+    outline: none;
+  }
+  .startoranoUserComponentsContainer input:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.15);
+  }
+  .startoranoUserComponentsContainer input::-ms-clear {
+    display: none;
+    width : 0;
+    height: 0;
+  }
+  .startoranoUserComponentsContainer input::-ms-reveal {
+    display: none;
+    width : 0;
+    height: 0;
+  }
+  .startoranoUserComponentsContainer input::-webkit-search-decoration,
+  .startoranoUserComponentsContainer input::-webkit-search-cancel-button,
+  .startoranoUserComponentsContainer input::-webkit-search-results-button,
+  .startoranoUserComponentsContainer input::-webkit-search-results-decoration {
+    display: none;
+  }
+  .startoranoUserComponentsContainer input::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.15);
+  }
+  .startoranoUserComponentsContainer input::placeholder {
+    color: rgba(0, 0, 0, 0.15);
+  }
+  
+  .startoranoUserComponentsContainer img {
+    height: 26px;
+    opacity: 0.15;
+    /* padding-left: 6px; */
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  /* Basic Component Style END */
+  
+  
+  /* Component User Info START */
+  
+  .startoranoUserComponentTypeUserInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .startoranoUserComponentTypeUserInfo img {
+    padding-right: 12px;
+    opacity: 1;
+    height: 90px;
+  }
+  
+  .startoranoUserComponentTypeUserInfo p, small {
+    padding: 0;
+    margin: 0;
+    font-family: Raleway;
+    font-style: normal;
+  }
+  
+  .startoranoUserComponentTypeUserInfo p {
+    font-weight: 800;
+    font-size: 28px;
+    color: #000000;
+  }
+  
+  .startoranoUserComponentTypeUserInfo small {
+    font-weight: normal;
+    font-size: 12px;
+    color: #000000;
+    opacity: 0.8;
+  }
+  
+  .startoranoUserComponentTypeUserInfoRow2 {
+    flex: 1;
+  }
+  
+  /* Component User Info END */
+  
+  /* Component Header mit Logo START */
+  
+  .startoranoComponentHeaderLogo {
+    background-color: #FF004C;
+    width: 100%;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
+    margin-bottom: 6px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: flex-end;
+    height: 90px;
+  }
+  
+  .startoranoComponentHeaderLogo p {
+    margin: 0;
+    margin: 12px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+  
+  /* Component Header mit Logo END */
+  
+  
+  /* Component Header mit Seitenname START */
+  
+  .startoranoComponentHeaderSiteName {
+    background-color: #FF004C;
+    width: 100%;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 90px;
+  }
+  
+  .startoranoComponentHeaderSiteName p {
+    margin: 0;
+    margin-bottom: 12px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    color: #FFFFFF;
+  }
+  
+  /* Component Header mit Seitenname END */
+  
+  
+  /* Component Header mit Seitenname START */
+  
+  .startoranoComponentHeaderSearchInputCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .startoranoComponentHeaderSearch {
+    background-color: #FF004C;
+    width: 100%;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 170px;
+  }
+  
+  .startoranoComponentHeaderSearch p {
+    margin: 0;
+    margin: 12px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+  
+  /* Component Header mit Seitenname END */
+  
+  
+ /* Input Type Search START */
+  
+  .startoranoUserComponentTypeSearch {
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  .startoranoUserComponentTypeSearchListElementMain {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .startoranoUserComponentTypeSearchListElement {
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+    margin-top: 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  
+  .startoranoUserComponentTypeSearchListElementMain input {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .startoranoUserComponentTypeSearchListElement:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .startoranoUserComponentTypeSearchListElement p {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0;
+    color: #000000;
+  }
+  
+  /* Input Type Search END */
+  
+  /* Input Type DropDown START */
+  
+  .startoranoUserComponentTypeDropDown {
+    height: auto;
+  }
+  
+  .startoranoUserComponentTypeDropDownListElement {
+    display: flex;
+    align-items: center;
+    height: 26px;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+  }
+  
+  .startoranoUserComponentTypeDropDownListElement:first-of-type {
+    cursor: pointer;
+  }
+  
+  .startoranoUserComponentTypeDropDownListElement:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .startoranoUserComponentTypeDropDownListElement p {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    color: #000000;
+    margin: 0;
+  }
+  
+  .startoranoUserComponentTypeDropDownListElement:first-of-type p {
+    flex: 1;
+    color:rgba(0, 0, 0, 0.15);
+  }
+  
+  
+  .startoranoUserComponentTypeDropDown img {
+    height: 26px;
+    opacity: 0.15;
+    padding-left: 6px;
+  }
+  
+  .closed {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .startoranoUserComponentTypeDropDownListElementLoaded {
+    cursor: pointer;
+  }
+  
+  .selected {
+    color: rgba(0, 0, 0, 255) !important;
+  }
+  
+  .selectedgrayedout {
+    color: rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  /* Input Type DropDown END */
+  
+  /* Input Type BigButton START */
+  
+  .startoranoUserComponentTypeBigButton {
+    font-family: Raleway;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    color: #000000;
+    margin: 6px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .startoranoUserComponentTypeBigButton:focus {
+    outline: none;
+  }
+  
+  .startoranoUserComponentTypeBigButton:hover {
+    cursor: pointer;
+  }
+  
+  /* Input Type BigButton END */
+  
+  /* Input Type SmallButton START */
+  
+  .startoranoUserComponentTypeSmallButton {
+    text-decoration: none;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    border: none !important;
+    justify-content: center;
+    align-items: center;
+    width: 172px;
+    height: 36px;
+  }
+  
+  .startoranoUserComponentTypeSmallButton:hover {
+    cursor: pointer;
+  }
+  
+  /* Input Type SmallButton END */
+  
+  /* Input Type Button Style START */
+  
+  .filledWhite {
+    color: #FF004C !important;
+  }
+  
+  .filledRed {
+    background-color: #FF004C !important;
+    color: #FFFFFF !important;
+  }
+  
+  .filledBlack {
+    color: #000000 !important;
+  }
+  
+  .outlinedWhite {
+    background-color: transparent !important;
+    border: 1px solid #FFFFFF !important;
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+    border-radius: 7px !important;
+    color: #FFFFFF !important;
+  }
+  
+  .outlinedRed {
+    background-color: transparent !important;
+    border: 1px solid #FF004C !important;
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+    border-radius: 7px !important;
+    color: #FF004C !important;
+  }
+  
+  .filledDisabledGray {
+  color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .outlinedDisabledGray {
+    color: rgba(0, 0, 0, 0.1) !important;
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    }
+  
+  /* Input Type Button Style END */
+  
+  /* Component Type JobElement START */
+  
+  .startoranoUserComponentTypeJobElement {
+    display: flex;
+    flex-direction: column;
+    font-family: Raleway;
+    font-style: normal;
+  
+  }
+  
+  .startoranoUserComponentTypeJobElement img {
+    opacity: 1;
+    padding: 0;
+    padding-right: 8px;
+    height: 33px;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow1 {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow1ProfilePicture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow1ProfileInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .startoranoUserComponentTypeJobElement p, small {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow1ProfileInfoRow1 p {
+    font-weight: bold;
+    font-size: 12px;
+    color: #000000;
+    line-height: 0.9;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow1ProfileInfoRow1 small {
+    font-weight: normal;
+    font-size: 11px;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow1Bookmark {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow1Bookmark img {
+    padding: 0;
+    height: 24px;
+    opacity: 0.1;
+  }
+  
+  .bookmarkChecked img {
+    color: red;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow2JobInfoRow1 {
+    font-weight: 800;
+    font-size: 28px;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow2JobInfoRow2 {
+    font-weight: normal;
+    font-size: 12px;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow2JobInfoRow2 p small {
+    color: #FF004C;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow3 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  
+  .startoranoUserComponentTypeJobElementRow3 small {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    color: #000000;
+    opacity: 0.2;
+    text-transform: uppercase;
+  }
+  
+  /* Component Type JobElement END */
+  
+  /* Output Type ChatBubbles START */
+  
+  .startoranoUserComponentsContainerChat {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* width: calc(100% - 24px); */
+    width: auto;
+    max-width: 400px;
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    margin: 6px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box !important;
+  }
+  
+  .startoranoChatBubble {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 12px;
+    color: #000000;
+    border: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .startoranoChatBubble p {
+    margin: 0;
+  }
+  
+  .startoranoChatUsername {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .startoranoChatUsernameContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    background-color: #FFFFFF;
+    padding: 12px;
+    border-radius: 7px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box !important;
+  }
+  
+  .startoranoChatUsernameContainer p {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    color: #000000;
+    margin: 0 !important;
+  }
+  
+  .startoranoChatBubbleWrapperMe {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  
+  .startoranoChatBubbleWrapperOther {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .startoranoChatBubbleWrapperOtherDate {
+    margin-left: 6px;
+  }
+  
+  .startoranoChatBubbleWrapperOtherDate small {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 8px;
+    color: #000000;
+    opacity: 0.5;
+  } 
+  
+  .startoranoChatBubbleWrapperMeDate {
+    margin-right: 6px;
+  }
+  
+  .startoranoChatBubbleWrapperMeDate small {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 8px;
+    color: #000000;
+    opacity: 0.5;
+  } 
+  
+  .startoranoUserComponentChatBubbleRow1 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+  }
+  
+  .startoranoUserComponentChatBubbleRow1ProfilePicture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Output Type ChatBubbles END */
+  
+  /* Component Type MessageElement START */
+  
+  .startoranoUserComponentMessageInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .startoranoUserComponentMessageInfo img {
+    padding-right: 12px;
+    opacity: 1;
+    height: 90px;
+  }
+  
+  .startoranoUserComponentMessageInfo p, small {
+    padding: 0;
+    margin: 0;
+    font-family: Raleway;
+    font-style: normal;
+  }
+  
+  .startoranoUserComponentMessageInfoUser {
+    font-weight: 800;
+    font-size: 16px;
+    color: #000000;
+  }
+  
+  .startoranoUserComponentMessageInfoUnreadUser {
+    font-weight: 800;
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  .startoranoUserComponentMessageInfoPreview {
+    padding-top: 4px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+  }
+  
+  .startoranoUserComponentMessageInfoUnreadPreviewUnreadText p {
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+  }
+  
+  .startoranoUserComponentMessageInfoPreviewRepliedText p {
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+  }
+  
+  .startoranoUserComponentMessageInfoPreviewReplied {
+    padding-top: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .startoranoUserComponentMessageInfoPreviewRepliedImage {
+    flex: 0;
+  }
+  
+  .startoranoUserComponentMessageInfoPreviewRepliedText {
+    flex: 1;
+  }
+  
+  .startoranoUserComponentMessageInfoUnreadPreviewUnread {
+    padding-top: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+  }
+  
+  .startoranoUserComponentMessageInfoUnreadPreviewUnreadImage {
+    flex: 1;
+  }
+  
+  .startoranoUserComponentMessageInfoTime {
+    padding-top: 4px;
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 8px;
+    color: #000000;
+    opacity: 0.8;
+  }
+  
+  .startoranoUserComponentMessageInfoRow2 {
+    flex: 1;
+  }
+  
+  .startoranoUserComponentMessageInfoRow2 img {
+    padding-left: 44px;
+    height: 10px;
+  }
+  
+  .startoranoUserComponentMessageInfoRow2Send {
+    flex: 1;
+  }
+  
+  .startoranoUserComponentMessageInfoRow2Send img {
+    height: 10px;
+  }
+  
+  .startoranoChatNewMessageWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+  }
+  
+  .startoranoChatNewMessageArrow {
+    flex: 1;
+  }
+  
+  .startoranoChatNewMessageArrow:hover {
+    cursor: pointer;
+  }
+  
+  .startoranoMessageComponentTypeBigField {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    color: #000000;
+    margin: 6px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .startoranoMessengerStartWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-between;
+    margin: 12px;
+    
+  }
+  
+  .startoranoMessengerStartTitle {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;  
+    color: #000000;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+
+  /* Component Type MenuBand START */
+  
+  .startoranoUserComponentTypeMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 60px;
+    width: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    bottom: 0;
+  }
+  
+  .startoranoUserComponentTypeMenu a {
+    text-decoration: none;
+  }
+  
+  .startoranoUserComponentTypeMenu a svg {
+    height: 26px;
+    opacity: 0.19;
+  }
+  
+  .startoranoUserComponentTypeMenu a:hover svg {
+    opacity: 0.9;
+    fill: #FF004C;
+  }
+  
+  /* Component Type MenuBand END */
+  
+  
+  /* Component Type CompanyInfo START */
+  
+  .startoranoUserComponentTypeCompanyInfo p {
+    margin: 0;
+    padding: 0;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #000000;
+  }
+  
+  .startoranoUserComponentTypeCompanyInfoHeadline p {
+    font-weight: 800;
+    font-size: 20px;
+    padding-bottom: 8px;
+  }
+  
+  /* Component Type CompanyInfo END */
+  
+  
+  /* Component Header mit Profile START */
+  
+  .startoranoComponentHeaderProfile {
+    background-color: #FF004C;
+    width: 100%;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 250px;
+  }
+  
+  .startoranoComponentHeaderProfieLogo p {
+    margin: 0;
+    margin: 12px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+  
+  .startoranoComponentHeaderProfileInfoImage {
+    padding-left: 6px;
+  }
+  
+  .startoranoComponentHeaderProfileInfo {
+    display: flex;
+    flex-direction: row;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  
+  .startoranoComponentHeaderProfileInfo p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .startoranoComponentHeaderProfileInfoText {
+    font-family: Raleway;
+    font-style: normal;
+    padding-left: 8px;
+    display: flex;
+    color: #FFFFFF;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .startoranoComponentHeaderProfileInfoTextCompanyName {
+    font-weight: 900;
+    font-size: 28px;
+  }
+  
+  .startoranoComponentHeaderProfileInfoTextCompanyType {
+    font-weight: normal;
+    font-size: 12px;
+    opacity: 0.8;
+    padding-bottom: 12px;
+  }
+  
+  .startoranoComponentHeaderProfileInfoTextCompanySlogan {
+    font-weight: normal;
+    font-size: 12px;
+    opacity: 0.8;
+    padding-bottom: 12px;
+  }
+  
+  .startoranoComponentHeaderProfileInfoTextCompanyExperience {
+    display: flex;
+    flex-direction: column;
+    padding-right: 6px;
+  }
+  
+  .startoranoComponentHeaderProfileInfoTextCompanyExperienceRow1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    font-weight: 500;
+    font-size: 12px;
+    opacity: 0.9;
+  }
+  
+  .startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2 {
+    flex: 1;
+    padding-top: 4px;
+    position: relative;
+    height: 5px;
+  }
+  
+  .startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2Progressbar1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.35;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+  }
+  
+  .startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2Progressbar2 {
+    position: absolute;
+    height: 100%;
+    width: 33%;
+    opacity: 0.9;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+  }
+  
+  /* Component Header mit Profile END */
+  /* Component Type MessageElement END */
+  
+
+
+
+
+
+
+
+  /*************************************** Seiten Design **********************************************/
+  /**************************************** Startseite **********************************************/
+
+  .startoranoPageIndexBackground {
+    background-color: #FF004C;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .startoranoPageIndexBackground img {
+    margin-bottom: 24px;
+  }
+
+  /****************************************** Login **********************************************/
+
+  .startoranoLoginWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .startoranoLoginPasswordReset  {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .startoranoLoginPasswordReset a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .startoranoLoginPasswordReset a:hover {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: underline;
+  }
+
+  /****************************************** Register **********************************************/
+
+  #captcha {
+    margin: 6px;
+  }

@@ -25,7 +25,9 @@ class RegisterController extends Controller
         if (LoginModel::isUserLoggedIn()) {
             Redirect::home();
         } else {
-            $this->View->render('register/index');
+            $this->View->render('register/index', array(
+                // 'companyType' => RegistrationModel::getCompanyType()
+            ));
         }
     }
 
@@ -70,5 +72,15 @@ class RegisterController extends Controller
     public function showCaptcha()
     {
         CaptchaModel::generateAndShowCaptcha();
+    }
+
+    public function user_companyLocation()
+    {
+        RegistrationModel::getLocation($_REQUEST["term"]);
+    }
+
+    public function user_companyType()
+    {
+        RegistrationModel::getCompanyType($_REQUEST["term"]);
     }
 }

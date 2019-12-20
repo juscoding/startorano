@@ -1,4 +1,7 @@
-<div class="container">
+<!-- Header Datei einbinden -->
+<?php include("../application/view/_templates/header_standard.php");?>
+
+<div class="wrapper">
     <h1>UserController/showProfile</h1>
 
     <div class="box">
@@ -19,3 +22,6 @@
         <div>Your account type is: <?= $this->user_account_type; ?></div>
     </div>
 </div>
+
+<!-- Footer Datei einbinden -->
+<?php include("../application/view/_templates/footer_standard.php");?>
