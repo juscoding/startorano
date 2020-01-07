@@ -30,7 +30,8 @@ class UserController extends Controller
             'user_avatar_file' => Session::get('user_avatar_file'),
             'user_account_type' => Session::get('user_account_type'),
             'userAnzeigen' => UserModel::getAnzeigeInfo(Session::get('user_id')),
-            'userInfo' => UserModel::getUserInformation(Session::get('user_id'))
+            'userInfo' => UserModel::getUserInformation(Session::get('user_id')),
+            'doneProjects' => UserModel::getDoneProjectInformation(Session::get('user_id'))
         ));
     }
 
