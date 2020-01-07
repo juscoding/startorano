@@ -157,6 +157,27 @@
         limitMessages();
     });
     // Chat Element end ################################################################
+
+
+    // Project Element start ##############################################################
+    function biglimitMessages(){
+    		$(".biglimited").each(function(){
+            var text = $(this).text();
+            $(this).text(text.substr(0, 500) + "..." );
+        });
+    }
+
+    $(document).ready(function(){
+        biglimitMessages();
+    });
+
+    // var openProject = document.getElementById('clickable');
+    // openProject.style.cursor = 'pointer';
+    // openProject.onclick = function() {
+    //   $(this).attr("src", "<?php echo Config::get('URL'); ?>NewChat/index");
+    // };
+    // Project Element end ################################################################
+
     // Profile Tabs start ####################################################################
 
     $( ".startoranoComponentHeaderProfileTabsPoints" ).click(function() {

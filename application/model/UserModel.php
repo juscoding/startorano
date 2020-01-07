@@ -362,4 +362,15 @@ class UserModel
 
         return $query->fetchAll();
     }
+
+    public static function getDoneProjectInformation($user_name)
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "Call getAllDoneProjects(:user_id)";
+        $query = $database->prepare($sql);
+        $query->execute(array(':user_id' => $user_name));
+
+        return $query->fetchAll();
+    }
 }

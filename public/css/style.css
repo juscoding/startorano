@@ -609,6 +609,7 @@ html, body {
     flex-direction: column;
     font-family: Raleway;
     font-style: normal;
+    cursor: pointer;
   
   }
   
@@ -708,6 +709,8 @@ html, body {
     text-transform: uppercase;
   }
   
+
+
   /* Component Type JobElement END */
   
   /* Output Type ChatBubbles START */
