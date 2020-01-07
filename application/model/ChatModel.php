@@ -27,4 +27,20 @@ class ChatModel
     }
 
     
+
+    public static function getAllSearchEntries($searchinput){    
+        $database = DatabaseFactory::getFactory()->getConnection();
+        
+        $sql = "CALL getAllChatEntries('$searchinput');";
+        $query = $database->prepare($sql);
+        $query->execute();
+
+            foreach ($query->fetchAll() as $key ) {
+                //echo "<div class='startoranoUserComponentTypeSearchListElement'>";
+                echo "<p>" . $key->Text . "</p>";
+                //echo "</div>";
+            }
+        
+    }
+    
 }

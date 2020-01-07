@@ -26,14 +26,26 @@ class NewChatController extends Controller
      * NewChat page action
      * POST-request after form submit
      */
-    public function chat_action()
+    public function sendNewMsg()
     {
-        $send_successful = NewChatModel::sendNewMessage();
+        NewChatModel::sendNewMessage(
+            Request::post('message_sender'), 
+            Request::post('message_recipient'), 
+            Request::post('message_status'), 
+            Request::post('message_content')
+        );
+        Redirect::to("chat/index/" . Request::post('toUserId'));
 
-        if ($send_successful) {
-            Redirect::to('chat/index');
-        } else {
-            Redirect::to('chat/index');
-        }
+        // if ($send_successful) {
+        //     Redirect::to('user/index');
+        // } else {
+        //     Redirect::to('chat/index');
+        // }
     }
+
+    public function message_recipient(){
+        
+        NewChatModel::getUserName($_REQUEST["term"]);
+    }
+
 }

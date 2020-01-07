@@ -1,21 +1,28 @@
-<?php include("../application/view/_templates/header_chat.php"); ?>
+<?php include("../application/view/_templates/header_standard.php"); ?>
 
-<!-- <div class="container"> -->
+
+
+
+
 <div class="startoranoMessengerStartWrapper">
   <div class="startoranoMessengerStartTitle">
     <p>Nachrichten</p>
   </div>
   <div class="startoranoMessengerStartButton">
-    <!-- <input class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledRed" type="button" value="neue Nachricht"> -->
     <a href="<?php echo Config::get('URL'); ?>NewChat/index" class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledRed">neue Nachricht</a>
   </div>
 </div>
 <div class="wrapper">
-  <!-- <div class="box"> -->
 
-  <!-- echo out the system feedback (error and success messages) -->
   <?php $this->renderFeedbackMessages(); ?>
   <div class="startoranoChatComponentWrapper">
+    <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
+      <div class="startoranoUserComponentTypeSearchListElementMain">
+        <input type="text" controller="chat" name="chat_search" placeholder="Suche..." autocomplete="off" required>
+        <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
+      </div>
+      <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
+    </div>
 
     <!-- Alle gesendeten Chats anzeigen -->
     <?php
@@ -47,7 +54,7 @@
               <div class="startoranoUserComponentMessageInfoPreviewRepliedImage">
                 <img src="<?php echo Config::get('URL'); ?>images/svg/replied-Message.svg" alt="reply">
               </div>
-              <div class="startoranoUserComponentMessageInfoPreviewRepliedText">
+              <div class="startoranoUserComponentMessageInfoPreviewRepliedText limited">
                 <p><?= $s_chat->Text; ?></p>
               </div>
             <?php } ?>
@@ -63,69 +70,50 @@
         </div>
 
       </div>
-  </div>
-<?php } ?>
 
-<!-- Alle empfangenen Chats anzeigen -->
-<?php
-foreach ($this->ReceivedChats as $r_chat) { ?>
-  <div class="startoranoUserComponentMessageInfo">
-    <div class="startoranoUserComponentMessageInfoRow1">
-      <img src=<?= $r_chat->BildID; ?> alt="ProfilePicture">
-    </div>
-    <div class="startoranoUserComponentMessageInfoRow2">
-      <?php if ($r_chat->Status == 0) { ?>
-        <div class="startoranoUserComponentMessageInfoUnreadUser">
-          <p><?= $r_chat->user_name; ?></p>
-        </div>
-      <?php } else { ?>
-        <div class="startoranoUserComponentMessageInfoUser">
-          <p><?= $r_chat->user_name; ?></p>
-        </div>
-      <?php } ?>
+    <?php } ?>
 
-      <?php if ($r_chat->Status == 0) { ?>
-        <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadText">
-          <p><?= $r_chat->Text; ?></p>
+    <!-- Alle empfangenen Chats anzeigen -->
+    <?php
+    foreach ($this->ReceivedChats as $r_chat) { ?>
+      <div class="startoranoUserComponentMessageInfo">
+        <div class="startoranoUserComponentMessageInfoRow1">
+          <img src=<?= $r_chat->BildID; ?> alt="ProfilePicture">
         </div>
-      <?php } else { ?>
-        <div class="startoranoUserComponentMessageInfoPreview">
-          <p><?= $r_chat->Text; ?></p>
+        <div class="startoranoUserComponentMessageInfoRow2">
+          <?php if ($r_chat->Status == 0) { ?>
+            <div class="startoranoUserComponentMessageInfoUnreadUser">
+              <p><?= $r_chat->user_name; ?></p>
+            </div>
+          <?php } else { ?>
+            <div class="startoranoUserComponentMessageInfoUser">
+              <p><?= $r_chat->user_name; ?></p>
+            </div>
+          <?php } ?>
+
+          <?php if ($r_chat->Status == 0) { ?>
+            <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadText limited">
+              <p><?= $r_chat->Text; ?></p>
+            </div>
+          <?php } else { ?>
+            <div class="startoranoUserComponentMessageInfoPreview limited">
+              <p><?= $r_chat->Text; ?></p>
+            </div>
+          <?php } ?>
+          <?php if ($s_chat->Status == 0) { ?>
+            <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadImage">
+              <img src="<?php echo Config::get('URL'); ?>images/svg/dot-unreadMessage.svg" alt="dot">
+            </div>
+          <?php } ?>
+          <div class="startoranoUserComponentMessageInfoTime">
+            <p><?= $r_chat->Zeitstempel; ?></p>
+          </div>
         </div>
-      <?php } ?>
-      <?php if ($s_chat->Status == 0) { ?>
-        <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadImage">
-          <img src="<?php echo Config::get('URL'); ?>images/svg/dot-unreadMessage.svg" alt="dot">
-        </div>
-      <?php } ?>
-      <div class="startoranoUserComponentMessageInfoTime">
-        <p><?= $r_chat->Zeitstempel; ?></p>
       </div>
-    </div>
+    <?php } ?>
   </div>
-<?php } ?>
 
 </div>
 
 <!-- Footer Datei einbinden -->
 <?php include("../application/view/_templates/footer_standard.php"); ?>
-
-<script>
-
-(function($){
-    "use strict";
-    
-    function limitMessages(){
-    		$(".limited").each(function(){
-            var text = $(this).text();
-            $(this).text(text.substr(0, 25) + "...");
-        });
-    }
-
-    $(document).ready(function(){
-        limitMessages();
-    });
-})(jQuery);
-</script>
-=======
-<?php include("../application/view/_templates/footer_standard.php");?> 

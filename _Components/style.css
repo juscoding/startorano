@@ -704,7 +704,7 @@ color: rgba(0, 0, 0, 0.1) !important;
 }
 
 .startoranoUserComponentMessageInfoRow2 img {
-  padding-left: 44px;
+  padding-left: 12px !important;
   height: 10px;
 }
 

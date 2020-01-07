@@ -38,7 +38,7 @@
       var inputVal = $(this).val();
         var resultDropdown = $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementWrapper" );
         if(inputVal.length){
-            $.get("<?php echo Config::get('URL'); ?>register/" + $(this).attr('name') + "", {term: inputVal}).done(function(data){
+            $.get("<?php echo Config::get('URL'); ?>" +$(this).attr('controller') + "/" + $(this).attr('name') + "", {term: inputVal}).done(function(data){
                 // Display the returned data in browser
                 resultDropdown.html(data);
                 console.log("suche");
@@ -144,7 +144,19 @@
     
     // Job Element end #################################################################
 
-    
+    // Chat Element start ##############################################################
+    function limitMessages(){
+    		$(".limited").each(function(){
+            var text = $(this).text();
+            $(this).text(text.substr(0, 60) + "..." );
+        });
+    }
+
+    $(document).ready(function(){
+        limitMessages();
+    });
+    // Chat Element end ################################################################
+
   </script>   
 </body>
 </html>

@@ -10,19 +10,17 @@
 
 
 
-<form class="startoranoLoginWrapper" method="post" action="<?php echo Config::get('URL'); ?>NewChat/chat_action">
+<form class="startoranoLoginWrapper" method="post" action="<?php echo Config::get('URL'); ?>NewChat/sendNewMsg">
+    <!-- Angemeldeter Benutzer -->
+    <input type="hidden" name="message_sender" value="<?= Session::get('user_id'); ?>" />
 
     <!-- SerachInput Empfänger -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElementMain">
-            <input type="text" name="message_recipient" placeholder="Empfänger" required>
+            <input type="text" controller="NewChat" name="message_recipient" placeholder="Empfänger..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
-            <!--  //foreach ($this->companyType as $type) { 
-                <div class="startoranoUserComponentTypeSearchListElement">
-                    <p>= $type->Jobbezeichnung; 
-                </div>
-             //}  -->
+        <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
     </div>
 
     <!-- TextInput E-Mail -->
@@ -30,8 +28,11 @@
         <input type="text" name="message_content" placeholder="Text" required>
     </div>
 
-
-     <!-- pinker Button mit weißer Schrift -->
+    <!-- Status -->
+    <input type="hidden" name="message_status" value="0" />
+    
+    <!-- pinker Button mit weißer Schrift -->
     <input class="startoranoUserComponentsContainer startoranoUserComponentTypeBigButton filledRed" type="submit" value="Senden!">
+
 
 </form>

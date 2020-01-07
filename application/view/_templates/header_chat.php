@@ -5,8 +5,8 @@
     <div class="startoranoComponentHeaderSearchInputCenter">
       <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElement">
-          <input type="text" placeholder="Suchbegriff...">
-          <img src="../public/images/svg/searchIcon.svg" alt="searchIcon">
+          <input controller="chat" name="chat_search" type="text" placeholder="Suchbegriff...">
+          <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
       </div>
     </div>
