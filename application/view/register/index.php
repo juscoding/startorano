@@ -25,7 +25,7 @@
     <!-- SerachInput Art des Unternehmens -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElementMain">
-            <input type="text" name="user_companyType" placeholder="Art des Unternehemens..." autocomplete="off" required>
+            <input type="text" controller="register" name="user_companyType" placeholder="Art des Unternehemens..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
         <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
@@ -34,7 +34,7 @@
     <!-- SerachInput Firmensitz -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElementMain">
-            <input type="text" name="user_companyLocation" placeholder="Firmensitz..." autocomplete="off" required>
+            <input type="text" controller="register" name="user_companyLocation" placeholder="Firmensitz..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
         <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
