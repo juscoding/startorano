@@ -202,7 +202,6 @@ html, body {
     justify-content: flex-start;
     width: calc(100% - 24px);
     max-width: 400px;
-    /* height: auto; */
     background-color: #FFFFFF;
     padding: 12px;
     border-radius: 7px;
@@ -321,14 +320,13 @@ html, body {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
     margin-bottom: 6px;
     display: flex;
-    /* justify-content: center; */
     align-items: flex-end;
-    height: 90px;
   }
   
   .startoranoComponentHeaderLogo p {
     margin: 0;
     margin: 12px;
+    margin-top: 45px;
     font-family: Raleway;
     font-style: normal;
     font-weight: 900;
@@ -383,12 +381,12 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 170px;
   }
   
   .startoranoComponentHeaderSearch p {
     margin: 0;
     margin: 12px;
+    margin-top: 45px;
     font-family: Raleway;
     font-style: normal;
     font-weight: 900;
@@ -438,6 +436,7 @@ html, body {
     font-family: Raleway;
     font-style: normal;
     font-weight: 800;
+    text-transform: none;
     font-size: 20px;
     margin: 0;
     color: #000000;
@@ -1004,6 +1003,34 @@ html, body {
   
   /* Component Type MenuBand END */
   
+  /* User Info Element Small START */
+
+  .startoranoUserComponentTypeUserInfoSmall {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .startoranoUserComponentTypeUserInfoSmallTextWrapper {
+    text-align: center;
+  }
+
+  .startoranoUserComponentTypeUserInfoSmallTextWrapper p {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .startoranoUserComponentTypeUserInfoSmallTextWrapper small {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  /* User Info Element Small END */
   
   /* Component Type CompanyInfo START */
   
@@ -1014,12 +1041,13 @@ html, body {
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
+    line-height: 16px;
     color: #000000;
   }
   
   .startoranoUserComponentTypeCompanyInfoHeadline p {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 22px;
     padding-bottom: 8px;
   }
   
@@ -1032,17 +1060,16 @@ html, body {
     background-color: #FF004C;
     width: 100%;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
-    padding-bottom: 6px;
     margin-bottom: 6px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 250px;
   }
   
   .startoranoComponentHeaderProfieLogo p {
     margin: 0;
     margin: 12px;
+    margin-top: 45px;
     font-family: Raleway;
     font-style: normal;
     font-weight: 900;
@@ -1075,6 +1102,7 @@ html, body {
     color: #FFFFFF;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
   }
   
   .startoranoComponentHeaderProfileInfoTextCompanyName {
@@ -1131,10 +1159,58 @@ html, body {
   .startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2Progressbar2 {
     position: absolute;
     height: 100%;
-    width: 33%;
     opacity: 0.9;
     background-color: #FFFFFF;
     border-radius: 10px;
+  }
+
+  .startoranoComponentHeaderProfileTabs {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .startoranoComponentHeaderProfileTabsPointsText {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .startoranoComponentHeaderProfileTabsPoints {
+    flex: 1;
+    cursor: pointer;
+  }
+
+  .startoranoComponentHeaderProfileTabsPoints p {
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .startoranoComponentHeaderProfileTabsPointsUnderline {
+    margin-top: 4px;
+    height: 2px;
+    display: flex;
+  }
+
+  .selectedTabLeft {
+    justify-content: flex-start;
+  }
+
+  .selectedTabCenter {
+    justify-content: center;
+  }
+
+  .selectedTabRight {
+    justify-content: flex-end;
+  }
+
+  .startoranoComponentHeaderProfileTabsPointsUnderline div {
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 33%;
   }
   
   /* Component Header mit Profile END */
@@ -1192,4 +1268,34 @@ html, body {
 
   #captcha {
     margin: 6px;
+  }
+
+
+  /****************************************** Profile **********************************************/
+
+  .startoranoProfileTabWrapper {
+    overflow-x: hidden;
+  }
+
+  .startoranoProfileTabWrapperUnderflow {
+    width: calc(100% * 3);
+    display: flex;
+    transition: all 300ms;
+    margin-left: 0;
+  }
+
+  .startoranoProfileTabWrapperTabs {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /****************************************** neue Anzeige **********************************************/
+
+  .startoranoNeueAnzeigeZwischentext {
+    margin: 6px 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
   }

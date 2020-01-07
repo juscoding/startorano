@@ -28,7 +28,9 @@ class UserController extends Controller
             'user_email' => Session::get('user_email'),
             'user_gravatar_image_url' => Session::get('user_gravatar_image_url'),
             'user_avatar_file' => Session::get('user_avatar_file'),
-            'user_account_type' => Session::get('user_account_type')
+            'user_account_type' => Session::get('user_account_type'),
+            'userAnzeigen' => UserModel::getAnzeigeInfo(Session::get('user_id')),
+            'userInfo' => UserModel::getUserInformation(Session::get('user_id'))
         ));
     }
 

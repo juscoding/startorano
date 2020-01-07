@@ -75,6 +75,7 @@
     $( document ).ready(function() {
       console.log( "jQuery loaded!" );
       $( ".startoranoUserComponentTypeDropDownListElementLoaded" ).hide();
+      $( ".startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2Progressbar2" ).css("width", "<?= (isset($this->userInfo[0]->Erfahrung) ? $this->userInfo[0]->Erfahrung : 0); ?>%");
     });
 
     // klick auf das oberste Element (das erste Element das immer zu sehen ist)
@@ -156,6 +157,43 @@
         limitMessages();
     });
     // Chat Element end ################################################################
+    // Profile Tabs start ####################################################################
+
+    $( ".startoranoComponentHeaderProfileTabsPoints" ).click(function() {
+      $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).removeClass( "selectedTabLeft" );
+      $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).removeClass( "selectedTabCenter" );
+      $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).removeClass( "selectedTabRight" );
+
+      switch ($(this).children().html()) {
+        case "Details":
+            $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).addClass("selectedTabLeft");
+            $( ".startoranoProfileTabWrapperUnderflow" ).css("margin-left", "0");
+          break;
+
+        case "Anzeigen":
+            $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).addClass("selectedTabCenter");
+            $( ".startoranoProfileTabWrapperUnderflow" ).css("margin-left", "-100%");
+          break;
+
+        case "Projekte":
+            $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).addClass("selectedTabRight");
+            $( ".startoranoProfileTabWrapperUnderflow" ).css("margin-left", "-200%");
+          break;
+      
+        default:
+          break;
+      }
+
+    });
+
+
+
+
+
+
+
+
+    // Profile Tabs end ####################################################################
 
   </script>   
 </body>

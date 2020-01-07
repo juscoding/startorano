@@ -340,4 +340,26 @@ class UserModel
         // return one row (we only have one result or nothing)
         return $query->fetch();
     }
+
+    public static function getUserInformation($user_name)
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "Call getUserInformation(:user_id)";
+        $query = $database->prepare($sql);
+        $query->execute(array(':user_id' => $user_name));
+
+        return $query->fetchAll();
+    }
+
+    public static function getAnzeigeInfo($user_id)
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "Call getAnzeigeInfo(:user_id)";
+        $query = $database->prepare($sql);
+        $query->execute(array(':user_id' => $user_id));
+
+        return $query->fetchAll();
+    }
 }
