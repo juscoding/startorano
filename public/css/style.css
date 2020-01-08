@@ -226,6 +226,7 @@ html, body {
     color: #000000;
     caret-color: #FF004C;
     flex: 1;
+    resize: none;
   }
   .startoranoUserComponentsContainer input:focus,
   .startoranoUserComponentsContainer textarea:focus {
