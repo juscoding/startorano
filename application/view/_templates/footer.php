@@ -56,6 +56,9 @@
       $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).children( "p" ).removeClass( "selected" );
       // beim obersten DropDown-Element wird der Text des angeklickten Elements eingefügt
       $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementMain" ).children( "input" ).val($(this).children( "p" ).html());
+
+      $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementMain" ).children( "input[type=hidden]" ).val($(this).children( "p" ).attr("key"));
+
       // dem obersten Element wird die Class="selected" hinzugefügt
       $(this).children( "p" ).addClass( "selected" );
       // dem angeklickten Element wird die Class="selectedgrayedout" hinzugefügt
