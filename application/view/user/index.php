@@ -26,32 +26,21 @@
                     <small>Startupsitz</small>
                 </div>
             </div>
-            <!-- User Info Element Small END -->
-        </div>
-        <div class="startoranoProfileTabWrapperTabs">
-            <?php foreach ($this->userAnzeigen as $Anzeige) { ?>
-                <!-- Job-Element START -->
-                <div class="startoranoUserComponentsContainer startoranoUserComponentTypeJobElement">
-                    <div class="startoranoUserComponentTypeJobElementRow1">
-                        <div class="startoranoUserComponentTypeJobElementRow1ProfilePicture">
-                            <img src="<?php echo Config::get('URL'); ?>/images/profilePic.png" alt="ProfilePicture">
-                        </div>
-                        <div class="startoranoUserComponentTypeJobElementRow1ProfileInfo">
-                            <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow1">
-                                <p>MFG</p>
+            <div class="startoranoProfileTabWrapperTabs">
+                <?php foreach ($this->userAnzeigen as $Anzeige) { ?>
+                    <!-- Job-Element START -->
+                    <div class="startoranoUserComponentsContainer startoranoUserComponentTypeJobElement">
+                        <div class="startoranoUserComponentTypeJobElementRow1">
+                            <div class="startoranoUserComponentTypeJobElementRow1ProfilePicture">
+                                <img src="<?php echo Config::get('URL'); ?>/images/profilePic2.png" alt="ProfilePicture">
                             </div>
-                            <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow2">
-                                <small>Digitaldrucker</small>
-                            </div>
-                        </div>
-                        <div class="startoranoUserComponentTypeJobElementRow1Bookmark">
-                            <img src="<?php echo Config::get('URL'); ?>/images/svg/bookmarkOff.svg" alt="bookmarkIcon">
-                        </div>
-                    </div>
-                    <div class="startoranoUserComponentTypeJobElementRow2">
-                        <div class="startoranoUserComponentTypeJobElementRow2JobInfo">
-                            <div class="startoranoUserComponentTypeJobElementRow2JobInfoRow1">
-                                <p><?= $Anzeige->Titel; ?></p>
+                            <div class="startoranoUserComponentTypeJobElementRow1ProfileInfo">
+                                <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow1">
+                                    <p><?= $Anzeige->Firmenname; ?></p>
+                                </div>
+                                <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow2">
+                                    <small><?= $Anzeige->Art; ?></small>
+                                </div>
                             </div>
                             <div class="startoranoUserComponentTypeJobElementRow2JobInfoRow2">
                                 <p><?= $Anzeige->Beschreibung; ?></p>
