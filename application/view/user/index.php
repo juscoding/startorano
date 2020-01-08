@@ -34,14 +34,14 @@
                     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeJobElement">
                         <div class="startoranoUserComponentTypeJobElementRow1">
                             <div class="startoranoUserComponentTypeJobElementRow1ProfilePicture">
-                                <img src="<?php echo Config::get('URL'); ?>/images/profilePic2.png" alt="ProfilePicture">
+                                <img src="<?php echo Config::get('URL'); ?>/images/profilePic.png" alt="ProfilePicture">
                             </div>
                             <div class="startoranoUserComponentTypeJobElementRow1ProfileInfo">
                                 <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow1">
-                                    <p><?= $Anzeige->Firmenname; ?></p>
+                                    <p>MFG</p>
                                 </div>
                                 <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow2">
-                                    <small><?= $Anzeige->Art; ?></small>
+                                    <small>Digitaldrucker</small>
                                 </div>
                             </div>
                             <div class="startoranoUserComponentTypeJobElementRow1Bookmark">

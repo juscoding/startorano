@@ -2,28 +2,23 @@
 
 class AddController extends Controller
 {
+    /**
+     * Construct this object by extending the basic Controller class
+     */
     public function __construct()
     {
         parent::__construct();
 
+        // special authentication check for the entire controller: Note the check-ADMIN-authentication!
+        // All methods inside this controller are only accessible for admins (= users that have role type 7)
         Auth::checkAuthentication();
     }
 
+    /**
+     * This method controls what happens when you move to /admin or /admin/index in your app.
+     */
     public function index()
     {
-        $this->View->render('add/index', array(
-            'user_name' => Session::get('user_name'))
-        );
-    }
-
-    public function getJobs()
-    {
-        AddModel::getJobs($_REQUEST["term"]);
-    }
-
-    public function createNewAnzeige()
-    {
-        AddModel::writeNewAnzeigeToDataBase(Request::post('anzeigen_auftraggeber'), Request::post('anzeigen_jobId'), Request::post('anzeigen_titel'), Request::post('anzeigen_beschreibung'));
-        Redirect::to('user/index');
+        $this->View->render('add/index');
     }
 }
