@@ -215,7 +215,8 @@ html, body {
   }
 
   
-  .startoranoUserComponentsContainer input {
+  .startoranoUserComponentsContainer input,
+  .startoranoUserComponentsContainer textarea {
     border: none;
     background: none;
     font-family: Raleway;
@@ -226,10 +227,12 @@ html, body {
     caret-color: #FF004C;
     flex: 1;
   }
-  .startoranoUserComponentsContainer input:focus {
+  .startoranoUserComponentsContainer input:focus,
+  .startoranoUserComponentsContainer textarea:focus {
     outline: none;
   }
-  .startoranoUserComponentsContainer input:-ms-input-placeholder {
+  .startoranoUserComponentsContainer input:-ms-input-placeholder,
+  .startoranoUserComponentsContainer textarea:-ms-input-placeholder {
     color: rgba(0, 0, 0, 0.15);
   }
   .startoranoUserComponentsContainer input::-ms-clear {
@@ -248,10 +251,12 @@ html, body {
   .startoranoUserComponentsContainer input::-webkit-search-results-decoration {
     display: none;
   }
-  .startoranoUserComponentsContainer input::-webkit-input-placeholder {
+  .startoranoUserComponentsContainer input::-webkit-input-placeholder,
+  .startoranoUserComponentsContainer textarea::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.15);
   }
-  .startoranoUserComponentsContainer input::placeholder {
+  .startoranoUserComponentsContainer input::placeholder,
+  .startoranoUserComponentsContainer textarea::placeholder {
     color: rgba(0, 0, 0, 0.15);
   }
   
