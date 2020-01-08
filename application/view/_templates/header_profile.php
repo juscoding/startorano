@@ -13,7 +13,7 @@
           <p><?= $this->user_name; ?></p>
         </div>
         <div class="startoranoComponentHeaderProfileInfoTextCompanyType">
-          <p>Programmer</p>
+          <p><?= $this->userInfo[0]->UnternehmensArt; ?></p>
         </div>
         <div class="startoranoComponentHeaderProfileInfoTextCompanySlogan">
           <p><?= $this->userInfo[0]->Slogan; ?></p>
