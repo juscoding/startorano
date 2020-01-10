@@ -1091,17 +1091,28 @@ html, body {
     flex-direction: column;
     justify-content: flex-end;
   }
+
+  .startoranoComponentHeaderProfieLogo {
+    margin: 12px;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   .startoranoComponentHeaderProfieLogo p {
     margin: 0;
-    margin: 12px;
-    margin-top: 45px;
     font-family: Raleway;
     font-style: normal;
     font-weight: 900;
     font-size: 24px;
     text-transform: uppercase;
     color: #FFFFFF;
+  }
+
+  .startoranoComponentHeaderProfieLogo img {
+    cursor: pointer;
   }
   
   .startoranoComponentHeaderProfileInfoImage {
@@ -1113,6 +1124,7 @@ html, body {
     flex-direction: row;
     padding-left: 6px;
     padding-right: 6px;
+    max-width: 550px;
   }
   
   .startoranoComponentHeaderProfileInfo p {
@@ -1237,6 +1249,81 @@ html, body {
     background-color: #FFFFFF;
     height: 100%;
     width: 33%;
+  }
+
+  .startoranoComponentHeaderProfileMenuWrapper {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color 300ms;
+  }
+
+  .startoranoComponentHeaderProfileMenu {
+    position: absolute;
+    height: 100%;
+    width: 60%;
+    background-color: #FFFFFF;
+    right: 0;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    box-sizing: border-box;
+    transition: right 300ms;
+    padding-top: 48px;
+  }
+
+  .startoranoComponentHeaderProfileMenu img {
+    opacity: .9;
+    cursor: pointer;
+  }
+
+  .startoranoComponentHeaderProfileMenuHeadline {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 12px 0;
+  }
+
+  .startoranoComponentHeaderProfileMenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-top: 12px;
+  }
+
+  .startoranoComponentHeaderProfileMenu ul li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 24px 0;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    padding-top: 24px;
+  }
+
+  .startoranoComponentHeaderProfileMenu ul li img {
+    margin-right: 16px;
+  }
+
+  .startoranoComponentHeaderProfileMenu ul li p {
+    margin: 0;
+  }
+
+  .startoranoComponentHeaderProfileMenuItemWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .startoranoComponentHeaderProfileMenuCloseTrigger {
+    position: absolute;
+    height: 100%;
+    width: 40%;
+    left: 0;
   }
   
   /* Component Header mit Profile END */

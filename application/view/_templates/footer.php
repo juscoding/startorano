@@ -218,17 +218,40 @@
         default:
           break;
       }
-
     });
 
-
-
-
-
-
-
-
     // Profile Tabs end ####################################################################
+
+
+    // Profile Menu start ###################################################################
+
+    $( ".startoranoComponentHeaderProfileMenu" ).css("right", "-60%");
+    $( ".startoranoComponentHeaderProfileMenuWrapper" ).css("background-color", "rgba(0, 0, 0, 0)");
+    $( ".startoranoComponentHeaderProfileMenuWrapper" ).hide();
+
+    $( ".startoranoComponentHeaderProfieLogo img" ).click(function() {
+      $( ".startoranoComponentHeaderProfileMenuWrapper" ).show();
+      $( ".startoranoComponentHeaderProfileMenu" ).css("right", "0%");
+      $( ".startoranoComponentHeaderProfileMenuWrapper" ).css("background-color", "rgba(0, 0, 0, 0.4)");
+    });
+
+    $( ".startoranoComponentHeaderProfileMenu img" ).click(function() {
+      $( ".startoranoComponentHeaderProfileMenu" ).css("right", "-60%");
+      $( ".startoranoComponentHeaderProfileMenuWrapper" ).css("background-color", "rgba(0, 0, 0, 0)");
+      setTimeout(() => {
+        $( ".startoranoComponentHeaderProfileMenuWrapper" ).hide();
+      }, 300);
+    });
+
+    $( ".startoranoComponentHeaderProfileMenuCloseTrigger" ).click(function() {
+      $( ".startoranoComponentHeaderProfileMenu" ).css("right", "-60%");
+      $( ".startoranoComponentHeaderProfileMenuWrapper" ).css("background-color", "rgba(0, 0, 0, 0)");
+      setTimeout(() => {
+        $( ".startoranoComponentHeaderProfileMenuWrapper" ).hide();
+      }, 300);
+    });
+
+    // Profile Menu end ####################################################################
 
   </script>   
 </body>

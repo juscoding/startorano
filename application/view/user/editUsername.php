@@ -1,20 +1,28 @@
-<div class="container">
-    <h1>UserController/editUsername</h1>
+<!-- Header mit Seitenname START -->
 
-    <!-- echo out the system feedback (error and success messages) -->
+<div class="startoranoComponentHeaderSiteName">
+    <p>neuer Benutzername</p>
+</div>
+
+<!-- Header mit Seitenname END -->
+
+<form class="wrapper" action="<?php echo Config::get('URL'); ?>user/editUserName_action" method="post">
+
     <?php $this->renderFeedbackMessages(); ?>
 
-    <div class="box">
-        <h2>Change your username</h2>
-
-        <form action="<?php echo Config::get('URL'); ?>user/editUserName_action" method="post">
-            <!-- btw http://stackoverflow.com/questions/774054/should-i-put-input-tag-inside-label-tag -->
-            <label>
-                New username: <input type="text" name="user_name" required />
-            </label>
-			<!-- set CSRF token at the end of the form -->
-			<input type="hidden" name="csrf_token" value="<?= Csrf::makeToken(); ?>" />
-            <input type="submit" value="Submit" />
-        </form>
+    <!-- TextInput START -->
+    <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
+        <input type="text" name="user_name" autocomplete="off" placeholder="Name..." required>
     </div>
-</div>
+    <!-- TextInput END -->
+
+    <input type="hidden" name="csrf_token" value="<?= Csrf::makeToken(); ?>" />
+
+    <!-- pinker Button mit weißer Schrift -->
+    <input class="startoranoUserComponentsContainer startoranoUserComponentTypeBigButton filledRed" type="submit" value="SWAG!">
+
+
+</form>
+
+<!-- Footer Datei einbinden -->
+<?php include("../application/view/_templates/footer_standard.php");?>

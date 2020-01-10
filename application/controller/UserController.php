@@ -56,7 +56,7 @@ class UserController extends Controller
         }
 
         UserModel::editUserName(Request::post('user_name'));
-        Redirect::to('user/editUsername');
+        Redirect::to('user/index');
     }
 
     /**
@@ -74,7 +74,7 @@ class UserController extends Controller
     public function editUserEmail_action()
     {
         UserModel::editUserEmail(Request::post('user_email'));
-        Redirect::to('user/editUserEmail');
+        Redirect::to('user/index');
     }
 
     /**
