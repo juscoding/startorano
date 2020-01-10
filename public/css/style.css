@@ -193,6 +193,9 @@ html, body {
 
 /***************************************************** STARTORANO COMPONENTS ********************************************************************/
 
+.startoranoDeviderFooter {
+  height: 60px;
+}
   
   /* Basic Component Style START */
   
@@ -431,7 +434,13 @@ html, body {
     width: 100%;
     padding: 0;
   }
-  
+
+  .startoranoUserComponentTypeSearchListElementMainEdit {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
   .startoranoUserComponentTypeSearchListElement:last-of-type {
     padding-bottom: 0;
     border-bottom: none;
@@ -561,6 +570,14 @@ html, body {
   .startoranoUserComponentTypeSmallButton:hover {
     cursor: pointer;
   }
+
+  .startoranoEditProjectButtonRows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  
   
   /* Input Type SmallButton END */
   
