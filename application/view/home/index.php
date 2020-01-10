@@ -1,23 +1,23 @@
  <!-- Header Datei einbinden -->
  <?php include("../application/view/_templates/header_standard.php"); ?>
-
+    <div class="wrapper">
  <?php foreach ($this->allProjects as $Projects) { ?>
      <!-- Job-Element START -->
      <div class="startoranoUserComponentsContainer startoranoUserComponentTypeJobElement">
          <div class="startoranoUserComponentTypeJobElementRow1">
              <div class="startoranoUserComponentTypeJobElementRow1ProfilePicture">
-                 <img src="/profilePic.png" alt="ProfilePicture">
+                 <img src="<?php echo Config::get('URL'); ?>images/profilePic.png" alt="ProfilePicture">
              </div>
              <div class="startoranoUserComponentTypeJobElementRow1ProfileInfo">
                  <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow1">
-                     <p><?= $Projects->Firmenname; ?></p>
+                    <p><?= $Projects->Firmenname; ?></p>
                  </div>
                  <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow2">
-                     <small><?= $Projects->Art; ?></small>
+                   <small><?= $Projects->Art; ?></small>
                  </div>
              </div>
              <div class="startoranoUserComponentTypeJobElementRow1Bookmark">
-                 <img src="/bookmarkOff.svg" alt="bookmarkIcon">
+                 <img src="<?php echo Config::get('URL'); ?>images/svg/bookmarkOff.svg" alt="bookmarkIcon">
              </div>
          </div>
          <div class="startoranoUserComponentTypeJobElementRow2">
@@ -41,5 +41,6 @@
      </div>
      <!-- Job Element END -->
  <?php } ?>
+ </div>
  <!-- Footer Datei einbinden -->
  <?php include("../application/view/_templates/footer_standard.php"); ?>

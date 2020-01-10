@@ -20,11 +20,13 @@ class HomeController extends Controller
 
     /**
      * Show user's PRIVATE profile
+     * 'allProjects' => HomeModel::getAllProjectsInformationAuftraggeber(HomeModel::getAllProjectsInformation(Session::get('user_id'))),
      */
     public function index()
     {
         $this->View->render('home/index', array(
-            'allProjects' => HomeModel::getAllProjectsInformation()));
+           'allProjects' => HomeModel::getAllProjectsInformation(Session::get('user_id'))
+        ));
     }
 
 }
