@@ -2,7 +2,7 @@
 
 <div class="startoranoUserComponentTypeMenu">
     <div>
-      <a href="<?php echo Config::get('URL'); ?>user/index">
+      <a href="<?php echo Config::get('URL'); ?>home/index">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none"/></svg>      </a>
     </div>
     <div>
