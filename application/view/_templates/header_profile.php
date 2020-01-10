@@ -3,6 +3,7 @@
   <div class="startoranoComponentHeaderProfile">
     <div class="startoranoComponentHeaderProfieLogo">
       <p>startorano</p>
+      <img src="<?php echo Config::get('URL'); ?>/images/svg/menuIcon.svg" alt="menuIcon">
     </div>
     <div class="startoranoComponentHeaderProfileInfo">
       <div class="startoranoComponentHeaderProfileInfoImage">
@@ -44,6 +45,42 @@
       </div>
       <div class="startoranoComponentHeaderProfileTabsPointsUnderline">
         <div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="startoranoComponentHeaderProfileMenuWrapper">
+    <div class="startoranoComponentHeaderProfileMenuCloseTrigger"></div>
+    <div class="startoranoComponentHeaderProfileMenu">
+      <img src="<?php echo Config::get('URL'); ?>/images/svg/closeIcon.svg" alt="closeIcon">
+      <p class="startoranoComponentHeaderProfileMenuHeadline">menu</p>
+      <div class="startoranoComponentHeaderProfileMenuItemWrapper">
+        <ul>
+          <li>
+            <a href="<?php echo Config::get('URL'); ?>user/editusername">
+              <img src="<?php echo Config::get('URL'); ?>/images/svg/profileIcon.svg" alt="profileIcon">
+              <p>Username ändern</p>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo Config::get('URL'); ?>user/edituserEmail">
+              <img src="<?php echo Config::get('URL'); ?>/images/svg/emailIcon.svg" alt="emailIcon">
+              <p>E-Mail ändern</p>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo Config::get('URL'); ?>user/changePassword">
+              <img src="<?php echo Config::get('URL'); ?>/images/svg/passwordIcon.svg" alt="passwordIcon">
+              <p>Passwort ändern</p>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo Config::get('URL'); ?>login/logout">
+              <img src="<?php echo Config::get('URL'); ?>/images/svg/logoutIcon.svg" alt="logoutIcon">
+              <p>Abmelden</p>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
