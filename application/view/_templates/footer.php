@@ -116,6 +116,9 @@
       $(this).children( "p" ).removeClass( "selectedgrayedout" );
       // beim obersten DropDown-Element wird der Text des angeklickten Elements eingefügt
       $(this).closest( ".startoranoUserComponentTypeDropDown" ).find( ".startoranoUserComponentTypeDropDownListElementFirst" ).children( "p" ).html($(this).children( "p" ).html());
+
+      $(this).closest( ".startoranoUserComponentTypeDropDown" ).find( ".startoranoUserComponentTypeDropDownListElementFirst" ).children( "input[type=hidden]" ).val($(this).children( "p" ).html());
+
       // dem obersten Element wird die Class="selected" hinzugefügt
       $(this).closest( ".startoranoUserComponentTypeDropDown" ).find( ".startoranoUserComponentTypeDropDownListElementFirst" ).children( "p" ).addClass( "selected" );
       // dem angeklickten Element wird die Class="selectedgrayedout" hinzugefügt
@@ -174,12 +177,20 @@
         biglimitMessages();
     });
 
-    // var openProject = document.getElementById('clickable');
-    // openProject.style.cursor = 'pointer';
-    // openProject.onclick = function() {
-    //   $(this).attr("src", "<?php echo Config::get('URL'); ?>NewChat/index");
-    // };
     // Project Element end ################################################################
+
+    // EditProject start   ################################################################
+
+    function deleteProject(){
+      $status_value = 3;
+      
+    }
+
+    function isDoneProject(){
+      $status_value = 2;
+    }
+
+    // EditProject end    ################################################################
 
     // Profile Tabs start ####################################################################
 
