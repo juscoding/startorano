@@ -15,7 +15,7 @@ class AddModel
 
     foreach ($query->fetchAll() as $key ) {
       echo "<div class='startoranoUserComponentTypeSearchListElement'>";
-      echo "<p key=" . $key->JobID . ">" . $key->Jobbezeichnung . "</p>";
+      echo "<p key=" . $key->UnternehmenID . ">" . $key->Art . "</p>";
       echo "</div>";
     }
   }
