@@ -7,18 +7,19 @@
  */
 class HomeModel
 {
-    public static function getAllProjectsInformation()
+    public static function getAllProjectsInformation($user_id)
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "CALL getAnzeige()";
+        $sql = "CALL getAnzeige(:user_id)";
         $query = $database->prepare($sql);
 
         // DEFAULT is the marker for "normal" accounts (that have a password etc.)
         // There are other types of accounts that don't have passwords etc. (FACEBOOK)
-        $query->execute();
+        $query->execute(array(':user_id' => $user_id));
 
         // return one row (we only have one result or nothing)
         return $query->fetchAll();
     }
+
 }
