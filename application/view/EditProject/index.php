@@ -17,7 +17,9 @@
                     <!-- <p><?= print_r($this->editProject); ?></p> -->
                 </div>
                 <div>
-                    <small>Programmer</small>
+                    <small><?php if (!empty($this->user_company_type[0]->Art)){ 
+                        echo $this->user_company_type[0]->Art;
+                    }; ?></small>
                 </div>
             </div>
         </div>
@@ -26,13 +28,13 @@
 
         <!-- User Info Element END -->
 
-        <p class="startoranoNeueAnzeigeZwischentext">sucht</p>
+        <p class="startoranoNeueAnzeigeZwischentext">sucht im Bereich</p>
 
         <!-- SerachInput START -->
 
         <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
             <div class="startoranoUserComponentTypeSearchListElementMain">
-                <input type="text" controller="add" name="getJobs" placeholder="Job wählen..." autocomplete="off" value="<?php echo $this->editProject[0]->Jobbezeichnung ?>" required>
+                <input type="text" controller="add" name="getJobs" placeholder="Branche wählen..." autocomplete="off" value="<?php if(!empty($this->editProject[0]->Art)){ echo $this->editProject[0]->Art; } ?>" required>
                 <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
                 <input type="hidden" name="anzeigen_jobId">
             </div>
@@ -40,17 +42,19 @@
         </div>
         <!-- SerachInput ENDE -->
 
-        <p class="startoranoNeueAnzeigeZwischentext">für</p>
+        <p class="startoranoNeueAnzeigeZwischentext">einen Experten für</p>
 
         <!-- TextInput START -->
         <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-            <input type="text" name="anzeigen_titel" value="<?php echo $this->editProject[0]->Titel ?>" required>
+            <input type="text" name="anzeigen_titel" value="<?php if(!empty($this->editProject[0]->Titel)){ echo $this->editProject[0]->Titel; } ?>" required>
         </div>
         <!-- TextInput END -->
 
         <!-- TextInput START -->
         <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-            <textarea rows="5" name="anzeigen_beschreibung" placeholder="Beschreibung..." required><?php echo $this->editProject[0]->Beschreibung ?></textarea>
+            <textarea rows="5" name="anzeigen_beschreibung" placeholder="Beschreibung..." required>
+                <?php if(!empty($this->editProject[0]->Beschreibung)){ echo $this->editProject[0]->Beschreibung; } ?>
+            </textarea>
         </div>
         <!-- TextInput END -->
 
@@ -60,7 +64,7 @@
         <!-- UserSearch START -->
         <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
             <div class="startoranoUserComponentTypeSearchListElementMain">
-                <input type="text" controller="NewChat" name="message_recipient" placeholder="Bearbeiter" value="<?php echo $this->editProject[0]->user_name ?>" autocomplete="off">
+                <input type="text" controller="NewChat" name="message_recipient" placeholder="Bearbeiter" value="<?php if(!empty($this->editProject[0]->user_name)){ echo $this->editProject[0]->user_name; } ?>" autocomplete="off">
                 <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
             </div>
             <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
@@ -72,6 +76,7 @@
             <div class="startoranoUserComponentTypeDropDownListElement startoranoUserComponentTypeDropDownListElementFirst closed">
                 <input type="hidden" name="anzeigen_status">
                 <p><?php
+                if(!empty($this->editProject[0]->Status)){
                     switch ($this->editProject[0]->Status) {
                         case 0: ?> Status
                             <?php break; ?>
@@ -81,7 +86,8 @@
                         <?php
                         case 2: ?> erledigt
                             <?php break; ?>
-                    <?php } ?>
+                    <?php } 
+                }else{?> Status <?php } ?>
                 </p>
                 <img src="<?php echo Config::get('URL'); ?>images/svg/arrowDownIcon.svg" alt="arrowDownIcon">
             </div>

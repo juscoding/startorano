@@ -44,10 +44,7 @@ class EditProjectModel
     }
 
 
-    $anzeigen_id = 4;
-    $fp2 = fopen('data2.txt', 'w');
-    fwrite($fp2, $status);
-    fclose($fp2);
+    $anzeigen_id = 21;
 
     switch ($status) {
       case 'erledigt':
@@ -61,15 +58,7 @@ class EditProjectModel
         break;
     }
 
-    $fp = fopen('data.txt', 'w');
-    fwrite($fp, $anzeigen_id);
-    fwrite($fp, Session::get('user_id'));
-    fwrite($fp, $JobId);
-    fwrite($fp, $Titel);
-    fwrite($fp, $Beschreibung);
-    fwrite($fp, $user_id_auftragnehmer);
-    fwrite($fp, $status);
-    fclose($fp);
+
 
     $sql = "CALL updateEditedProject(:AnzeigeId, :AuftraggeberId, :JobId, :Titel, :Beschreibung, :AuftragnehmerId, :Status);";
     $query = $database->prepare($sql);
@@ -89,12 +78,23 @@ class EditProjectModel
 
   public static function getProjectInfoToEdit($user_id, $anzeigen_id)
   {
-    $anzeigen_id = 4;
+    $anzeigen_id = 21;
     $database = DatabaseFactory::getFactory()->getConnection();
 
     $sql = "Call getProjectInfoToEdit(:user_id, :anzeigen_id)";
     $query = $database->prepare($sql);
     $query->execute(array(':user_id' => $user_id, ':anzeigen_id' => $anzeigen_id));
+
+    return $query->fetchAll();
+  }
+
+  public static function getUserCompanyType($user_id)
+  {
+    $database = DatabaseFactory::getFactory()->getConnection();
+
+    $sql = "Call getUserCompanyType(:user_id)";
+    $query = $database->prepare($sql);
+    $query->execute(array(':user_id' => $user_id));
 
     return $query->fetchAll();
   }

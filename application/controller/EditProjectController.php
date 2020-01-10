@@ -21,6 +21,7 @@ class EditProjectController extends Controller
         // );
         $this->View->render('EditProject/index', array(
             'user_name' => Session::get('user_name'),
+            'user_company_type' => EditProjectModel::getUserCompanyType(Session::get('user_id')),
             'editProject' => EditProjectModel::getProjectInfoToEdit(Session::get('user_id'),Request::post('anzeigen_id'))
         ));
 

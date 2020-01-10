@@ -22,12 +22,12 @@
 
     <!-- User Info Element END -->
 
-    <p class="startoranoNeueAnzeigeZwischentext">sucht</p>
+    <p class="startoranoNeueAnzeigeZwischentext">sucht im Bereich</p>
 
     <!-- SerachInput START -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElementMain">
-            <input type="text" controller="add" name="getJobs" placeholder="Job wählen..." autocomplete="off" required>
+            <input type="text" controller="add" name="getJobs" placeholder="Branche wählen..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
             <input type="hidden" name="anzeigen_jobId">
         </div>
@@ -36,7 +36,7 @@
 
     <!-- SerachInput ENDE -->
 
-    <p class="startoranoNeueAnzeigeZwischentext">für</p>
+    <p class="startoranoNeueAnzeigeZwischentext">einen Experten für</p>
 
     <!-- TextInput START -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
