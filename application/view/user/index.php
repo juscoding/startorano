@@ -31,9 +31,9 @@
         <div class="startoranoProfileTabWrapperTabs">
             <?php foreach ($this->userAnzeigen as $Anzeige) { ?>
                 <!-- Aufruf der EditProject index.php  -->
-                <a name="anzeige" href="<?php echo Config::get('URL'); ?>user/anzeige/<?=$Anzeige->AnzeigeID;?>">
+                
                 <!-- Job-Element START -->
-                <div class="startoranoUserComponentsContainer startoranoUserComponentTypeJobElement">
+                <a class="startoranoUserComponentsContainer startoranoUserComponentTypeJobElement" name="anzeige" href="<?php echo Config::get('URL'); ?>user/anzeige/<?=$Anzeige->AnzeigeID;?>">
                     <div class="startoranoUserComponentTypeJobElementRow1">
                         <div class="startoranoUserComponentTypeJobElementRow1ProfilePicture">
                             <img src="<?php echo Config::get('URL'); ?>/images/profilePic.png" alt="ProfilePicture">
@@ -68,11 +68,10 @@
                             <input class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledDisabledGray" type="button" value="Anschreiben">
                         </div>
                     </div>
-                </div>
+                </a>
                
                 <!-- Job Element END -->
             <?php } ?>
-            </a>
         </div>
         <div class="startoranoProfileTabWrapperTabs" >
             <?php foreach ($this->doneProjects as $Projects) { ?>
