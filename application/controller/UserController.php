@@ -157,4 +157,14 @@ class UserController extends Controller
         else
             Redirect::to('user/changePassword');
     }
+
+    public function anzeige($anzeigeid){
+
+        $this->View->render('EditProject/index',array(
+            'user_name' => Session::get('user_name'),
+            'user_company_type' => EditProjectModel::getUserCompanyType(Session::get('user_id')),
+            'editProject' => EditProjectModel::getProjectInfoToEdit(Session::get('user_id'),$anzeigeid)
+        ));
+        
+    }
 }

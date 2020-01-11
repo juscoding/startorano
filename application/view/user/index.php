@@ -30,6 +30,8 @@
         </div>
         <div class="startoranoProfileTabWrapperTabs">
             <?php foreach ($this->userAnzeigen as $Anzeige) { ?>
+                <!-- Aufruf der EditProject index.php  -->
+                <a name="anzeige" href="<?php echo Config::get('URL'); ?>user/anzeige/<?=$Anzeige->AnzeigeID;?>">
                 <!-- Job-Element START -->
                 <div class="startoranoUserComponentsContainer startoranoUserComponentTypeJobElement">
                     <div class="startoranoUserComponentTypeJobElementRow1">
@@ -38,10 +40,10 @@
                         </div>
                         <div class="startoranoUserComponentTypeJobElementRow1ProfileInfo">
                             <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow1">
-                                <p>MFG</p>
+                                <p><?= $Anzeige->Firmenname; ?></p>
                             </div>
                             <div class="startoranoUserComponentTypeJobElementRow1ProfileInfoRow2">
-                                <small>Digitaldrucker</small>
+                                <small><?= $Anzeige->Art; ?></small>
                             </div>
                         </div>
                         <div class="startoranoUserComponentTypeJobElementRow1Bookmark">
@@ -63,15 +65,15 @@
                             <small><?= $Anzeige->Zeitstempel; ?></small>
                         </div>
                         <div class="startoranoUserComponentTypeJobElementRow3SmallButton">
-                            <input class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledRed" type="button" value="Anschreiben">
+                            <input class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledDisabledGray" type="button" value="Anschreiben">
                         </div>
                     </div>
                 </div>
                
                 <!-- Job Element END -->
             <?php } ?>
+            </a>
         </div>
-        <!-- onclick="location.href='<?php echo Config::get('URL'); ?>NewChat/index';" -->
         <div class="startoranoProfileTabWrapperTabs" >
             <?php foreach ($this->doneProjects as $Projects) { ?>
                 <!-- Job-Element START -->
