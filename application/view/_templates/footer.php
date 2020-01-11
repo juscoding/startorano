@@ -143,9 +143,11 @@
       if ($(this).hasClass( "bookmarkChecked" )) {
         $(this).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/bookmarkOff.svg");
         $(this).removeClass( "bookmarkChecked" );
+        $.get("<?php echo Config::get('URL'); ?>home/deleteProjectStored/" + $(this).children("img").attr('key'));
       } else {
         $(this).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/bookmarkOn.svg");
         $(this).addClass( "bookmarkChecked" );
+        $.get("<?php echo Config::get('URL'); ?>home/setProjectStored/" + $(this).children("img").attr('key'));
       }
     });
     

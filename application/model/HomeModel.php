@@ -22,4 +22,24 @@ class HomeModel
         return $query->fetchAll();
     }
 
+    public static function setProjectStored($user_id, $AnzeigenID)
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "CALL setStoredProject(:user_id, :AnzeigenID)";
+        $query = $database->prepare($sql);
+
+        $query->execute(array(':user_id' => $user_id, ':AnzeigenID' => $AnzeigenID));
+    }
+
+    public static function deleteStoredProject($user_id, $AnzeigenID)
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "CALL deleteStoredProject(:user_id, :AnzeigenID)";
+        $query = $database->prepare($sql);
+
+        $query->execute(array(':user_id' => $user_id, ':AnzeigenID' => $AnzeigenID));
+    }
+
 }

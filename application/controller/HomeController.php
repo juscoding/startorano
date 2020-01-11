@@ -37,4 +37,14 @@ class HomeController extends Controller
             'test' => NewChatModel::getUserNameRecipient($recipient)
         ));
     }
+
+    public function setProjectStored($AnzeigenID)
+    {
+        HomeModel::setProjectStored(Session::get('user_id'), $AnzeigenID);
+    }
+
+    public function deleteProjectStored($AnzeigenID)
+    {
+        HomeModel::deleteStoredProject(Session::get('user_id'), $AnzeigenID);
+    }
 }
