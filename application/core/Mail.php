@@ -2,7 +2,8 @@
 
 /* Using PHPMailer's namespace */
 use PHPMailer\PHPMailer\PHPMailer;
-
+include('/usr/share/php/libphp-phpmailer/class.phpmailer.php');
+include('/usr/share/php/libphp-phpmailer/class.smtp.php');
 /**
  * Class Mail
  *
