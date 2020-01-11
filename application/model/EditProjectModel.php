@@ -44,7 +44,7 @@ class EditProjectModel
     }
 
 
-    $anzeigen_id = 21;
+    //$anzeigen_id = Request::get();
 
     switch ($status) {
       case 'erledigt':
@@ -78,7 +78,11 @@ class EditProjectModel
 
   public static function getProjectInfoToEdit($user_id, $anzeigen_id)
   {
-    $anzeigen_id = 21;
+    //$anzeigen_id = 21;
+    $fp = fopen('data.txt', 'w');
+    fwrite($fp, $anzeigen_id);
+    fclose($fp);
+
     $database = DatabaseFactory::getFactory()->getConnection();
 
     $sql = "Call getProjectInfoToEdit(:user_id, :anzeigen_id)";

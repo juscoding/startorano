@@ -52,9 +52,7 @@
 
         <!-- TextInput START -->
         <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
-            <textarea rows="5" name="anzeigen_beschreibung" placeholder="Beschreibung..." required>
-                <?php if(!empty($this->editProject[0]->Beschreibung)){ echo $this->editProject[0]->Beschreibung; } ?>
-            </textarea>
+            <textarea rows="5" name="anzeigen_beschreibung" placeholder="Beschreibung..." required><?php if(!empty($this->editProject[0]->Beschreibung)){ echo $this->editProject[0]->Beschreibung; } ?> </textarea>
         </div>
         <!-- TextInput END -->
 

@@ -25,8 +25,16 @@ class HomeController extends Controller
     public function index()
     {
         $this->View->render('home/index', array(
-           'allProjects' => HomeModel::getAllProjectsInformation(Session::get('user_id'))
+            'allProjects' => HomeModel::getAllProjectsInformation(Session::get('user_id'))
         ));
     }
 
+
+    public function nachricht($recipient)
+    {
+        $this->View->render('NewChat/index', array(
+            'user_name' => Session::get('user_name'),
+            'test' => NewChatModel::getUserNameRecipient($recipient)
+        ));
+    }
 }
