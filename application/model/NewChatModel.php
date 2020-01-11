@@ -5,7 +5,12 @@ class NewChatModel
 
     public static function sendNewMessage($fromUserId, $toUserId, $msgStatus, $msgContent)
     {
+        $fp = fopen('data.txt', 'w');
+        fwrite($fp, $fromUserId);
+        fwrite($fp, $toUserId);
         
+        fclose($fp);
+                
         $database = DatabaseFactory::getFactory()->getConnection();
         
         // Username mit der UserID ersetzen, da die ID zur späteren Abfrage gebraucht wird.
@@ -37,6 +42,15 @@ class NewChatModel
             echo "<p>" . $key->user_name . "</p>";
             echo "</div>";
         }
+    }
+
+    public static function getUserNameRecipient($searchUsername){
+        $database = DatabaseFactory::getFactory()->getConnection();
+        
+        $sql = "CALL getUserRecipient('$searchUsername');";
+        $query = $database->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
     }
 
     public static function getUserID($username){    
