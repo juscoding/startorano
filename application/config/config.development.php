@@ -137,8 +137,8 @@ return array(
     'EMAIL_SMTP_HOST' => 'smtp.gmail.com',
     'EMAIL_SMTP_AUTH' => true,
     'EMAIL_SMTP_USERNAME' => 'droaup@gmail.com',
-    'EMAIL_SMTP_PASSWORD' => 'mjcdroaup!2',
-    'EMAIL_SMTP_PORT' => 25,
+    'EMAIL_SMTP_PASSWORD' => 'cXZraHNua2N3aWVmcHl4eg',
+    'EMAIL_SMTP_PORT' => 465,
     'EMAIL_SMTP_ENCRYPTION' => 'ssl',
     /**
      * Configuration for: Email content data
