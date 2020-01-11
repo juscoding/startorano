@@ -134,9 +134,9 @@ return array(
      */
     'EMAIL_USED_MAILER' => 'phpmailer',
     'EMAIL_USE_SMTP' => true,
-    'EMAIL_SMTP_HOST' => 'smtp.gmail.com',
+    'EMAIL_SMTP_HOST' => '84.200.81.82',
     'EMAIL_SMTP_AUTH' => true,
-    'EMAIL_SMTP_USERNAME' => 'droaup@gmail.com',
+    'EMAIL_SMTP_USERNAME' => 'ZHJvYXVwQGdtYWlsLmNvbQo',
     'EMAIL_SMTP_PASSWORD' => 'cXZraHNua2N3aWVmcHl4eg',
     'EMAIL_SMTP_PORT' => 465,
     'EMAIL_SMTP_ENCRYPTION' => 'ssl',
