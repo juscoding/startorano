@@ -65,7 +65,14 @@
                             <small><?= $Anzeige->Zeitstempel; ?></small>
                         </div>
                         <div class="startoranoUserComponentTypeJobElementRow3SmallButton">
-                            <input class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledDisabledGray" type="button" value="Anschreiben">
+                            <?php
+                            if($Anzeige->Status==1){?>
+                                <!-- <input class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledRed" type="button" value="Anschreiben"> -->
+                                <img src="<?php echo Config::get('URL'); ?>/images/svg/in-progress.svg" alt="progress">
+                            <?php }
+                            else { ?>
+                                <img src="<?php echo Config::get('URL'); ?>/images/svg/done.svg" alt="done">
+                            <?php } ?> 
                         </div>
                     </div>
                 </a>

@@ -13,19 +13,16 @@
             <div class="startoranoUserComponentTypeUserInfoRow2">
                 <div>
 
-                    <p><?= $this->user_name; ?></p>
-                    <!-- <p><?= print_r($this->editProject); ?></p> -->
+                    <p><?= $this->editProject[0]->Firmenname; ?></p>
                 </div>
                 <div>
-                    <small><?php if (!empty($this->user_company_type[0]->Art)){ 
-                        echo $this->user_company_type[0]->Art;
-                    }; ?></small>
+                    <small><?= $this->editProject[0]->Art; ?></small>
                 </div>
             </div>
         </div>
-
         <input type="hidden" name="anzeigen_auftraggeber" value="<?= $this->user_name; ?>">
-
+        <input type="hidden" name="anzeigen_id" value="<?= $this->editProject[0]->AnzeigeID;?>">
+        <!-- <input type="hidden" name="anzeigen_id" value="<?php $testvar ?>"> -->
         <!-- User Info Element END -->
 
         <p class="startoranoNeueAnzeigeZwischentext">sucht im Bereich</p>
