@@ -4,6 +4,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 include('/usr/share/php/libphp-phpmailer/class.phpmailer.php');
 include('/usr/share/php/libphp-phpmailer/class.smtp.php');
+include('/usr/share/php/libphp-phpmailer/class.phpmaileroauthgoogle.php');
+include('/usr/share/php/libphp-phpmailer/class.phpmaileroauth.php');
 /**
  * Class Mail
  *
