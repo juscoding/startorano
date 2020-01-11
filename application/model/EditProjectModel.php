@@ -27,7 +27,7 @@ class EditProjectModel
     $query->execute(array(':AuftraggeberId' => Session::get('user_id'), ':JobId' => $JobId, ':Title' => $Titel, ':Beschreibung' => $Beschreibung));
   }
 
-  public static function updateProject($AuftraggeberId, $JobId, $Titel, $Beschreibung, $username, $status)
+  public static function updateProject($AuftraggeberId, $JobId, $Titel, $Beschreibung, $username, $status, $id)
   {
 
     $database = DatabaseFactory::getFactory()->getConnection();
@@ -58,13 +58,22 @@ class EditProjectModel
         break;
     }
 
-
+    $fp = fopen('data.txt', 'w');
+    fwrite($fp, $id);
+    fwrite($fp, Session::get('user_id'));
+    fwrite($fp, $JobId);
+    fwrite($fp, $Titel);
+    fwrite($fp, $Beschreibung);
+    fwrite($fp, $user_id_auftragnehmer);
+    fwrite($fp, $status);
+    
+    fclose($fp);
 
     $sql = "CALL updateEditedProject(:AnzeigeId, :AuftraggeberId, :JobId, :Titel, :Beschreibung, :AuftragnehmerId, :Status);";
     $query = $database->prepare($sql);
     $query->execute(
       array(
-        ':AnzeigeId' => $anzeigen_id,
+        ':AnzeigeId' => $id,
         ':AuftraggeberId' => Session::get('user_id'),
         ':JobId' => $JobId,
         ':Titel' => $Titel,
@@ -73,16 +82,20 @@ class EditProjectModel
         ':Status' => $status
       )
     );
+    $sql = "CALL getAnzeigeEdited(:AnzeigeId);";
+    $query = $database->prepare($sql);
+    $query->execute(
+      array(
+        ':AnzeigeId' => $id,
+      )
+    );
+
+    return $query->fetchAll();
   }
 
 
   public static function getProjectInfoToEdit($user_id, $anzeigen_id)
   {
-    //$anzeigen_id = 21;
-    $fp = fopen('data.txt', 'w');
-    fwrite($fp, $anzeigen_id);
-    fclose($fp);
-
     $database = DatabaseFactory::getFactory()->getConnection();
 
     $sql = "Call getProjectInfoToEdit(:user_id, :anzeigen_id)";
@@ -102,4 +115,14 @@ class EditProjectModel
 
     return $query->fetchAll();
   }
+
+  public static function getAnzeigeID($id){
+    $database = DatabaseFactory::getFactory()->getConnection();
+
+    $sql = "Call getAnzeigeDerID(:anzeige_id)";
+    $query = $database->prepare($sql);
+    $query->execute(array(':anzeige_id' => $id));
+
+    return $query->fetchAll();
+}
 }

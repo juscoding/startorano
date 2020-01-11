@@ -19,7 +19,9 @@ class EditProjectController extends Controller
         // $this->View->render('EditProject/index', array(
         //     'user_name' => Session::get('user_name'))
         // );
-        $this->View->render('EditProject/index');
+        $this->View->render('EditProject/index',array(
+            'user_nmae' => Session::get('user_name')
+        ));
 
     }
 
@@ -30,11 +32,9 @@ class EditProjectController extends Controller
 
     public function createNewAnzeige()
     {
-        EditProjectModel::updateProject(Request::post('anzeigen_auftraggeber'), Request::post('anzeigen_jobId'), Request::post('anzeigen_titel'), Request::post('anzeigen_beschreibung'), Request::post('message_recipient'), Request::post('anzeigen_status'));
-        Redirect::to('EditProject/index');
+        $this->View->render('EditProject/index',array(
+            'editProject' => EditProjectModel::updateProject(Request::post('anzeigen_auftraggeber'), Request::post('anzeigen_jobId'), Request::post('anzeigen_titel'), Request::post('anzeigen_beschreibung'), Request::post('message_recipient'), Request::post('anzeigen_status'), Request::post('anzeigen_id'))
+        ));
     }
 
-    public function test($anzeigeid){
-
-    }
 }

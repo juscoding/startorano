@@ -373,4 +373,6 @@ class UserModel
 
         return $query->fetchAll();
     }
+
+ 
 }

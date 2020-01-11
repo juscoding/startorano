@@ -163,6 +163,7 @@ class UserController extends Controller
         $this->View->render('EditProject/index',array(
             'user_name' => Session::get('user_name'),
             'user_company_type' => EditProjectModel::getUserCompanyType(Session::get('user_id')),
+            'anzeige_id' => EditProjectModel::getAnzeigeID($anzeigeid),
             'editProject' => EditProjectModel::getProjectInfoToEdit(Session::get('user_id'),$anzeigeid)
         ));
         

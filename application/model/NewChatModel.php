@@ -5,12 +5,7 @@ class NewChatModel
 
     public static function sendNewMessage($fromUserId, $toUserId, $msgStatus, $msgContent)
     {
-        $fp = fopen('data.txt', 'w');
-        fwrite($fp, $fromUserId);
-        fwrite($fp, $toUserId);
-        
-        fclose($fp);
-                
+                        
         $database = DatabaseFactory::getFactory()->getConnection();
         
         // Username mit der UserID ersetzen, da die ID zur späteren Abfrage gebraucht wird.
