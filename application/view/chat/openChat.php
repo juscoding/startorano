@@ -40,7 +40,6 @@
             <?php } ?>
         <?php } ?>
     </div>
-  
         <!--Nachricht Eingabefeld-->
         <form action="<?php echo Config::get('URL'); ?>openChat/nachricht" method="post">
             <input type="hidden" name="message_status" value="0">
