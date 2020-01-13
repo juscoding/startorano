@@ -27,8 +27,6 @@ class ChatController extends Controller
         );
     }
 
-    
-
     public function chat_search(){
         
         ChatModel::getAllSearchEntries($_REQUEST["term"]);

@@ -652,6 +652,7 @@ html, body {
     color: #000000;
     line-height: 0.9;
   }
+
   
   .startoranoUserComponentTypeJobElementRow1ProfileInfoRow1 small {
     font-weight: normal;
@@ -710,6 +711,30 @@ html, body {
   }
   
   /* Component Type JobElement END */
+
+  /* ChatComponent Type Header START */
+  
+  .startoranoChatComponentTypeHeaderRow1 {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .startoranoChatComponentTypeHeaderRow1ProfileInfoRow1 h1 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+    line-height: 0.9;
+  }
+
+  .startoranoChatComponentTypeHeaderRow1ProfileInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+
+    /* ChatComponent Type Header END */
   
   /* Output Type ChatBubbles START */
   
@@ -748,7 +773,8 @@ html, body {
     display: flex;
     justify-content: flex-start;
   }
-  
+
+
   .startoranoChatUsernameContainer {
     display: flex;
     flex-direction: column;
