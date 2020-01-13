@@ -52,7 +52,7 @@
         <!-- TextInput END -->
         
         <!-- pinker Button mit weißer Schrift -->
-        <input class="startoranoUserComponentsContainer startoranoUserComponentTypeBigButton filledRed" type="submit" value="SWAG!">
+        <input class="startoranoUserComponentsContainer startoranoUserComponentTypeBigButton filledRed" type="submit" value="Speichern">
         
     </form>
 
