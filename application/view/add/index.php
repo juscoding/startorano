@@ -10,10 +10,10 @@
         </div>
         <div class="startoranoUserComponentTypeUserInfoRow2">
             <div>
-                <p><?= $this->user_name; ?></p>
+                <p><?= $this->userinfo[0]->Firmenname; ?></p>
             </div>
             <div>
-                <small>Programmer</small>
+                <small><?php echo $this->userinfo[0]->Slogan; ?></small>
             </div>
         </div>
     </div>
