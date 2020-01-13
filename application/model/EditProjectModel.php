@@ -58,16 +58,6 @@ class EditProjectModel
         break;
     }
 
-    $fp = fopen('data.txt', 'w');
-    fwrite($fp, $id);
-    fwrite($fp, Session::get('user_id'));
-    fwrite($fp, $JobId);
-    fwrite($fp, $Titel);
-    fwrite($fp, $Beschreibung);
-    fwrite($fp, $user_id_auftragnehmer);
-    fwrite($fp, $status);
-    
-    fclose($fp);
 
     $sql = "CALL updateEditedProject(:AnzeigeId, :AuftraggeberId, :JobId, :Titel, :Beschreibung, :AuftragnehmerId, :Status);";
     $query = $database->prepare($sql);
