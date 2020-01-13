@@ -24,7 +24,12 @@ class AddController extends Controller
 
     public function createNewAnzeige()
     {
-        AddModel::writeNewAnzeigeToDataBase(Request::post('anzeigen_auftraggeber'), Request::post('anzeigen_jobId'), Request::post('anzeigen_titel'), Request::post('anzeigen_beschreibung'));
+        AddModel::writeNewAnzeigeToDataBase(
+            Request::post('anzeigen_auftraggeber'), 
+            Request::post('anzeigen_jobId'), 
+            Request::post('anzeigen_titel'), 
+            Request::post('anzeigen_beschreibung')
+        );
         Redirect::to('user/index');
     }
 }

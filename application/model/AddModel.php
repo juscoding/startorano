@@ -26,7 +26,11 @@ class AddModel
 
       $sql = "CALL insertNewProject(:AuftraggeberId, :JobId, :Title, :Beschreibung);";
       $query = $database->prepare($sql);
-      $query->execute(array(':AuftraggeberId' => Session::get('user_id'), ':JobId' => $JobId, ':Title' => $Titel, ':Beschreibung' => $Beschreibung));
+      $query->execute(array(
+        ':AuftraggeberId' => Session::get('user_id'), 
+        ':JobId' => $JobId, 
+        ':Title' => $Titel, 
+        ':Beschreibung' => $Beschreibung));
   }
 
   public static function getUserInfo($id){
