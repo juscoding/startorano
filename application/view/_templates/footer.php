@@ -56,6 +56,9 @@
       $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElement" ).children( "p" ).removeClass( "selected" );
       // beim obersten DropDown-Element wird der Text des angeklickten Elements eingefügt
       $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementMain" ).children( "input" ).val($(this).children( "p" ).html());
+
+      $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementMain" ).children( "input[type=hidden]" ).val($(this).children( "p" ).attr("key"));
+
       // dem obersten Element wird die Class="selected" hinzugefügt
       $(this).children( "p" ).addClass( "selected" );
       // dem angeklickten Element wird die Class="selectedgrayedout" hinzugefügt
@@ -75,6 +78,7 @@
     $( document ).ready(function() {
       console.log( "jQuery loaded!" );
       $( ".startoranoUserComponentTypeDropDownListElementLoaded" ).hide();
+      $( ".startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2Progressbar2" ).css("width", "<?= (isset($this->userInfo[0]->Erfahrung) ? $this->userInfo[0]->Erfahrung : 0); ?>%");
     });
 
     // klick auf das oberste Element (das erste Element das immer zu sehen ist)
@@ -112,6 +116,9 @@
       $(this).children( "p" ).removeClass( "selectedgrayedout" );
       // beim obersten DropDown-Element wird der Text des angeklickten Elements eingefügt
       $(this).closest( ".startoranoUserComponentTypeDropDown" ).find( ".startoranoUserComponentTypeDropDownListElementFirst" ).children( "p" ).html($(this).children( "p" ).html());
+
+      $(this).closest( ".startoranoUserComponentTypeDropDown" ).find( ".startoranoUserComponentTypeDropDownListElementFirst" ).children( "input[type=hidden]" ).val($(this).children( "p" ).html());
+
       // dem obersten Element wird die Class="selected" hinzugefügt
       $(this).closest( ".startoranoUserComponentTypeDropDown" ).find( ".startoranoUserComponentTypeDropDownListElementFirst" ).children( "p" ).addClass( "selected" );
       // dem angeklickten Element wird die Class="selectedgrayedout" hinzugefügt
@@ -136,9 +143,11 @@
       if ($(this).hasClass( "bookmarkChecked" )) {
         $(this).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/bookmarkOff.svg");
         $(this).removeClass( "bookmarkChecked" );
+        $.get("<?php echo Config::get('URL'); ?>home/deleteProjectStored/" + $(this).children("img").attr('key'));
       } else {
         $(this).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/bookmarkOn.svg");
         $(this).addClass( "bookmarkChecked" );
+        $.get("<?php echo Config::get('URL'); ?>home/setProjectStored/" + $(this).children("img").attr('key'));
       }
     });
     
@@ -156,6 +165,95 @@
         limitMessages();
     });
     // Chat Element end ################################################################
+
+
+    // Project Element start ##############################################################
+    function biglimitMessages(){
+    		$(".biglimited").each(function(){
+            var text = $(this).text();
+            $(this).text(text.substr(0, 500) + "..." );
+        });
+    }
+
+    $(document).ready(function(){
+        biglimitMessages();
+    });
+
+    // Project Element end ################################################################
+
+    // EditProject start   ################################################################
+
+    function deleteProject(){
+      $status_value = 3;
+      
+    }
+
+    function isDoneProject(){
+      $status_value = 2;
+    }
+
+    // EditProject end    ################################################################
+
+    // Profile Tabs start ####################################################################
+
+    $( ".startoranoComponentHeaderProfileTabsPoints" ).click(function() {
+      $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).removeClass( "selectedTabLeft" );
+      $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).removeClass( "selectedTabCenter" );
+      $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).removeClass( "selectedTabRight" );
+
+      switch ($(this).children().html()) {
+        case "Details":
+            $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).addClass("selectedTabLeft");
+            $( ".startoranoProfileTabWrapperUnderflow" ).css("margin-left", "0");
+          break;
+
+        case "Anzeigen":
+            $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).addClass("selectedTabCenter");
+            $( ".startoranoProfileTabWrapperUnderflow" ).css("margin-left", "-100%");
+          break;
+
+        case "Projekte":
+            $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).addClass("selectedTabRight");
+            $( ".startoranoProfileTabWrapperUnderflow" ).css("margin-left", "-200%");
+          break;
+      
+        default:
+          break;
+      }
+    });
+
+    // Profile Tabs end ####################################################################
+
+
+    // Profile Menu start ###################################################################
+
+    $( ".startoranoComponentHeaderProfileMenu" ).css("right", "-60%");
+    $( ".startoranoComponentHeaderProfileMenuWrapper" ).css("background-color", "rgba(0, 0, 0, 0)");
+    $( ".startoranoComponentHeaderProfileMenuWrapper" ).hide();
+
+    $( ".startoranoComponentHeaderProfieLogo img" ).click(function() {
+      $( ".startoranoComponentHeaderProfileMenuWrapper" ).show();
+      $( ".startoranoComponentHeaderProfileMenu" ).css("right", "0%");
+      $( ".startoranoComponentHeaderProfileMenuWrapper" ).css("background-color", "rgba(0, 0, 0, 0.4)");
+    });
+
+    $( ".startoranoComponentHeaderProfileMenu img" ).click(function() {
+      $( ".startoranoComponentHeaderProfileMenu" ).css("right", "-60%");
+      $( ".startoranoComponentHeaderProfileMenuWrapper" ).css("background-color", "rgba(0, 0, 0, 0)");
+      setTimeout(() => {
+        $( ".startoranoComponentHeaderProfileMenuWrapper" ).hide();
+      }, 300);
+    });
+
+    $( ".startoranoComponentHeaderProfileMenuCloseTrigger" ).click(function() {
+      $( ".startoranoComponentHeaderProfileMenu" ).css("right", "-60%");
+      $( ".startoranoComponentHeaderProfileMenuWrapper" ).css("background-color", "rgba(0, 0, 0, 0)");
+      setTimeout(() => {
+        $( ".startoranoComponentHeaderProfileMenuWrapper" ).hide();
+      }, 300);
+    });
+
+    // Profile Menu end ####################################################################
 
   </script>   
 </body>

@@ -137,19 +137,19 @@ return array(
     'EMAIL_SMTP_HOST' => 'smtp.gmail.com',
     'EMAIL_SMTP_AUTH' => true,
     'EMAIL_SMTP_USERNAME' => 'droaup@gmail.com',
-    'EMAIL_SMTP_PASSWORD' => 'mjcdroaup!2',
-    'EMAIL_SMTP_PORT' => 25,
+    'EMAIL_SMTP_PASSWORD' => 'qvkhsnkcwiefpyxz',
+    'EMAIL_SMTP_PORT' => 465,
     'EMAIL_SMTP_ENCRYPTION' => 'ssl',
     /**
      * Configuration for: Email content data
      */
     'EMAIL_PASSWORD_RESET_URL' => 'login/verifypasswordreset',
-    'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'no-reply@example.com',
+    'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'droaup@gmail.com',
     'EMAIL_PASSWORD_RESET_FROM_NAME' => 'My Project',
     'EMAIL_PASSWORD_RESET_SUBJECT' => 'Password reset for PROJECT XY',
     'EMAIL_PASSWORD_RESET_CONTENT' => 'Please click on this link to reset your password: ',
     'EMAIL_VERIFICATION_URL' => 'register/verify',
-    'EMAIL_VERIFICATION_FROM_EMAIL' => 'no-reply@example.com',
+    'EMAIL_VERIFICATION_FROM_EMAIL' => 'droauup@gmail.com',
     'EMAIL_VERIFICATION_FROM_NAME' => 'My Project',
     'EMAIL_VERIFICATION_SUBJECT' => 'Account activation for PROJECT XY',
     'EMAIL_VERIFICATION_CONTENT' => 'Please click on this link to activate your account: ',

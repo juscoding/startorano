@@ -1,17 +1,26 @@
-<div class="container">
-    <h1>UserController/editUserEmail</h1>
+<!-- Header mit Seitenname START -->
 
-    <!-- echo out the system feedback (error and success messages) -->
+<div class="startoranoComponentHeaderSiteName">
+    <p>neue E-Mail</p>
+</div>
+
+<!-- Header mit Seitenname END -->
+
+<form class="wrapper" action="<?php echo Config::get('URL'); ?>user/editUserEmail_action" method="post">
+
     <?php $this->renderFeedbackMessages(); ?>
 
-    <div class="box">
-        <h2>Change your email address</h2>
-
-        <form action="<?php echo Config::get('URL'); ?>user/editUserEmail_action" method="post">
-            <label>
-                New email address: <input type="text" name="user_email" required />
-            </label>
-            <input type="submit" value="Submit" />
-        </form>
+    <!-- TextInput START -->
+    <div class="startoranoUserComponentsContainer startoranoUserComponentTypeText">
+        <input type="text" name="user_email" autocomplete="off" placeholder="E-Mail..." required>
     </div>
-</div>
+    <!-- TextInput END -->
+
+    <!-- pinker Button mit weißer Schrift -->
+    <input class="startoranoUserComponentsContainer startoranoUserComponentTypeBigButton filledRed" type="submit" value="SWAG!">
+
+
+</form>
+
+<!-- Footer Datei einbinden -->
+<?php include("../application/view/_templates/footer_standard.php");?>

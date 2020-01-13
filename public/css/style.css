@@ -36,6 +36,11 @@ html, body {
     margin-top: 30px;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 
 /* navigation dropdown menu */
 .navigation, .navigation-submenu {
@@ -193,6 +198,9 @@ html, body {
 
 /***************************************************** STARTORANO COMPONENTS ********************************************************************/
 
+.startoranoDeviderFooter {
+  height: 60px;
+}
   
   /* Basic Component Style START */
   
@@ -202,7 +210,6 @@ html, body {
     justify-content: flex-start;
     width: calc(100% - 24px);
     max-width: 400px;
-    /* height: auto; */
     background-color: #FFFFFF;
     padding: 12px;
     border-radius: 7px;
@@ -216,7 +223,8 @@ html, body {
   }
 
   
-  .startoranoUserComponentsContainer input {
+  .startoranoUserComponentsContainer input,
+  .startoranoUserComponentsContainer textarea {
     border: none;
     background: none;
     font-family: Raleway;
@@ -226,11 +234,14 @@ html, body {
     color: #000000;
     caret-color: #FF004C;
     flex: 1;
+    resize: none;
   }
-  .startoranoUserComponentsContainer input:focus {
+  .startoranoUserComponentsContainer input:focus,
+  .startoranoUserComponentsContainer textarea:focus {
     outline: none;
   }
-  .startoranoUserComponentsContainer input:-ms-input-placeholder {
+  .startoranoUserComponentsContainer input:-ms-input-placeholder,
+  .startoranoUserComponentsContainer textarea:-ms-input-placeholder {
     color: rgba(0, 0, 0, 0.15);
   }
   .startoranoUserComponentsContainer input::-ms-clear {
@@ -249,10 +260,12 @@ html, body {
   .startoranoUserComponentsContainer input::-webkit-search-results-decoration {
     display: none;
   }
-  .startoranoUserComponentsContainer input::-webkit-input-placeholder {
+  .startoranoUserComponentsContainer input::-webkit-input-placeholder,
+  .startoranoUserComponentsContainer textarea::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.15);
   }
-  .startoranoUserComponentsContainer input::placeholder {
+  .startoranoUserComponentsContainer input::placeholder,
+  .startoranoUserComponentsContainer textarea::placeholder {
     color: rgba(0, 0, 0, 0.15);
   }
   
@@ -321,14 +334,13 @@ html, body {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
     margin-bottom: 6px;
     display: flex;
-    /* justify-content: center; */
     align-items: flex-end;
-    height: 90px;
   }
   
   .startoranoComponentHeaderLogo p {
     margin: 0;
     margin: 12px;
+    margin-top: 45px;
     font-family: Raleway;
     font-style: normal;
     font-weight: 900;
@@ -383,12 +395,12 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 170px;
   }
   
   .startoranoComponentHeaderSearch p {
     margin: 0;
     margin: 12px;
+    margin-top: 45px;
     font-family: Raleway;
     font-style: normal;
     font-weight: 900;
@@ -427,7 +439,13 @@ html, body {
     width: 100%;
     padding: 0;
   }
-  
+
+  .startoranoUserComponentTypeSearchListElementMainEdit {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
   .startoranoUserComponentTypeSearchListElement:last-of-type {
     padding-bottom: 0;
     border-bottom: none;
@@ -438,6 +456,7 @@ html, body {
     font-family: Raleway;
     font-style: normal;
     font-weight: 800;
+    text-transform: none;
     font-size: 20px;
     margin: 0;
     color: #000000;
@@ -556,6 +575,14 @@ html, body {
   .startoranoUserComponentTypeSmallButton:hover {
     cursor: pointer;
   }
+
+  .startoranoEditProjectButtonRows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  
   
   /* Input Type SmallButton END */
   
@@ -610,6 +637,7 @@ html, body {
     flex-direction: column;
     font-family: Raleway;
     font-style: normal;
+    cursor: pointer;
   
   }
   
@@ -710,6 +738,8 @@ html, body {
     text-transform: uppercase;
   }
   
+
+
   /* Component Type JobElement END */
 
   /* ChatComponent Type Header START */
@@ -830,7 +860,12 @@ html, body {
     font-size: 8px;
     color: #000000;
     opacity: 0.5;
-  } 
+  }
+  
+  .startoranoProfileTabWrapperTabs a{
+    color: inherit;
+    text-decoration: none;
+  }
   
   .startoranoUserComponentChatBubbleRow1 {
     display: flex;
@@ -1030,6 +1065,34 @@ html, body {
   
   /* Component Type MenuBand END */
   
+  /* User Info Element Small START */
+
+  .startoranoUserComponentTypeUserInfoSmall {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .startoranoUserComponentTypeUserInfoSmallTextWrapper {
+    text-align: center;
+  }
+
+  .startoranoUserComponentTypeUserInfoSmallTextWrapper p {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .startoranoUserComponentTypeUserInfoSmallTextWrapper small {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  /* User Info Element Small END */
   
   /* Component Type CompanyInfo START */
   
@@ -1040,12 +1103,13 @@ html, body {
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
+    line-height: 16px;
     color: #000000;
   }
   
   .startoranoUserComponentTypeCompanyInfoHeadline p {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 22px;
     padding-bottom: 8px;
   }
   
@@ -1058,23 +1122,33 @@ html, body {
     background-color: #FF004C;
     width: 100%;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
-    padding-bottom: 6px;
     margin-bottom: 6px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 250px;
+  }
+
+  .startoranoComponentHeaderProfieLogo {
+    margin: 12px;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .startoranoComponentHeaderProfieLogo p {
     margin: 0;
-    margin: 12px;
     font-family: Raleway;
     font-style: normal;
     font-weight: 900;
     font-size: 24px;
     text-transform: uppercase;
     color: #FFFFFF;
+  }
+
+  .startoranoComponentHeaderProfieLogo img {
+    cursor: pointer;
   }
   
   .startoranoComponentHeaderProfileInfoImage {
@@ -1086,6 +1160,7 @@ html, body {
     flex-direction: row;
     padding-left: 6px;
     padding-right: 6px;
+    max-width: 550px;
   }
   
   .startoranoComponentHeaderProfileInfo p {
@@ -1101,6 +1176,7 @@ html, body {
     color: #FFFFFF;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
   }
   
   .startoranoComponentHeaderProfileInfoTextCompanyName {
@@ -1157,10 +1233,133 @@ html, body {
   .startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2Progressbar2 {
     position: absolute;
     height: 100%;
-    width: 33%;
     opacity: 0.9;
     background-color: #FFFFFF;
     border-radius: 10px;
+  }
+
+  .startoranoComponentHeaderProfileTabs {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .startoranoComponentHeaderProfileTabsPointsText {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .startoranoComponentHeaderProfileTabsPoints {
+    flex: 1;
+    cursor: pointer;
+  }
+
+  .startoranoComponentHeaderProfileTabsPoints p {
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .startoranoComponentHeaderProfileTabsPointsUnderline {
+    margin-top: 4px;
+    height: 2px;
+    display: flex;
+  }
+
+  .selectedTabLeft {
+    justify-content: flex-start;
+  }
+
+  .selectedTabCenter {
+    justify-content: center;
+  }
+
+  .selectedTabRight {
+    justify-content: flex-end;
+  }
+
+  .startoranoComponentHeaderProfileTabsPointsUnderline div {
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 33%;
+  }
+
+  .startoranoComponentHeaderProfileMenuWrapper {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color 300ms;
+  }
+
+  .startoranoComponentHeaderProfileMenu {
+    position: absolute;
+    height: 100%;
+    width: 60%;
+    background-color: #FFFFFF;
+    right: 0;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    box-sizing: border-box;
+    transition: right 300ms;
+    padding-top: 48px;
+  }
+
+  .startoranoComponentHeaderProfileMenu img {
+    opacity: .9;
+    cursor: pointer;
+  }
+
+  .startoranoComponentHeaderProfileMenuHeadline {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 12px 0;
+  }
+
+  .startoranoComponentHeaderProfileMenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-top: 12px;
+  }
+
+  .startoranoComponentHeaderProfileMenu ul li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 24px 0;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    padding-top: 24px;
+  }
+
+  .startoranoComponentHeaderProfileMenu ul li img {
+    margin-right: 16px;
+  }
+
+  .startoranoComponentHeaderProfileMenu ul li p {
+    margin: 0;
+  }
+
+  .startoranoComponentHeaderProfileMenuItemWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .startoranoComponentHeaderProfileMenuCloseTrigger {
+    position: absolute;
+    height: 100%;
+    width: 40%;
+    left: 0;
   }
   
   /* Component Header mit Profile END */
@@ -1218,4 +1417,34 @@ html, body {
 
   #captcha {
     margin: 6px;
+  }
+
+
+  /****************************************** Profile **********************************************/
+
+  .startoranoProfileTabWrapper {
+    overflow-x: hidden;
+  }
+
+  .startoranoProfileTabWrapperUnderflow {
+    width: calc(100% * 3);
+    display: flex;
+    transition: all 300ms;
+    margin-left: 0;
+  }
+
+  .startoranoProfileTabWrapperTabs {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /****************************************** neue Anzeige **********************************************/
+
+  .startoranoNeueAnzeigeZwischentext {
+    margin: 6px 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
   }

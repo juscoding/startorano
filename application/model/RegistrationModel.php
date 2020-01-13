@@ -208,8 +208,8 @@ class RegistrationModel
         $query = $database->prepare($sql);
         $query->execute(array(':user_name' => $user_companyName,
                               ':user_nickName' => $user_nickName,
-                            //   ':user_companyType' => $user_companyType,
-                            //   ':user_companyLocation' => $user_companyLocation,
+                              ':user_companyType' => $user_companyType,
+                              ':user_companyLocation' => $user_companyLocation,
                               ':user_workercount' => $user_workercount,
                               ':user_password_hash' => $user_password_hash,
                               ':user_email' => $user_email,

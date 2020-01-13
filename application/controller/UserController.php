@@ -28,7 +28,10 @@ class UserController extends Controller
             'user_email' => Session::get('user_email'),
             'user_gravatar_image_url' => Session::get('user_gravatar_image_url'),
             'user_avatar_file' => Session::get('user_avatar_file'),
-            'user_account_type' => Session::get('user_account_type')
+            'user_account_type' => Session::get('user_account_type'),
+            'userAnzeigen' => UserModel::getAnzeigeInfo(Session::get('user_id')),
+            'userInfo' => UserModel::getUserInformation(Session::get('user_id')),
+            'doneProjects' => UserModel::getDoneProjectInformation(Session::get('user_id'))
         ));
     }
 
@@ -53,7 +56,7 @@ class UserController extends Controller
         }
 
         UserModel::editUserName(Request::post('user_name'));
-        Redirect::to('user/editUsername');
+        Redirect::to('user/index');
     }
 
     /**
@@ -71,7 +74,7 @@ class UserController extends Controller
     public function editUserEmail_action()
     {
         UserModel::editUserEmail(Request::post('user_email'));
-        Redirect::to('user/editUserEmail');
+        Redirect::to('user/index');
     }
 
     /**
@@ -153,5 +156,16 @@ class UserController extends Controller
             Redirect::to('user/index');
         else
             Redirect::to('user/changePassword');
+    }
+
+    public function anzeige($anzeigeid){
+
+        $this->View->render('EditProject/index',array(
+            'user_name' => Session::get('user_name'),
+            'user_company_type' => EditProjectModel::getUserCompanyType(Session::get('user_id')),
+            'anzeige_id' => EditProjectModel::getAnzeigeID($anzeigeid),
+            'editProject' => EditProjectModel::getProjectInfoToEdit(Session::get('user_id'),$anzeigeid)
+        ));
+        
     }
 }
