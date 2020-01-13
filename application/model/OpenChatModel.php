@@ -1,7 +1,5 @@
 <?php
 
-use Prophecy\Call\Call;
-
 class OpenChatModel
 {
 

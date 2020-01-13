@@ -809,7 +809,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: auto;
+    width: 350px;
     height: auto;
     background-color: #FFFFFF;
     padding: 12px;
@@ -831,6 +831,7 @@ a {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    width: auto;
   }
   
   .startoranoChatBubbleWrapperOther {
@@ -990,6 +991,7 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;  
+    width: 350px;
   }
   
   .startoranoChatNewMessageArrow {
