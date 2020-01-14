@@ -118,10 +118,10 @@
                             <?php
                             if($Projects->Status==1){?>
                                 <!-- <input class="startoranoUserComponentsContainer startoranoUserComponentTypeSmallButton filledRed" type="button" value="Anschreiben"> -->
-                                <img src="<?php echo Config::get('URL'); ?>/images/svg/in-progress.svg" alt="progress">
+                                <img src="<?php echo Config::get('URL'); ?>/images/svg/done.svg" alt="progress">
                             <?php }
                             else { ?>
-                                <img src="<?php echo Config::get('URL'); ?>/images/svg/done.svg" alt="done">
+                                <img src="<?php echo Config::get('URL'); ?>/images/svg/in-progress.svg" alt="done">
                             <?php } ?> 
                         </div>
                     </div>
