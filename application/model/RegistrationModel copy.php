@@ -16,15 +16,22 @@ class RegistrationModel
     public static function registerNewUser()
     {
         // clean the input
-        $user_name = strip_tags(Request::post('user_nickName'));
-        $user_email = strip_tags(Request::post('user_email'));
-        // $user_email_repeat = strip_tags(Request::post('user_email_repeat'));
+        $user_companyName = strip_tags(Request::post('user_companyName'));
+        $user_nickName = strip_tags(Request::post('user_nickName'));
+        $user_companyType = strip_tags(Request::post('user_companyTypeId'));
+        $user_companyLocation = Request::post('user_companyLocationId');
+        $user_workercount = Request::post('user_workercount');
+        $user_email = Request::post('user_email');
         $user_password_new = Request::post('user_password_new');
         $user_password_repeat = Request::post('user_password_repeat');
 
+        $fp = fopen('test.txt', 'w');
+        fwrite($fp, "(" . $user_companyName . ", " . $user_nickName . ", " . $user_companyType . ", " . $user_companyLocation . ", " . $user_workercount . ", " . $user_email . ", " . $user_password_new . ", " . $user_password_repeat . ")");
+        fclose($fp);
+
         // stop registration flow if registrationInputValidation() returns false (= anything breaks the input check rules)
-        $validation_result = self::registrationInputValidation(Request::post('captcha'), $user_name, $user_password_new, $user_password_repeat, $user_email);
-        if (!$validation_result) {
+        $validation_result = self::registrationInputValidation(Request::post('captcha'), $user_companyName, $user_nickName, $user_companyType, $user_companyLocation, $user_workercount, $user_email, $user_password_new, $user_password_repeat);
+        if (!$validation_result) {                                          // $captcha, $user_companyName, $user_nickName, $user_companyType, $user_companyLocation, $user_workercount, $user_email, $user_password_new, $user_password_repeat
             return false;
         }
 
@@ -36,7 +43,7 @@ class RegistrationModel
         $return = true;
 
         // check if username already exists
-        if (UserModel::doesUsernameAlreadyExist($user_name)) {
+        if (UserModel::doesUsernameAlreadyExist($user_companyName)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_USERNAME_ALREADY_TAKEN'));
             $return = false;
         }
@@ -54,13 +61,13 @@ class RegistrationModel
         $user_activation_hash = sha1(uniqid(mt_rand(), true));
 
         // write user data to database
-        if (!self::writeNewUserToDatabase($user_name, $user_password_hash, $user_email, time(), $user_activation_hash)) {
+        if (!self::writeNewUserToDatabase($user_companyName, $user_nickName, $user_companyType, $user_companyLocation, $user_workercount, $user_password_hash, $user_email, time(), $user_activation_hash)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_ACCOUNT_CREATION_FAILED'));
             return false; // no reason not to return false here
         }
 
         // get user_id of the user that has been created, to keep things clean we DON'T use lastInsertId() here
-        $user_id = UserModel::getUserIdByUsername($user_name);
+        $user_id = UserModel::getUserIdByUsername($user_companyName);
 
         if (!$user_id) {
             Session::add('feedback_negative', Text::get('FEEDBACK_UNKNOWN_ERROR'));
@@ -91,7 +98,7 @@ class RegistrationModel
      *
      * @return bool
      */
-    public static function registrationInputValidation($captcha, $user_name, $user_password_new, $user_password_repeat, $user_email)
+    public static function registrationInputValidation($captcha, $user_companyName, $user_nickName, $user_companyType, $user_companyLocation, $user_workercount, $user_email, $user_password_new, $user_password_repeat)
     {
         $return = true;
 
@@ -102,7 +109,7 @@ class RegistrationModel
         }
 
         // if username, email and password are all correctly validated, but make sure they all run on first sumbit
-        if (self::validateUserName($user_name) AND self::validateUserEmail($user_email) AND self::validateUserPassword($user_password_new, $user_password_repeat) AND $return) {
+        if (self::validateUserName($user_companyName) AND self::validateUserEmail($user_email) AND self::validateUserPassword($user_password_new, $user_password_repeat) AND $return) {
             return true;
         }
 
@@ -116,15 +123,15 @@ class RegistrationModel
      * @param $user_name
      * @return bool
      */
-    public static function validateUserName($user_name)
+    public static function validateUserName($user_companyName)
     {
-        if (empty($user_name)) {
+        if (empty($user_companyName)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_USERNAME_FIELD_EMPTY'));
             return false;
         }
 
         // if username is too short (2), too long (64) or does not fit the pattern (aZ09)
-        if (!preg_match('/^[a-zA-Z0-9]{2,64}$/', $user_name)) {
+        if (!preg_match('/^[a-zA-Z0-9]{2,64}$/', $user_companyName)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_USERNAME_DOES_NOT_FIT_PATTERN'));
             return false;
         }
@@ -194,16 +201,24 @@ class RegistrationModel
      * @param $user_activation_hash
      *
      * @return bool
-     */
-    public static function writeNewUserToDatabase($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash)
+     */  
+    public static function writeNewUserToDatabase($user_companyName, $user_nickName, $user_companyType, $user_companyLocation, $user_workercount, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash)
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
         // write new users data into database
+        // $sql = "INSERT INTO users (user_name, user_password_hash, user_email, user_creation_timestamp, user_activation_hash, user_provider_type, Firmenname, Mitarbeiter)
         $sql = "INSERT INTO users (user_name, user_password_hash, user_email, user_creation_timestamp, user_activation_hash, user_provider_type)
-                    VALUES (:user_name, :user_password_hash, :user_email, :user_creation_timestamp, :user_activation_hash, :user_provider_type)";
+                    VALUES (:user_nickName, :user_password_hash, :user_email, :user_creation_timestamp, :user_activation_hash, :user_provider_type)";
         $query = $database->prepare($sql);
-        $query->execute(array(':user_name' => $user_name,
+        // $fp = fopen('test.txt', 'w');
+        // fwrite($fp, "(" . print_r($query, true) . ")");
+        // fclose($fp);
+        $query->execute(array(':user_name' => $user_companyName,
+                              ':user_nickName' => $user_nickName,
+                              ':user_companyType' => $user_companyType,
+                              ':user_companyLocation' => $user_companyLocation,
+                              ':user_workercount' => $user_workercount,
                               ':user_password_hash' => $user_password_hash,
                               ':user_email' => $user_email,
                               ':user_creation_timestamp' => $user_creation_timestamp,
@@ -300,6 +315,7 @@ class RegistrationModel
         }
     }
 
+
     public static function getLocation($searchOrt){    
         $database = DatabaseFactory::getFactory()->getConnection();
 
@@ -314,3 +330,5 @@ class RegistrationModel
         }
     }
 }
+
+// 'companyLocation' => RegistrationModel::getLocation()
