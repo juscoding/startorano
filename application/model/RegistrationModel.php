@@ -17,6 +17,8 @@ class RegistrationModel
     {
         // clean the input
         $user_name = strip_tags(Request::post('user_nickName'));
+        $user_companyTypeId = strip_tags(Request::post('user_companyTypeId'));
+        $user_companyLocationId = strip_tags(Request::post('user_companyLocationId'));
         $user_email = strip_tags(Request::post('user_email'));
         // $user_email_repeat = strip_tags(Request::post('user_email_repeat'));
         $user_password_new = Request::post('user_password_new');
@@ -54,7 +56,7 @@ class RegistrationModel
         $user_activation_hash = sha1(uniqid(mt_rand(), true));
 
         // write user data to database
-        if (!self::writeNewUserToDatabase($user_name, $user_password_hash, $user_email, time(), $user_activation_hash)) {
+        if (!self::writeNewUserToDatabase($user_companyTypeId, $user_companyLocationId, $user_name, $user_password_hash, $user_email, time(), $user_activation_hash)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_ACCOUNT_CREATION_FAILED'));
             return false; // no reason not to return false here
         }
@@ -195,15 +197,17 @@ class RegistrationModel
      *
      * @return bool
      */
-    public static function writeNewUserToDatabase($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash)
+    public static function writeNewUserToDatabase($user_companyTypeId, $user_companyLocationId, $user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash)
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
         // write new users data into database
-        $sql = "INSERT INTO users (user_name, user_password_hash, user_email, user_creation_timestamp, user_activation_hash, user_provider_type)
-                    VALUES (:user_name, :user_password_hash, :user_email, :user_creation_timestamp, :user_activation_hash, :user_provider_type)";
+        $sql = "INSERT INTO users (UnternehmenID, OrtID, user_name, user_password_hash, user_email, user_creation_timestamp, user_activation_hash, user_provider_type)
+                    VALUES (:user_art, :user_ort, :user_name, :user_password_hash, :user_email, :user_creation_timestamp, :user_activation_hash, :user_provider_type)";
         $query = $database->prepare($sql);
-        $query->execute(array(':user_name' => $user_name,
+        $query->execute(array(':user_art' => $user_companyTypeId,
+                              ':user_ort' => $user_companyLocationId,
+                              ':user_name' => $user_name,
                               ':user_password_hash' => $user_password_hash,
                               ':user_email' => $user_email,
                               ':user_creation_timestamp' => $user_creation_timestamp,
