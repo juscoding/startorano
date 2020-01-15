@@ -147,10 +147,10 @@ return array(
     'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'droaup@gmail.com',
     'EMAIL_PASSWORD_RESET_FROM_NAME' => 'Startorano',
     'EMAIL_PASSWORD_RESET_SUBJECT' => 'Passwort zurücksetzen für Startorano',
-    'EMAIL_PASSWORD_RESET_CONTENT' => 'Klicken Sie auf den Link um Ihr Passwort zurückzusetzen ',
+    'EMAIL_PASSWORD_RESET_CONTENT' => 'Klicken Sie auf den Link um Ihr Passwort zurückzusetzen: ',
     'EMAIL_VERIFICATION_URL' => 'register/verify',
     'EMAIL_VERIFICATION_FROM_EMAIL' => 'droauup@gmail.com',
     'EMAIL_VERIFICATION_FROM_NAME' => 'Startorano',
     'EMAIL_VERIFICATION_SUBJECT' => 'Startorano Account bestätigen',
-    'EMAIL_VERIFICATION_CONTENT' => 'Klicken Sie auf den Link um Ihren Account zu bestätigen',
+    'EMAIL_VERIFICATION_CONTENT' => 'Klicken Sie auf den Link um Ihren Account zu bestätigen: ',
 );
