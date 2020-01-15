@@ -132,7 +132,7 @@ return array(
      * EMAIL_USE_SMTP: Use SMTP or not
      * EMAIL_SMTP_AUTH: leave this true unless your SMTP service does not need authentication
      */
-    'EMAIL_USED_MAILER' => 'swiftmailer',
+    'EMAIL_USED_MAILER' => 'phpmailer',
     'EMAIL_USE_SMTP' => true,
     'EMAIL_SMTP_HOST' => 'smtp.gmail.com',
     'EMAIL_SMTP_AUTH' => true,
@@ -145,12 +145,12 @@ return array(
      */
     'EMAIL_PASSWORD_RESET_URL' => 'login/verifypasswordreset',
     'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'droaup@gmail.com',
-    'EMAIL_PASSWORD_RESET_FROM_NAME' => 'My Project',
-    'EMAIL_PASSWORD_RESET_SUBJECT' => 'Password reset for PROJECT XY',
-    'EMAIL_PASSWORD_RESET_CONTENT' => 'Please click on this link to reset your password: ',
+    'EMAIL_PASSWORD_RESET_FROM_NAME' => 'Startorano',
+    'EMAIL_PASSWORD_RESET_SUBJECT' => 'Passwort zurücksetzen für Startorano',
+    'EMAIL_PASSWORD_RESET_CONTENT' => 'Klicken Sie auf den Link um Ihr Passwort zurückzusetzen ',
     'EMAIL_VERIFICATION_URL' => 'register/verify',
     'EMAIL_VERIFICATION_FROM_EMAIL' => 'droauup@gmail.com',
-    'EMAIL_VERIFICATION_FROM_NAME' => 'My Project',
-    'EMAIL_VERIFICATION_SUBJECT' => 'Account activation for PROJECT XY',
-    'EMAIL_VERIFICATION_CONTENT' => 'Please click on this link to activate your account: ',
+    'EMAIL_VERIFICATION_FROM_NAME' => 'Startorano',
+    'EMAIL_VERIFICATION_SUBJECT' => 'Startorano Account bestätigen',
+    'EMAIL_VERIFICATION_CONTENT' => 'Klicken Sie auf den Link um Ihren Account zu bestätigen',
 );
