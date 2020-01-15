@@ -38,8 +38,10 @@ class HomeController extends Controller
         ));
     }
 
+    // Funktion die von jQuery (AJAX) aufgerufen wird mit übergebener AnzeigenID
     public function setProjectStored($AnzeigenID)
     {
+        // Funktion im Model mit user_id und AnzeigenID
         HomeModel::setProjectStored(Session::get('user_id'), $AnzeigenID);
     }
 

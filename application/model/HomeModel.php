@@ -22,13 +22,15 @@ class HomeModel
         return $query->fetchAll();
     }
 
+    // Funktion die der Controller aufruft
     public static function setProjectStored($user_id, $AnzeigenID)
     {
+        // Datenbankverbindung wird aufgebaut
         $database = DatabaseFactory::getFactory()->getConnection();
-
+        // das Stored Procedure
         $sql = "CALL setStoredProject(:user_id, :AnzeigenID)";
         $query = $database->prepare($sql);
-
+        // in die Platzhelter werden die übergebenen Daten eingefügt
         $query->execute(array(':user_id' => $user_id, ':AnzeigenID' => $AnzeigenID));
     }
 

@@ -465,11 +465,9 @@ a {
   /* Input Type Search END */
   
   /* Input Type DropDown START */
-  
   .startoranoUserComponentTypeDropDown {
     height: auto;
   }
-  
   .startoranoUserComponentTypeDropDownListElement {
     display: flex;
     align-items: center;
@@ -478,17 +476,14 @@ a {
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 12px;
   }
-  
   .startoranoUserComponentTypeDropDownListElement:first-of-type {
     cursor: pointer;
   }
-  
   .startoranoUserComponentTypeDropDownListElement:last-of-type {
     padding-bottom: 0;
     border-bottom: none;
     margin-bottom: 0;
   }
-  
   .startoranoUserComponentTypeDropDownListElement p {
     font-family: Raleway;
     font-style: normal;
@@ -497,37 +492,29 @@ a {
     color: #000000;
     margin: 0;
   }
-  
   .startoranoUserComponentTypeDropDownListElement:first-of-type p {
     flex: 1;
     color:rgba(0, 0, 0, 0.15);
   }
-  
-  
   .startoranoUserComponentTypeDropDown img {
     height: 26px;
     opacity: 0.15;
     padding-left: 6px;
   }
-  
   .closed {
     padding-bottom: 0;
     border-bottom: none;
     margin-bottom: 0;
   }
-  
   .startoranoUserComponentTypeDropDownListElementLoaded {
     cursor: pointer;
   }
-  
   .selected {
     color: rgba(0, 0, 0, 255) !important;
   }
-  
   .selectedgrayedout {
     color: rgba(0, 0, 0, 0.15) !important;
   }
-  
   /* Input Type DropDown END */
   
   /* Input Type BigButton START */
