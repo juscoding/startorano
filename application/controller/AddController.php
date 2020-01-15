@@ -12,8 +12,9 @@ class AddController extends Controller
     public function index()
     {
         $this->View->render('add/index', array(
-            'user_name' => Session::get('user_name'))
-        );
+            'user_name' => Session::get('user_name'),
+            'userinfo' => AddModel::getUserInfo(Session::get('user_id'))
+        ));
     }
 
     public function getJobs()
@@ -23,7 +24,12 @@ class AddController extends Controller
 
     public function createNewAnzeige()
     {
-        AddModel::writeNewAnzeigeToDataBase(Request::post('anzeigen_auftraggeber'), Request::post('anzeigen_jobId'), Request::post('anzeigen_titel'), Request::post('anzeigen_beschreibung'));
+        AddModel::writeNewAnzeigeToDataBase(
+            Request::post('anzeigen_auftraggeber'), 
+            Request::post('anzeigen_jobId'), 
+            Request::post('anzeigen_titel'), 
+            Request::post('anzeigen_beschreibung')
+        );
         Redirect::to('user/index');
     }
 }
