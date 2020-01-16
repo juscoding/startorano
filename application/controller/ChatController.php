@@ -22,13 +22,14 @@ class ChatController extends Controller
         $this->View->render(
             'chat/index',
             array(
-                'SendChats' => ChatModel::getAllSendChats(), 'ReceivedChats' => ChatModel::getAllReceivedChats()
+                'SendChats' => ChatModel::getAllLatestMessages(Session::get('user_id'), ChatModel::getLatestMessage())
             )
         );
     }
 
-    public function chat_search(){
-        
+    public function chat_search()
+    {
+
         ChatModel::getAllSearchEntries($_REQUEST["term"]);
     }
 }

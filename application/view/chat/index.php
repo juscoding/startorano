@@ -25,59 +25,64 @@
     </div>
 
     <!-- Alle Chats anzeigen -->
+
     <?php
-    foreach ($this->SendChats as $s_chat) { ?>
-     <?php if ($s_chat->SenderID == Session::get('user_id')) { ?>
-      <a class="startoranoUserComponentMessageInfo" href="<?php echo Config::get('URL'); ?>openChat/chats/<?= $s_chat->EmpfängerID; ?>">
-     <?php } else{?>
-      <a class="startoranoUserComponentMessageInfo" href="<?php echo Config::get('URL'); ?>openChat/chats/<?= $s_chat->SenderID; ?>">
-      <?php } ?>
-        <div class="startoranoUserComponentMessageInfo">
-          <div class="startoranoUserComponentMessageInfoRow1">
-            <img src="<?php if (empty($r_chat->BildID)) {
-                        echo Config::get('URL');
-                      } ?>images/svg/accountNoPicture.svg" alt="ProfilePicture">
-          </div>
-          <div class="startoranoUserComponentMessageInfoRow2">
-            <?php if ($s_chat->Status == 0) { ?>
-              <div class="startoranoUserComponentMessageInfoUnreadUser">
-                <p><?= $s_chat->chatpartner; ?></p>
-              </div>
-            <?php } else { ?>
-              <div class="startoranoUserComponentMessageInfoUser">
-                <p><?= $s_chat->chatpartner; ?></p>
-              </div>
+    if (!empty($this->SendChats)) {
+      foreach ($this->SendChats as $s_chat) { ?>
+
+        <?php if ($s_chat[0]->SenderID == Session::get('user_id')) { ?>
+          <a class="startoranoUserComponentMessageInfo" href="<?php echo Config::get('URL'); ?>openChat/chats/<?= $s_chat[0]->EmpfängerID; ?>">
+          <?php } else { ?>
+            <a class="startoranoUserComponentMessageInfo" href="<?php echo Config::get('URL'); ?>openChat/chats/<?= $s_chat[0]->SenderID; ?>">
             <?php } ?>
-            <div class="startoranoUserComponentMessageInfoPreviewReplied">
-              <?php if ($s_chat->SenderID == Session::get('user_id')) { ?>
-                <div class="startoranoUserComponentMessageInfoPreviewRepliedImage">
-                  <img src="<?php echo Config::get('URL'); ?>images/svg/replied-Message.svg" alt="reply">
-                </div>
-                <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadText limited">
-                  <p><?= $s_chat->Text; ?></p>
-                </div>
+            <div class="startoranoUserComponentMessageInfo">
+              <div class="startoranoUserComponentMessageInfoRow1">
+                <img src="<?php if (empty($r_chat->BildID)) {
+                            echo Config::get('URL');
+                          } ?>images/svg/accountNoPicture.svg" alt="ProfilePicture">
+              </div>
+              <div class="startoranoUserComponentMessageInfoRow2">
+                <?php if ($s_chat[0]->Status == 0) { ?>
+                  <div class="startoranoUserComponentMessageInfoUnreadUser">
+                    <p><?= $s_chat[0]->user_name; ?></p>
+                  </div>
+                <?php } else { ?>
+                  <div class="startoranoUserComponentMessageInfoUser">
+                    <p><?= $s_chat[0]->SenderID; ?></p>
+                  </div>
+                <?php } ?>
+                <div class="startoranoUserComponentMessageInfoPreviewReplied">
+                  <?php if ($s_chat[0]->SenderID == Session::get('user_id')) { ?>
+                    <div class="startoranoUserComponentMessageInfoPreviewRepliedImage">
+                      <img src="<?php echo Config::get('URL'); ?>images/svg/replied-Message.svg" alt="reply">
+                    </div>
+                    <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadText limited">
+                      <p><?= $s_chat[0]->Text; ?></p>
+                    </div>
 
-              <?php } else { ?>
-                <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadText limited">
-                  <p><?= $s_chat->Text; ?></p>
+                  <?php } else { ?>
+                    <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadText limited">
+                      <p><?= $s_chat[0]->Text; ?></p>
+                    </div>
+                  <?php } ?>
+                  <?php if ($s_chat[0]->Status == 0) { ?>
+                    <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadImage">
+                      <img src="<?php echo Config::get('URL'); ?>images/svg/dot-unreadMessage.svg" alt="dot">
+                    </div>
+                  <?php } ?>
                 </div>
-              <?php } ?>
-              <?php if ($s_chat->Status == 0) { ?>
-                <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadImage">
-                  <img src="<?php echo Config::get('URL'); ?>images/svg/dot-unreadMessage.svg" alt="dot">
+                <div class="startoranoUserComponentMessageInfoTime">
+                  <p><?= $s_chat[0]->Zeitstempel; ?></p>
                 </div>
-              <?php } ?>
+              </div>
+
             </div>
-            <div class="startoranoUserComponentMessageInfoTime">
-              <p><?= $s_chat->Zeitstempel; ?></p>
-            </div>
-          </div>
+            </a>
+        <?php }
+    } ?>
 
-        </div>
-      </a>
-    <?php } ?>
 
-</div>
+  </div>
 
-<!-- Footer Datei einbinden -->
-<?php include("../application/view/_templates/footer_standard.php"); ?>
+  <!-- Footer Datei einbinden -->
+  <?php include("../application/view/_templates/footer_standard.php"); ?>
