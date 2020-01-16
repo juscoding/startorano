@@ -58,8 +58,6 @@ class EditProjectModel
         $status = 0;
       break;
     }
-    
-
 
     $sql = "CALL updateEditedProject(:AnzeigeId, :AuftraggeberId, :JobId, :Titel, :Beschreibung, :AuftragnehmerId, :Status);";
     $query = $database->prepare($sql);
