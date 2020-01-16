@@ -14,7 +14,8 @@ class OpenChatModel
         return $query->fetchAll();
     }
 
-    public static function getUserName($id){
+    public static function getUserName($id)
+    {
         $database = DatabaseFactory::getFactory()->getConnection();
 
         $sql = "Call getUserInformation(:sender_id)";
@@ -22,10 +23,10 @@ class OpenChatModel
         $query->execute(array(':sender_id' => $id));
 
         return $query->fetchAll();
-        
     }
 
-    public static function sendChat($senderid, $recipient, $status, $text){
+    public static function sendChat($senderid, $recipient, $status, $text)
+    {
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
@@ -35,7 +36,7 @@ class OpenChatModel
             ':sender_id' => $senderid,
             ':recipient_id' => $recipient,
             ':status' => $status,
-            ':text' => $text));
-
+            ':text' => $text
+        ));
     }
 }

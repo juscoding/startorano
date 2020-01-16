@@ -6,7 +6,8 @@
 
         <!-- Chatpartner Namensanzeige-->
         <div class="startoranoChatUsernameContainer startoranoMessageComponentTypeBigField">
-            <p><?php echo $this->sendername[0]->user_name; ?></p>
+            <p><?php print_r($this->sendername[0]->user_name); //echo $this->sender_id; 
+                ?></p>
         </div>
         <?php foreach ($this->chat as $chat) { ?>
             <?php if ($chat->SenderID !== $this->user_id) { ?>
@@ -40,21 +41,21 @@
             <?php } ?>
         <?php } ?>
     </div>
-        <!--Nachricht Eingabefeld-->
-        <form action="<?php echo Config::get('URL'); ?>openChat/nachricht" method="post">
-            <input type="hidden" name="message_status" value="0">
-            <input type="hidden" name="message_sender" value="<?=$this->sender_id?>">
-            <div class="startoranoChatNewMessageWrapper">
-                <div class="startoranoUserComponentsContainer startoranoNewMessageContainer startoranoUserComponentTypeText">
-                    <input type="text" name="message_text" placeholder="deine Nachricht...">
-                </div>
-                <div class="startoranoChatNewMessageArrow">
-                    <input type="image" src="<?php echo Config::get('URL'); ?>images/svg/sendButton.svg" alt="Speichern">
-                </div>     
-            </div> 
-        </form>
-    </div> 
+    <!--Nachricht Eingabefeld-->
+    <form action="<?php echo Config::get('URL'); ?>openChat/nachricht" method="post">
+        <input type="hidden" name="message_status" value="0">
+        <input type="hidden" name="message_sender" value="<?= $this->sender_id ?>">
+        <div class="startoranoChatNewMessageWrapper">
+            <div class="startoranoUserComponentsContainer startoranoNewMessageContainer startoranoUserComponentTypeText">
+                <input type="text" name="message_text" placeholder="deine Nachricht...">
+            </div>
+            <div class="startoranoChatNewMessageArrow">
+                <input type="image" src="<?php echo Config::get('URL'); ?>images/svg/sendButton.svg" alt="Speichern">
+            </div>
+        </div>
+    </form>
+</div>
 </div>
 
-    <!-- Footer Datei einbinden -->
-    <?php include("../application/view/_templates/footer_standard.php"); ?>
+<!-- Footer Datei einbinden -->
+<?php include("../application/view/_templates/footer_standard.php"); ?>
