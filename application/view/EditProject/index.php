@@ -16,7 +16,7 @@
                     <p><?= $this->editProject[0]->Firmenname; ?></p>
                 </div>
                 <div>
-                    <small><?= $this->editProject[0]->Art; ?></small>
+                    <small><?= $this->editProject[0]->meinArt; ?></small>
                 </div>
             </div>
         </div>

@@ -36,6 +36,11 @@ html, body {
     margin-top: 30px;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 
 /* navigation dropdown menu */
 .navigation, .navigation-submenu {
@@ -460,11 +465,9 @@ html, body {
   /* Input Type Search END */
   
   /* Input Type DropDown START */
-  
   .startoranoUserComponentTypeDropDown {
     height: auto;
   }
-  
   .startoranoUserComponentTypeDropDownListElement {
     display: flex;
     align-items: center;
@@ -473,17 +476,14 @@ html, body {
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 12px;
   }
-  
   .startoranoUserComponentTypeDropDownListElement:first-of-type {
     cursor: pointer;
   }
-  
   .startoranoUserComponentTypeDropDownListElement:last-of-type {
     padding-bottom: 0;
     border-bottom: none;
     margin-bottom: 0;
   }
-  
   .startoranoUserComponentTypeDropDownListElement p {
     font-family: Raleway;
     font-style: normal;
@@ -492,37 +492,29 @@ html, body {
     color: #000000;
     margin: 0;
   }
-  
   .startoranoUserComponentTypeDropDownListElement:first-of-type p {
     flex: 1;
     color:rgba(0, 0, 0, 0.15);
   }
-  
-  
   .startoranoUserComponentTypeDropDown img {
     height: 26px;
     opacity: 0.15;
     padding-left: 6px;
   }
-  
   .closed {
     padding-bottom: 0;
     border-bottom: none;
     margin-bottom: 0;
   }
-  
   .startoranoUserComponentTypeDropDownListElementLoaded {
     cursor: pointer;
   }
-  
   .selected {
     color: rgba(0, 0, 0, 255) !important;
   }
-  
   .selectedgrayedout {
     color: rgba(0, 0, 0, 0.15) !important;
   }
-  
   /* Input Type DropDown END */
   
   /* Input Type BigButton START */
@@ -675,6 +667,7 @@ html, body {
     color: #000000;
     line-height: 0.9;
   }
+
   
   .startoranoUserComponentTypeJobElementRow1ProfileInfoRow1 small {
     font-weight: normal;
@@ -735,6 +728,30 @@ html, body {
 
 
   /* Component Type JobElement END */
+
+  /* ChatComponent Type Header START */
+  
+  .startoranoChatComponentTypeHeaderRow1 {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .startoranoChatComponentTypeHeaderRow1ProfileInfoRow1 h1 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+    line-height: 0.9;
+  }
+
+  .startoranoChatComponentTypeHeaderRow1ProfileInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+
+    /* ChatComponent Type Header END */
   
   /* Output Type ChatBubbles START */
   
@@ -773,12 +790,13 @@ html, body {
     display: flex;
     justify-content: flex-start;
   }
-  
+
+
   .startoranoChatUsernameContainer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: auto;
+    width: 350px;
     height: auto;
     background-color: #FFFFFF;
     padding: 12px;
@@ -800,6 +818,7 @@ html, body {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    width: auto;
   }
   
   .startoranoChatBubbleWrapperOther {
@@ -959,6 +978,7 @@ html, body {
     display: flex;
     flex-direction: row;
     align-items: center;  
+    width: 350px;
   }
   
   .startoranoChatNewMessageArrow {

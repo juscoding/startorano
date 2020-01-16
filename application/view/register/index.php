@@ -27,6 +27,7 @@
         <div class="startoranoUserComponentTypeSearchListElementMain">
             <input type="text" controller="register" name="user_companyType" placeholder="Art des Unternehemens..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
+            <input type="hidden" name="user_companyTypeId">
         </div>
         <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
     </div>
@@ -36,6 +37,7 @@
         <div class="startoranoUserComponentTypeSearchListElementMain">
             <input type="text" controller="register" name="user_companyLocation" placeholder="Firmensitz..." autocomplete="off" required>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
+            <input type="hidden" name="user_companyLocationId">
         </div>
         <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
     </div>

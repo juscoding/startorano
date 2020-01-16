@@ -24,94 +24,58 @@
       <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
     </div>
 
-    <!-- Alle gesendeten Chats anzeigen -->
+    <!-- Alle Chats anzeigen -->
     <?php
     foreach ($this->SendChats as $s_chat) { ?>
-      <div class="startoranoUserComponentMessageInfo">
-        <div class="startoranoUserComponentMessageInfoRow1">
-          <img src=<?= $s_chat->BildID; ?> alt="ProfilePicture">
-        </div>
-        <div class="startoranoUserComponentMessageInfoRow2">
-          <?php if ($s_chat->Status == 0) { ?>
-            <div class="startoranoUserComponentMessageInfoUnreadUser">
-              <p><?= $s_chat->user_name; ?></p>
-            </div>
-          <?php } else { ?>
-            <div class="startoranoUserComponentMessageInfoUser">
-              <p><?= $s_chat->user_name; ?></p>
-            </div>
-          <?php } ?>
-          <div class="startoranoUserComponentMessageInfoPreviewReplied">
+     <?php if ($s_chat->SenderID == Session::get('user_id')) { ?>
+      <a class="startoranoUserComponentMessageInfo" href="<?php echo Config::get('URL'); ?>openChat/chats/<?= $s_chat->EmpfängerID; ?>">
+     <?php } else{?>
+      <a class="startoranoUserComponentMessageInfo" href="<?php echo Config::get('URL'); ?>openChat/chats/<?= $s_chat->SenderID; ?>">
+      <?php } ?>
+        <div class="startoranoUserComponentMessageInfo">
+          <div class="startoranoUserComponentMessageInfoRow1">
+            <img src="<?php if (empty($r_chat->BildID)) {
+                        echo Config::get('URL');
+                      } ?>images/svg/accountNoPicture.svg" alt="ProfilePicture">
+          </div>
+          <div class="startoranoUserComponentMessageInfoRow2">
             <?php if ($s_chat->Status == 0) { ?>
-              <div class="startoranoUserComponentMessageInfoPreviewRepliedImage">
-                <img src="<?php echo Config::get('URL'); ?>images/svg/replied-Message.svg" alt="reply">
+              <div class="startoranoUserComponentMessageInfoUnreadUser">
+                <p><?= $s_chat->chatpartner; ?></p>
               </div>
-              <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadText limited">
-                <p><?= $s_chat->Text; ?></p>
-              </div>
-
             <?php } else { ?>
-              <div class="startoranoUserComponentMessageInfoPreviewRepliedImage">
-                <img src="<?php echo Config::get('URL'); ?>images/svg/replied-Message.svg" alt="reply">
-              </div>
-              <div class="startoranoUserComponentMessageInfoPreviewRepliedText limited">
-                <p><?= $s_chat->Text; ?></p>
+              <div class="startoranoUserComponentMessageInfoUser">
+                <p><?= $s_chat->chatpartner; ?></p>
               </div>
             <?php } ?>
-            <?php if ($s_chat->Status == 0) { ?>
-              <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadImage">
-                <img src="<?php echo Config::get('URL'); ?>images/svg/dot-unreadMessage.svg" alt="dot">
-              </div>
-            <?php } ?>
+            <div class="startoranoUserComponentMessageInfoPreviewReplied">
+              <?php if ($s_chat->SenderID == Session::get('user_id')) { ?>
+                <div class="startoranoUserComponentMessageInfoPreviewRepliedImage">
+                  <img src="<?php echo Config::get('URL'); ?>images/svg/replied-Message.svg" alt="reply">
+                </div>
+                <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadText limited">
+                  <p><?= $s_chat->Text; ?></p>
+                </div>
+
+              <?php } else { ?>
+                <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadText limited">
+                  <p><?= $s_chat->Text; ?></p>
+                </div>
+              <?php } ?>
+              <?php if ($s_chat->Status == 0) { ?>
+                <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadImage">
+                  <img src="<?php echo Config::get('URL'); ?>images/svg/dot-unreadMessage.svg" alt="dot">
+                </div>
+              <?php } ?>
+            </div>
+            <div class="startoranoUserComponentMessageInfoTime">
+              <p><?= $s_chat->Zeitstempel; ?></p>
+            </div>
           </div>
-          <div class="startoranoUserComponentMessageInfoTime">
-            <p><?= $s_chat->Zeitstempel; ?></p>
-          </div>
+
         </div>
-
-      </div>
-
+      </a>
     <?php } ?>
-
-    <!-- Alle empfangenen Chats anzeigen -->
-    <?php
-    foreach ($this->ReceivedChats as $r_chat) { ?>
-      <div class="startoranoUserComponentMessageInfo">
-        <div class="startoranoUserComponentMessageInfoRow1">
-          <img src=<?= $r_chat->BildID; ?> alt="ProfilePicture">
-        </div>
-        <div class="startoranoUserComponentMessageInfoRow2">
-          <?php if ($r_chat->Status == 0) { ?>
-            <div class="startoranoUserComponentMessageInfoUnreadUser">
-              <p><?= $r_chat->user_name; ?></p>
-            </div>
-          <?php } else { ?>
-            <div class="startoranoUserComponentMessageInfoUser">
-              <p><?= $r_chat->user_name; ?></p>
-            </div>
-          <?php } ?>
-
-          <?php if ($r_chat->Status == 0) { ?>
-            <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadText limited">
-              <p><?= $r_chat->Text; ?></p>
-            </div>
-          <?php } else { ?>
-            <div class="startoranoUserComponentMessageInfoPreview limited">
-              <p><?= $r_chat->Text; ?></p>
-            </div>
-          <?php } ?>
-          <?php if ($s_chat->Status == 0) { ?>
-            <div class="startoranoUserComponentMessageInfoUnreadPreviewUnreadImage">
-              <img src="<?php echo Config::get('URL'); ?>images/svg/dot-unreadMessage.svg" alt="dot">
-            </div>
-          <?php } ?>
-          <div class="startoranoUserComponentMessageInfoTime">
-            <p><?= $r_chat->Zeitstempel; ?></p>
-          </div>
-        </div>
-      </div>
-    <?php } ?>
-  </div>
 
 </div>
 

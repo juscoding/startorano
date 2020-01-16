@@ -75,6 +75,12 @@
             </a>
           </li>
           <li>
+            <a href="<?php echo Config::get('URL'); ?>storedProjects/index">
+              <img src="<?php echo Config::get('URL'); ?>/images/svg/bookmarkOff.svg" alt="bookmarkIcon">
+              <p>Gespeichert</p>
+            </a>
+          </li>
+          <li>
             <a href="<?php echo Config::get('URL'); ?>login/logout">
               <img src="<?php echo Config::get('URL'); ?>/images/svg/logoutIcon.svg" alt="logoutIcon">
               <p>Abmelden</p>

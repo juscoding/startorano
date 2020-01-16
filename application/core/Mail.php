@@ -2,7 +2,10 @@
 
 /* Using PHPMailer's namespace */
 use PHPMailer\PHPMailer\PHPMailer;
-
+include('/usr/share/php/libphp-phpmailer/class.phpmailer.php');
+include('/usr/share/php/libphp-phpmailer/class.smtp.php');
+include('/usr/share/php/libphp-phpmailer/class.phpmaileroauthgoogle.php');
+include('/usr/share/php/libphp-phpmailer/class.phpmaileroauth.php');
 /**
  * Class Mail
  *
@@ -68,7 +71,7 @@ class Mail
             $mail->IsSMTP();
 
             // 0 = off, 1 = commands, 2 = commands and data, perfect to see SMTP errors
-            $mail->SMTPDebug = 0;
+            $mail->SMTPDebug = 2;
 
             // enable SMTP authentication
             $mail->SMTPAuth = Config::get('EMAIL_SMTP_AUTH');

@@ -16,8 +16,8 @@
                          <small><?= $Projects->Art; ?></small>
                      </div>
                  </div>
-                 <div class="startoranoUserComponentTypeJobElementRow1Bookmark">
-                     <img src="<?php echo Config::get('URL'); ?>images/svg/bookmarkOff.svg" alt="bookmarkIcon">
+                 <div class="startoranoUserComponentTypeJobElementRow1Bookmark <?= is_null($Projects->isStored) ? "" : "bookmarkChecked"; ?>">
+                     <img key="<?= $Projects->AnzeigeID; ?>" src="<?php echo Config::get('URL'); ?>images/svg/<?= is_null($Projects->isStored) ? "bookmarkOff" : "bookmarkOn"; ?>.svg" alt="bookmarkIcon">
                  </div>
              </div>
              <div class="startoranoUserComponentTypeJobElementRow2">

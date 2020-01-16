@@ -21,8 +21,14 @@
     <!-- pinker Button mit weißer Schrift -->
     <input class="startoranoUserComponentsContainer startoranoUserComponentTypeBigButton filledRed" type="submit" value="SWAG!">
 
-
 </form>
 
 <!-- Footer Datei einbinden -->
 <?php include("../application/view/_templates/footer_standard.php");?>
+
+
+
+
+
+
+

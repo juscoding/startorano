@@ -20,7 +20,7 @@
         $(this).closest( ".startoranoUserComponentTypeSearchListElementMain" ).find("input").focus();
       }
     });
-// Bei einer Eingabe in das Input feld
+    // Bei einer Eingabe in das Input feld
     $( ".startoranoUserComponentTypeSearchListElementMain input" ).keypress(function() {
       // Class="filled" hinzufügen
       $(this).closest( ".startoranoUserComponentTypeSearch" ).addClass( "filled" );
@@ -38,6 +38,7 @@
       var inputVal = $(this).val();
         var resultDropdown = $(this).closest( ".startoranoUserComponentTypeSearch" ).find( ".startoranoUserComponentTypeSearchListElementWrapper" );
         if(inputVal.length){
+            // Aufruf des Controllers mit übergabe des Wertes
             $.get("<?php echo Config::get('URL'); ?>" +$(this).attr('controller') + "/" + $(this).attr('name') + "", {term: inputVal}).done(function(data){
                 // Display the returned data in browser
                 resultDropdown.html(data);
@@ -80,7 +81,6 @@
       $( ".startoranoUserComponentTypeDropDownListElementLoaded" ).hide();
       $( ".startoranoComponentHeaderProfileInfoTextCompanyExperienceRow2Progressbar2" ).css("width", "<?= (isset($this->userInfo[0]->Erfahrung) ? $this->userInfo[0]->Erfahrung : 0); ?>%");
     });
-
     // klick auf das oberste Element (das erste Element das immer zu sehen ist)
     $( ".startoranoUserComponentTypeDropDownListElementFirst" ).click(function() {
 
@@ -109,7 +109,6 @@
         $(this).removeClass( "closed" );
       }
     });
-
     // klick auf eines der unteren DropDown-Elmenete
     $( ".startoranoUserComponentTypeDropDownListElementLoaded" ).click(function() {
       // Class="selectedgrayedout" bei jedem Element mit der Class="startoranoUserComponentTypeDropDownListElementLoaded" entfernen
@@ -136,20 +135,29 @@
     // DropDown end ####################################################################
     
     
-    // Job Element start ###############################################################
-    
-    $( ".startoranoUserComponentTypeJobElementRow1Bookmark" ).click(function() {
+    // Anzeige/Projekt Element merken start ###############################################################
 
-      if ($(this).hasClass( "bookmarkChecked" )) {
+    // Funktion wird ausgeführt wenn auf ein Lesezeichen-Icon gecklickt wird
+    $( ".startoranoUserComponentTypeJobElementRow1Bookmark" ).click(function() {
+      // check ob das Lesezeichen die class="bookmarkChecked" hat
+      if ($(this).hasClass( "bookmarkChecked" )) { // Wenn die class="bookmarkChecked" vorhanden ist
+        // das aktuelle SVG wird ersetzt
         $(this).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/bookmarkOff.svg");
+        // class="bookmarkChecked" wird entfernt
         $(this).removeClass( "bookmarkChecked" );
-      } else {
+        // der HomeController, um eine gespeicherte Anzeige zu löschen, wird aufgerufen und die ID der Anzeige wird mitübergeben
+        $.get("<?php echo Config::get('URL'); ?>home/deleteProjectStored/" + $(this).children("img").attr('key'));
+      } else { // Wenn die class="bookmarkChecked" nicht vorhanden ist
+        // das aktuelle SVG wird ersetzt
         $(this).find( "img" ).attr("src", "<?php echo Config::get('URL'); ?>images/svg/bookmarkOn.svg");
+        // class="bookmarkChecked" wird entfernt
         $(this).addClass( "bookmarkChecked" );
+        // der HomeController, um eine Anzeige zu speichern, wird aufgerufen und die ID der Anzeige wird aus dem Attribut "key" geholt
+        $.get("<?php echo Config::get('URL'); ?>home/setProjectStored/" + $(this).children("img").attr('key'));
       }
     });
     
-    // Job Element end #################################################################
+    // Anzeige/Projekt Element merken end #################################################################
 
     // Chat Element start ##############################################################
     function limitMessages(){
@@ -205,8 +213,10 @@
             $( ".startoranoProfileTabWrapperUnderflow" ).css("margin-left", "0");
           break;
 
-        case "Anzeigen":
+        case "Anzeigen": // Wenn der ausgelesene Wert "Anzeigen" ist
+            // class="selectedTabCenter" wird hinzugefügt
             $(this).closest( ".startoranoComponentHeaderProfileTabs" ).find( ".startoranoComponentHeaderProfileTabsPointsUnderline" ).addClass("selectedTabCenter");
+            // das untere div wird um 100% der Breite nach links geschoben
             $( ".startoranoProfileTabWrapperUnderflow" ).css("margin-left", "-100%");
           break;
 

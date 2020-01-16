@@ -17,7 +17,7 @@
     <!-- SerachInput Empfänger -->
     <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
         <div class="startoranoUserComponentTypeSearchListElementMain">
-            <input type="text" controller="NewChat" name="message_recipient" placeholder="Empfänger..." autocomplete="off" required value="<?= $this->test[0]->user_name;?>"/>
+            <input type="text" controller="NewChat" name="message_recipient" placeholder="Empfänger..." autocomplete="off" required value="<?php if(!empty($this->test[0]->user_name)){$this->test[0]->user_name;}?>"/>
             <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
         </div>
         <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>

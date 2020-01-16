@@ -37,4 +37,16 @@ class HomeController extends Controller
             'test' => NewChatModel::getUserNameRecipient($recipient)
         ));
     }
+
+    // Funktion die von jQuery (AJAX) aufgerufen wird mit übergebener AnzeigenID
+    public function setProjectStored($AnzeigenID)
+    {
+        // Funktion im Model mit user_id und AnzeigenID
+        HomeModel::setProjectStored(Session::get('user_id'), $AnzeigenID);
+    }
+
+    public function deleteProjectStored($AnzeigenID)
+    {
+        HomeModel::deleteStoredProject(Session::get('user_id'), $AnzeigenID);
+    }
 }
