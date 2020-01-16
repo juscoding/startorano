@@ -1,0 +1,8 @@
+Array
+(
+    [0] => stdClass Object
+        (
+            [UnternehmenID] => 3
+        )
+
+)
