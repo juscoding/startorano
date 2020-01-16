@@ -34,6 +34,7 @@ class EditProjectModel
 
     if (empty($username)) {
       $status = 'offen';
+      $user_id_auftragnehmer = 0;
     } else {
       $sql = "CALL getUserID('$username');";
       $query = $database->prepare($sql);
@@ -42,9 +43,6 @@ class EditProjectModel
         $user_id_auftragnehmer = $key->user_id;
       }
     }
-
-
-    //$anzeigen_id = Request::get();
 
     switch ($status) {
       case 'erledigt':
@@ -56,7 +54,11 @@ class EditProjectModel
       case 'offen':
         $status = 0;
         break;
+      default:
+        $status = 0;
+      break;
     }
+    
 
 
     $sql = "CALL updateEditedProject(:AnzeigeId, :AuftraggeberId, :JobId, :Titel, :Beschreibung, :AuftragnehmerId, :Status);";

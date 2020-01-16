@@ -28,12 +28,11 @@
         <p class="startoranoNeueAnzeigeZwischentext">sucht im Bereich</p>
 
         <!-- SerachInput START -->
-
         <div class="startoranoUserComponentsContainer startoranoUserComponentTypeSearch">
             <div class="startoranoUserComponentTypeSearchListElementMain">
                 <input type="text" controller="add" name="getJobs" placeholder="Branche wählen..." autocomplete="off" value="<?php if(!empty($this->editProject[0]->Art)){ echo $this->editProject[0]->Art; } ?>" required>
                 <img src="<?php echo Config::get('URL'); ?>images/svg/searchIcon.svg" alt="searchIcon">
-                <input type="hidden" name="anzeigen_jobId">
+                <input type="hidden" name="anzeigen_jobId" value="<?php if(!empty($this->editProject[0]->Art)){ echo $this->editProject[0]->Art; } ?>">
             </div>
             <div class="startoranoUserComponentTypeSearchListElementWrapper"></div>
         </div>
