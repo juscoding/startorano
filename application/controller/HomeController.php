@@ -34,7 +34,7 @@ class HomeController extends Controller
     {
         $this->View->render('NewChat/index', array(
             'user_name' => Session::get('user_name'),
-            'test' => NewChatModel::getUserNameRecipient($recipient)
+            'recipient' => NewChatModel::getUserNameRecipient($recipient)
         ));
     }
 
