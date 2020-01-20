@@ -51,11 +51,11 @@
         </div>
         <!-- TextInput END -->
 
-        <div style="height: 60px"></div>
         
         <!-- pinker Button mit weißer Schrift -->
         <input class="startoranoUserComponentsContainer startoranoUserComponentTypeBigButton filledRed" type="submit" value="Speichern">
         
+        <div style="height: 60px"></div>
     </form>
 
 <!-- Footer Datei einbinden -->
