@@ -50,6 +50,8 @@
             <textarea rows="5" name="anzeigen_beschreibung" placeholder="Beschreibung..."></textarea>
         </div>
         <!-- TextInput END -->
+
+        <div style="height: 60px"></div>
         
         <!-- pinker Button mit weißer Schrift -->
         <input class="startoranoUserComponentsContainer startoranoUserComponentTypeBigButton filledRed" type="submit" value="Speichern">
